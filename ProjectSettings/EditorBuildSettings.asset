@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: "Assets/Rub\xE9n/Scenes/Menu.unity"
+    guid: ad79a009f9aebc244a081237dd3e83ed
+  - enabled: 0
+    path: "Assets/Rub\xE9n/Scenes/Assembled.unity"
+    guid: bc80f390034a40a4a8badbf93fa6a173
+  - enabled: 1
+    path: "Assets/Rub\xE9n/Scenes/multiplayer.unity"
+    guid: 372adbd392ab1fc44bd82097788c53a1
+  - enabled: 1
+    path: Assets/o.unity
+    guid: a9781e8e1e24c244b8c560065138a484
+  m_configObjects: {}
