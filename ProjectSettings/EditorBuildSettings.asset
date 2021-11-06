@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Rub\xE9n/Scenes/multiplayer.unity"
     guid: 372adbd392ab1fc44bd82097788c53a1
-  - enabled: 1
+  - enabled: 0
     path: Assets/o.unity
     guid: a9781e8e1e24c244b8c560065138a484
   m_configObjects: {}

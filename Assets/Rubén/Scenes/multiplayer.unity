@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: 947353508}
   m_Layer: 0
   m_Name: RedSpawn2
-  m_TagString: Untagged
+  m_TagString: redelectrica
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
