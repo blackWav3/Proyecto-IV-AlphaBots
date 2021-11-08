@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b2d2819e7c0f544852674e04e5434f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotType: 0
+  shotType: 1
   basicMat: {fileID: 2100000, guid: 2b68c898db8aa874db5494947fc99a89, type: 2}
   specialMat: {fileID: 2100000, guid: 3b7371a38689bca418b311ac4321c169, type: 2}
   rendBrazo: {fileID: 286587250}

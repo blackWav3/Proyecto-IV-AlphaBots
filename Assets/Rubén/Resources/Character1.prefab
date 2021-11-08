@@ -1895,6 +1895,7 @@ MonoBehaviour:
   bala: {fileID: 5155311190641484980, guid: 50086bb885f69ca45a4692f94dc3bb91, type: 3}
   redElectrica: {fileID: 1504819030578228283, guid: c5839b4570a91be44a598190aad7dfcd, type: 3}
   muzzle: {fileID: 7177145943617996714}
+  areaslow: {fileID: 1979355262269898652, guid: 6ba9b4e6ae9cfab4abd10735bda05437, type: 3}
 --- !u!143 &2613928932837081416
 CharacterController:
   m_ObjectHideFlags: 0

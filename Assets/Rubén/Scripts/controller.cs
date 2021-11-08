@@ -20,6 +20,8 @@ public class controller : MonoBehaviour
     bool _redelectrica;
     PhotonView photonView;
     public GameObject muzzle;
+    //area slow - - - - - - - - - - - 
+    public GameObject areaslow;
 
 
     private void Start()
@@ -50,9 +52,13 @@ public class controller : MonoBehaviour
         {
             redelectrica();
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Areaslow();
+        }
     }
 
-    #region shoot
+    #region Shoot
     public void Shoot()
     {
         photonView.RPC("RPCShoot", RpcTarget.AllBuffered);
@@ -60,11 +66,11 @@ public class controller : MonoBehaviour
     [PunRPC]
     void RPCShoot()
     {
-        Instantiate(bala, transform.position, transform.rotation* Quaternion.Euler(0f, 0f, 0f));
+        Instantiate(bala, muzzle.transform.position, transform.rotation* Quaternion.Euler(0f, 0f, 0f));
     }
     #endregion
 
-    #region red eléctrica
+    #region Red eléctrica
     public void redelectrica()
     {
         photonView.RPC("RPCredelectrica", RpcTarget.AllBuffered);
@@ -79,9 +85,23 @@ public class controller : MonoBehaviour
     {
         if(other.gameObject.tag == "redelectrica")
         {
-            print("hola");
+            print("redelectrica");
             StartCoroutine(stunRedElectrica());
         }
+        if(other.gameObject.tag == "slow")
+        {
+            print("slow");
+            speed = 1;
+        }
+    }
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.tag == "slow")
+        {
+            print("Slow exit");
+            speed = 6;
+        }
+        
     }
     IEnumerator stunRedElectrica()
     {
@@ -97,5 +117,22 @@ public class controller : MonoBehaviour
         _redelectrica = true;
     }
     #endregion
+
+    #region Area slow
+
+    public void Areaslow()
+    {
+        photonView.RPC("RPCAreaslow", RpcTarget.AllBuffered);
+    }
+
+    [PunRPC]
+    public void RPCAreaslow()
+    {
+        Instantiate(areaslow, muzzle.transform.position, transform.rotation * Quaternion.Euler(0f, 0f, 0f));
+    }
+
+
+    #endregion
+
 }
 

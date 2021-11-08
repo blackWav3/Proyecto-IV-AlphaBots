@@ -7,6 +7,8 @@ TagManager:
   - red
   - blue
   - redelectrica
+  - slow
+  - floor
   layers:
   - Default
   - TransparentFX
