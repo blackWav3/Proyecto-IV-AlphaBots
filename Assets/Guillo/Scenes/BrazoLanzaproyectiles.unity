@@ -418,6 +418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1288561828}
+  - component: {fileID: 1288561829}
   - component: {fileID: 1288561827}
   m_Layer: 0
   m_Name: Player
@@ -438,14 +439,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b2d2819e7c0f544852674e04e5434f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotType: 1
+  player: {fileID: 0}
+  playerSpeed: 4
   basicMat: {fileID: 2100000, guid: 2b68c898db8aa874db5494947fc99a89, type: 2}
   specialMat: {fileID: 2100000, guid: 3b7371a38689bca418b311ac4321c169, type: 2}
   rendBrazo: {fileID: 286587250}
+  shotType: 0
   spawnShot: {fileID: 1694859619}
-  basicBullet: {fileID: 3602096562250001626, guid: 3cb067002b445be469b83a61cf4af2cb, type: 3}
+  basicBulletPrefab: {fileID: 3602096562250001626, guid: 3cb067002b445be469b83a61cf4af2cb, type: 3}
   basicFireRate: 0.5
-  specialBullet: {fileID: 4789465864336494903, guid: 373e82a8e22a080459f60878fcecd328, type: 3}
+  specialBulletPrefab: {fileID: 4789465864336494903, guid: 373e82a8e22a080459f60878fcecd328, type: 3}
   specialFireRate: 1.5
 --- !u!4 &1288561828
 Transform:
@@ -463,6 +466,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &1288561829
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288561826}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1327678556
 GameObject:
   m_ObjectHideFlags: 0
