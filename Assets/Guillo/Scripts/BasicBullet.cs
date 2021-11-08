@@ -6,7 +6,9 @@ public class BasicBullet : MonoBehaviour
 {
     Rigidbody rb;
     public float speed;
-    public float lifeTime = 0f;
+    public float damage;
+
+    float lifeTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class BasicBullet : MonoBehaviour
     void Update()
     {
         lifeTime += Time.deltaTime;
-        if (lifeTime > 3)
+        if (lifeTime > 2)
         {
             Destroy(gameObject);
         }

@@ -444,7 +444,9 @@ MonoBehaviour:
   rendBrazo: {fileID: 286587250}
   spawnShot: {fileID: 1694859619}
   basicBullet: {fileID: 3602096562250001626, guid: 3cb067002b445be469b83a61cf4af2cb, type: 3}
+  basicFireRate: 0.5
   specialBullet: {fileID: 4789465864336494903, guid: 373e82a8e22a080459f60878fcecd328, type: 3}
+  specialFireRate: 1.5
 --- !u!4 &1288561828
 Transform:
   m_ObjectHideFlags: 0
