@@ -10,6 +10,9 @@ public class ArmShield : MonoBehaviour
     public int lifeShield;
     bool activatedShield;
 
+    //uwu cool down del escudo
+    public int cooldown; //<--esto se lo pones al yield return del coroutine y vas volando
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,7 @@ public class ArmShield : MonoBehaviour
             shieldAnimation.SetBool("shield", false);
             activatedShield = false;
             shield.SetActive(false);
+            StartCoroutine(CDescudo());//<---cuando la vida del escudo llega  a 0 empieza el cooldown para que el escudo recupere la vida
 
         }
 
@@ -57,5 +61,12 @@ public class ArmShield : MonoBehaviour
         yield return new WaitForSeconds(1.25f);
         shield.SetActive(true); //Hacemos aparecer el escudo
         activatedShield = true; //El estado del escudo ahora es activo
+    }
+
+    //CD escudo
+    IEnumerator CDescudo()
+    {
+        yield return new WaitForSeconds(cooldown);
+        lifeShield = 10;
     }
 }

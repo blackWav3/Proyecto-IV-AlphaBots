@@ -4,18 +4,37 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using Cinemachine;
+using UnityEngine.UI;
 
 
 public class myphoton : MonoBehaviourPunCallbacks
 {
+
+
+    public GameObject BlueWins, RedWins;
+    public static int blue, red;
+
 
     public GameObject spawnred1, spawnred2,spawnblue1, spawnblue2;
     // Start is called before the first frame update
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
-    }
 
+        blue = 0;
+        red = 0;
+    }
+    private void Update()
+    {
+        if(blue == 2)
+        {
+            RedWins.SetActive(true);
+        }
+        if (red == 2)
+        {
+            BlueWins.SetActive(true);
+        }
+    }
     public override void OnConnectedToMaster()
     {
         RoomOptions roomOptions = new RoomOptions();

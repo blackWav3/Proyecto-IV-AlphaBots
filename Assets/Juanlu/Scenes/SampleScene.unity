@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -433,6 +433,7 @@ MonoBehaviour:
   shield: {fileID: 328591024}
   Player: {fileID: 860622666}
   lifeShield: 10
+  cooldown: 3
 --- !u!1 &87980163 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e755550d419fc5f4185713a0db8664ea, type: 3}

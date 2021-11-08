@@ -22,13 +22,14 @@ public class bala : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Destroy(this.gameObject);
 
-        if(other.gameObject.tag == "floor" && this.gameObject.tag == "slow")
+
+        if (other.gameObject.tag == "floor" && this.gameObject.tag == "slow" || other.gameObject.tag == "Player" && this.gameObject.tag == "slow")
         {
             Instantiate(area, transform.position = new Vector3(transform.position.x,-3.4f,transform.position.z), transform.rotation * Quaternion.Euler(0f, 0f, 0f));
             //Destroy(this.gameObject);
 
         }
+        Destroy(this.gameObject);
     }
 }

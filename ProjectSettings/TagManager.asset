@@ -9,6 +9,7 @@ TagManager:
   - redelectrica
   - slow
   - floor
+  - proyectil
   layers:
   - Default
   - TransparentFX

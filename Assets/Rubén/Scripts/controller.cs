@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using Cinemachine;
 
 public class controller : MonoBehaviour
 {
     public CharacterController characterController;
     public float speed;
     Vector2 turn;
+
+    public int playerHP;
     //PARTES
     public GameObject[] BI;
     public GameObject[] BD;
@@ -40,14 +43,22 @@ public class controller : MonoBehaviour
         transform.localRotation = Quaternion.Euler(0, turn.x, 0);
         Vector3 move = transform.forward * verticalmove + transform.right * horizontalmove;
         characterController.Move(speed * Time.deltaTime * move);
+        if(playerHP <= 0)
+        {
+            GameObject Vcamera = GameObject.Find("CM vcam1");
+            print(Vcamera.name);
+            Vcamera.transform.position = new Vector3(-33f, 18.46f, -0.81f);
+            Vcamera.transform.rotation = Quaternion.Euler(30f, 90f, 0);
+            Dead();
+
+        }
+
+
+        //habilidades - - - - - - - - - - - - - - - - - - - - - - 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Shoot();
         }
-
-
-
-        //habilidades - - - - - - - - - - - - - - - - - - - - - - 
         if (Input.GetKeyDown(KeyCode.E))
         {
             redelectrica();
@@ -57,6 +68,27 @@ public class controller : MonoBehaviour
             Areaslow();
         }
     }
+
+    #region WinText
+    public void Dead()
+    {
+        photonView.RPC("RPCDead", RpcTarget.AllBuffered);
+    }
+    [PunRPC]
+    void RPCDead()
+    {
+        if (this.gameObject.name == "Character1(Clone)")
+        {
+            myphoton.red++;
+        }
+        else
+        {
+            myphoton.blue++;
+        }
+        Destroy(this.gameObject);
+    }
+
+    #endregion
 
     #region Shoot
     public void Shoot()
@@ -92,6 +124,10 @@ public class controller : MonoBehaviour
         {
             print("slow");
             speed = 1;
+        }
+        if(other.gameObject.tag == ("proyectil"))
+        {
+            playerHP--;
         }
     }
     private void OnCollisionExit(Collision other)
@@ -130,8 +166,6 @@ public class controller : MonoBehaviour
     {
         Instantiate(areaslow, muzzle.transform.position, transform.rotation * Quaternion.Euler(0f, 0f, 0f));
     }
-
-
     #endregion
 
 }
