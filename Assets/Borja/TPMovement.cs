@@ -49,13 +49,11 @@ public class TPMovement : MonoBehaviour
         
         checkGravityPos = this.transform.position;
 
-
         var lookPos = target.position - transform.position;
         lookPos.y = 0;
         var rotation = Quaternion.LookRotation(lookPos);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 100);
 
-        
         if (groundedPlayer && playerVelocity.y < 0)
             playerVelocity.y = 0f;
         
@@ -67,9 +65,6 @@ public class TPMovement : MonoBehaviour
         targetDirection.y = 0.0f;
 
         movimiento = targetDirection * Time.deltaTime * playerSpeed;
-
-        if (targetDirection != Vector3.zero)
-            gameObject.transform.forward = targetDirection;
         
         if (Input.GetButtonDown("Jump") && groundedPlayer && jump)
         {
@@ -86,7 +81,7 @@ public class TPMovement : MonoBehaviour
 
     private IEnumerator doubleJumpF()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.01f);
 
         if (Input.GetButtonDown("Jump") && doubleJump)
         {
