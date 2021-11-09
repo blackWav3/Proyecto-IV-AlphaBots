@@ -11,9 +11,9 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player Movement")]
     public CharacterController player;
-    private float horizontalMove;
-    private float verticalMove;
-    public float playerSpeed;
+    private float horizontalMove;   //movimiento en x
+    private float verticalMove;    //movimiento en z
+    public float playerSpeed;     //velocidad player
 
     [Header("Rendering")]
     public Material basicMat;
@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
     public Renderer rendBrazo;
 
     [Header("Shoot Parameters")]
-    public ShotType shotType;
-    public Transform spawnShot;
+    public ShotType shotType;      
+    public Transform spawnShot;    //spawn de las balas
 
     public GameObject basicBulletPrefab;
     public float basicFireRate;
@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
     public float specialFireRate;
 
     private float nextFire = 0f;
-    // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<CharacterController>();
@@ -39,7 +38,6 @@ public class PlayerController : MonoBehaviour
         shotType = ShotType.Basic;
     }
 
-    // Update is called once per frame
     void Update()
     {
         horizontalMove = Input.GetAxis("Horizontal");
