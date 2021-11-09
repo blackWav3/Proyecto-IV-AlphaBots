@@ -4,17 +4,26 @@ using UnityEngine;
 
 public class ataque : MonoBehaviour
 {
-    Animator anim;
+    public GameObject brazoD;public GameObject brazoI;public GameObject Rot;
 
     void Start()
     {
-        anim = gameObject.GetComponent<Animator>();
+        
     }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            anim.Play("Entry");
+            brazoD.GetComponent<Animator>().Play("basico");
+            print(1);
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            brazoD.GetComponent<Animator>().Play("pesado");
+            brazoI.GetComponent<Animator>().Play("pesadoIZq");
+            Rot.GetComponent<Animator>().Play("rotacion_pesado");
+
+            print(2);
         }
     }
 }
