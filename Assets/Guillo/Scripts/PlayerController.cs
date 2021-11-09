@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
         if (shotType == ShotType.Special)
         {
             nextFire = Time.time + specialFireRate;
-            Instantiate(specialBulletPrefab, spawnShot.position, Quaternion.identity);
+            Instantiate(specialBulletPrefab, spawnShot.position, spawnShot.rotation);
         }
     }
 }
