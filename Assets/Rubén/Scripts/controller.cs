@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class controller : MonoBehaviour
 {
@@ -17,6 +18,13 @@ public class controller : MonoBehaviour
     public GameObject[] BD;
     public GameObject[] PS;
     public GameObject bala;
+
+    //UI
+    [Header("UI")]
+    public bool b_q, b_m1, b_e;
+
+
+
 
     //red electrica - - - - - - - - - 
     public GameObject redElectrica;
@@ -55,15 +63,15 @@ public class controller : MonoBehaviour
 
 
         //habilidades - - - - - - - - - - - - - - - - - - - - - - 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0)&& b_m1==true)//2 sec
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)&&b_e==true)//15 sec
         {
             redelectrica();
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q)&& b_q==true)//10 sec
         {
             Areaslow();
         }
@@ -94,7 +102,15 @@ public class controller : MonoBehaviour
     public void Shoot()
     {
         photonView.RPC("RPCShoot", RpcTarget.AllBuffered);
+        StartCoroutine(cdm1());
     }
+    IEnumerator cdm1() //mouse 1 cd
+    {
+        b_m1= false;
+        yield return new WaitForSeconds(2f);
+        b_m1 = true;
+    }
+   
     [PunRPC]
     void RPCShoot()
     {
@@ -106,13 +122,19 @@ public class controller : MonoBehaviour
     public void redelectrica()
     {
         photonView.RPC("RPCredelectrica", RpcTarget.AllBuffered);
+        StartCoroutine(cde());
     }
     [PunRPC]
     void RPCredelectrica()
     {
         Instantiate(redElectrica, muzzle.transform.position, transform.rotation * Quaternion.Euler(0f, 0f, 0f));
     }
-
+    IEnumerator cde() //mouse 1 cd
+    {
+        b_e = false;
+        yield return new WaitForSeconds(15f);
+        b_e = true;
+    }
     void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.tag == "redelectrica")
@@ -159,8 +181,14 @@ public class controller : MonoBehaviour
     public void Areaslow()
     {
         photonView.RPC("RPCAreaslow", RpcTarget.AllBuffered);
+        StartCoroutine(cdq());
     }
-
+    IEnumerator cdq()//cd mouse
+    {
+        b_q = false;
+        yield return new WaitForSeconds(10f);
+        b_q = true;
+    }
     [PunRPC]
     public void RPCAreaslow()
     {
