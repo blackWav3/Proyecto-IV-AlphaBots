@@ -7,6 +7,7 @@ public class SpecialBullet : MonoBehaviour
     Rigidbody rb;
     public float speed;
     public float damage;
+    public float range;
 
     float lifeTime = 0f;
     // Start is called before the first frame update
@@ -21,9 +22,13 @@ public class SpecialBullet : MonoBehaviour
     void Update()
     {
         lifeTime += Time.deltaTime;
-        if (lifeTime > 2)
+        if (lifeTime > range)
         {
             Destroy(gameObject);
         }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
     }
 }
