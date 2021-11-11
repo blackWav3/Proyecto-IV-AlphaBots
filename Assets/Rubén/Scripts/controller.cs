@@ -22,6 +22,8 @@ public class controller : MonoBehaviour
     //UI
     [Header("UI")]
     public bool b_q, b_m1, b_e;
+    GameObject hp_player;
+    Text t_hp;
 
 
 
@@ -37,11 +39,16 @@ public class controller : MonoBehaviour
 
     private void Start()
     {
+        hp_player = GameObject.Find("Hp");
+        t_hp = hp_player.GetComponent<Text>();
         photonView = GetComponent<PhotonView>();
     }
     void Update()
     {
         if (!photonView.IsMine) return;
+
+        t_hp.text = playerHP.ToString();
+
         float horizontalmove = Input.GetAxis("Horizontal");
         float verticalmove = Input.GetAxis("Vertical");
         Cursor.visible = false;
