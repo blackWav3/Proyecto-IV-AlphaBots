@@ -433,7 +433,7 @@ MonoBehaviour:
   shield: {fileID: 328591024}
   Player: {fileID: 860622666}
   lifeShield: 10
-  cooldown: 3
+  cooldown: 10
 --- !u!1 &87980163 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e755550d419fc5f4185713a0db8664ea, type: 3}
@@ -1878,6 +1878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  maxSpeed: 10
 --- !u!136 &860622668
 CapsuleCollider:
   m_ObjectHideFlags: 0
