@@ -14,11 +14,9 @@ public class uiCD : MonoBehaviour
     
     
     private void Start()
-    {
-        
+    { 
         b = 2;
         c = 15;
-       
     }
     private void Update()
     {

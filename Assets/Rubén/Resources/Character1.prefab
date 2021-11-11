@@ -1889,7 +1889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 2613928932837081416}
   speed: 9
-  playerHP: 3
+  playerHP: 8
   BI: []
   BD: []
   PS: []
@@ -1897,6 +1897,7 @@ MonoBehaviour:
   b_q: 1
   b_m1: 1
   b_e: 1
+  hp_: {fileID: 0}
   redElectrica: {fileID: 1504819030578228283, guid: c5839b4570a91be44a598190aad7dfcd, type: 3}
   muzzle: {fileID: 7177145943617996714}
   areaslow: {fileID: 1979355262269898652, guid: 6ba9b4e6ae9cfab4abd10735bda05437, type: 3}
