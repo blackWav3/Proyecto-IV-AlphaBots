@@ -1889,7 +1889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 2613928932837081416}
   speed: 9
-  playerHP: 3
+  playerHP: 8
   BI: []
   BD: []
   PS: []
