@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int speed;
+    public int maxSpeed = 10;
     Rigidbody rb;
     Vector3 movementInput;
 
@@ -13,7 +14,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = maxSpeed;
+
         rb = GetComponent<Rigidbody>();
     }
 

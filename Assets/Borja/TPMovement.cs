@@ -29,9 +29,19 @@ public class TPMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-
-    void FixedUpdate()
+    private void Update()
     {
+        //Solo pueeds saltar si estas en el suelo y aun no has saltado
+        if (Input.GetButtonDown("Jump") && groundedPlayer && jump)
+        {
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            jump = false;
+        }
+
+        //StartCoroutine(comprobarGround());
+
+        
+
         //Recoje si esta tocando el suelo del Character Controller
         groundedPlayer = controller.isGrounded;
         //Si esta tocando el suelo se reinician los bools de saltar
@@ -40,20 +50,28 @@ public class TPMovement : MonoBehaviour
             doubleJump = true;
             jump = true;
         }
+        else if (groundedPlayer != true)
+        {
+            jump = false;
+        }
+
 
         //Si no esta en el suelo y ya ha saltado llama a la funcion de doble salto
-        else if (groundedPlayer == false && jump == false && doubleJump == true)
+        if (groundedPlayer == false && jump == false && doubleJump == true)
             StartCoroutine(doubleJumpF());
 
         //Si la ultima posicion de altura recogida es más baja que la anterior significa que esta cayendo. Si no esta subiendo
         if (this.transform.position.y <= checkGravityPos.y && groundedPlayer == false)
             bajando = true;
-            
+
         else if (this.transform.position.y >= checkGravityPos.y)
             bajando = false;
-        
-        checkGravityPos = this.transform.position;
 
+        checkGravityPos = this.transform.position;
+    }
+
+    void FixedUpdate()
+    {
         //Recoje el target que tiene la camara como hijo y siempre esta mirando hacia el
         var lookPos = target.position - transform.position;
         lookPos.y = 0;
@@ -75,12 +93,7 @@ public class TPMovement : MonoBehaviour
         
         movimiento = targetDirection * Time.deltaTime * playerSpeed;
         
-        //Solo pueeds saltar si estas en el suelo y aun no has saltado
-        if (Input.GetButtonDown("Jump") && groundedPlayer && jump)
-        {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-            jump = false;
-        }
+        
         //Añades la gravedad estandar a la velocidad en Y
         playerVelocity.y += gravityValue * Time.deltaTime;
 
@@ -91,13 +104,20 @@ public class TPMovement : MonoBehaviour
         controller.Move(movimiento + gravedad);
     }
 
+    private IEnumerator comprobarGround()
+    {
+        yield return new WaitForSeconds(2f);
+
+        
+    }
+
     private IEnumerator doubleJumpF()
     {
-
         yield return new WaitForSeconds(0.01f);
 
         if (Input.GetButtonDown("Jump") && doubleJump)
         {
+            
             if (bajando == true)
                 jumpHeight = 3;
             

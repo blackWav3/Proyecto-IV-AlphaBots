@@ -15,17 +15,18 @@ public class PlayerController : MonoBehaviour
     private float verticalMove;    //movimiento en z
     public float playerSpeed;     //velocidad player
 
-    [Header("Rendering")]
+    /*[Header("Rendering")]
     public Material basicMat;
-    public Material specialMat;
-    public Renderer rendBrazo;
+    public Material specialMat;         //para cuando añadamos el disparo basico
+
+    public Renderer rendBrazo;*/
 
     [Header("Shoot Parameters")]
     public ShotType shotType;      
     public Transform spawnShot;    //spawn de las balas
 
-    public GameObject basicBulletPrefab;
-    public float basicFireRate;
+    /*public GameObject basicBulletPrefab;
+    public float basicFireRate;*/               //para cuando añadamos el disparo basico
 
     public GameObject specialBulletPrefab;
     public float specialFireRate;
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         player = GetComponent<CharacterController>();
 
-        shotType = ShotType.Basic;
+        shotType = ShotType.Special;
     }
 
     void Update()
@@ -47,16 +48,17 @@ public class PlayerController : MonoBehaviour
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        /*if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             shotType = ShotType.Basic;
             rendBrazo.material = basicMat;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        }                                                   
+        if (Input.GetKeyDown(KeyCode.Alpha2))                   //para cuando añadamos el disparo basico
         {
             shotType = ShotType.Special;
             rendBrazo.material = specialMat;
-        }
+        }*/    //para cuando añadamos el disparo basico
+
     }
     private void FixedUpdate()
     {
@@ -65,15 +67,18 @@ public class PlayerController : MonoBehaviour
 
     void Shoot()
     {
-        if (shotType == ShotType.Basic)
+        /*if (shotType == ShotType.Basic)
         {
             nextFire = Time.time + basicFireRate;
-            Instantiate(basicBulletPrefab, spawnShot.position, Quaternion.identity);
-        }
+            Instantiate(basicBulletPrefab, spawnShot.position, Quaternion.identity);    //para cuando añadamos el disparo basico
+        }*/
+
         if (shotType == ShotType.Special)
         {
             nextFire = Time.time + specialFireRate;
-            Instantiate(specialBulletPrefab, spawnShot.position, spawnShot.rotation);
+            //Instantiate(specialBulletPrefab, spawnShot.position, spawnShot.rotation);
+            Instantiate(specialBulletPrefab, spawnShot.position, spawnShot.rotation * Quaternion.Euler(0f, 0f, 0f));
         }
     }
 }
+
