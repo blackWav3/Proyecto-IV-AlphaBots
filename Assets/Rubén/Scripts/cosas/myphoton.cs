@@ -5,45 +5,22 @@ using Photon.Pun;
 using Photon.Realtime;
 using Cinemachine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class myphoton : MonoBehaviourPunCallbacks
 {
-
-
-    public GameObject BlueWins, RedWins;
+    public GameObject BlueWins, RedWins, exitButton;
     public static int blue, red;
-
-
     public GameObject spawnred1, spawnred2,spawnblue1, spawnblue2;
-    // Start is called before the first frame update
+
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
+        
 
         blue = 0;
         red = 0;
-    }
-    private void Update()
-    {
-        if(blue == 2)
-        {
-            RedWins.SetActive(true);
-        }
-        if (red == 2)
-        {
-            BlueWins.SetActive(true);
-        }
-    }
-    public override void OnConnectedToMaster()
-    {
-        RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 4;
-        PhotonNetwork.JoinOrCreateRoom("Room 1", roomOptions, null);
-    }
 
-    public override void OnJoinedRoom()
-    {
         int Idplayer = PhotonNetwork.CountOfPlayers;
         print(Idplayer);
 
@@ -72,21 +49,34 @@ public class myphoton : MonoBehaviourPunCallbacks
 
         }
         #endregion
-
-        #region spawn1 
-        /*if(Idplayer==2 || Idplayer == 3)
-        {
-            GameObject newPlayer = PhotonNetwork.Instantiate("Character1", spawnred.transform.position, Quaternion.identity);
-            //GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().transform.rotation = (Quaternion.Euler(20, 1, 1));
-            GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;
-        }
-        if (Idplayer == 0 || Idplayer == 1)
-        {
-            GameObject newPlayer = PhotonNetwork.Instantiate("Character2", spawnblue.transform.position, Quaternion.identity);
-            //GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().transform.rotation = (Quaternion.Euler(24, 180, 0));
-            //GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().transform.position = new Vector3(0, 5, 36);
-            //GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = newPlayer.transform;
-        }*/
-        #endregion
     }
+    private void Update()
+    {
+        if(blue == 2)
+        {
+            RedWins.SetActive(true);
+            StartCoroutine(backtoLobby());
+        }
+        if (red == 2)
+        {
+            BlueWins.SetActive(true);
+            StartCoroutine(backtoLobby());
+        }
+    }
+    public override void OnConnectedToMaster()
+    {
+        RoomOptions roomOptions = new RoomOptions();
+        roomOptions.MaxPlayers = 4;
+        PhotonNetwork.JoinOrCreateRoom("Room 1", roomOptions, null);
+    }
+    IEnumerator backtoLobby(){
+        yield return new WaitForSeconds(3f);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        PhotonNetwork.Disconnect();
+        SceneManager.LoadScene("ConnectTo");
+
+    }
+
+   
 }

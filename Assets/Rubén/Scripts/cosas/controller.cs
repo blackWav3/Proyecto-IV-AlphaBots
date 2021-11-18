@@ -28,6 +28,7 @@ public class controller : MonoBehaviour
 
 
 
+
     //red electrica - - - - - - - - - 
     public GameObject redElectrica;
     bool _redelectrica;
@@ -42,6 +43,9 @@ public class controller : MonoBehaviour
         hp_player = GameObject.Find("Hp");
         t_hp = hp_player.GetComponent<Text>();
         photonView = GetComponent<PhotonView>();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
     void Update()
     {
@@ -51,8 +55,7 @@ public class controller : MonoBehaviour
 
         float horizontalmove = Input.GetAxis("Horizontal");
         float verticalmove = Input.GetAxis("Vertical");
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        
         turn.x += Input.GetAxis("Mouse X");
         //turn.y += Input.GetAxis("Mouse Y");
         transform.localRotation = Quaternion.Euler(0, turn.x, 0);
@@ -101,6 +104,7 @@ public class controller : MonoBehaviour
             myphoton.blue++;
         }
         Destroy(this.gameObject);
+       
     }
 
     #endregion
@@ -125,7 +129,7 @@ public class controller : MonoBehaviour
     }
     #endregion
 
-    #region Red eléctrica
+    #region Red elï¿½ctrica
     public void redelectrica()
     {
         photonView.RPC("RPCredelectrica", RpcTarget.AllBuffered);
