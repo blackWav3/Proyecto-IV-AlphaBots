@@ -44,6 +44,13 @@ public class PlayerController : MonoBehaviour
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
 
+        Vector3 playerInput = new Vector3(horizontalMove, 0, verticalMove);
+        playerInput = Vector3.ClampMagnitude(playerInput, 1);
+
+        playerInput = transform.TransformDirection(playerInput);
+
+        player.Move(playerInput * playerSpeed * Time.deltaTime);
+
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
             Shoot();
@@ -59,10 +66,6 @@ public class PlayerController : MonoBehaviour
             rendBrazo.material = specialMat;
         }*/    //para cuando añadamos el disparo basico
 
-    }
-    private void FixedUpdate()
-    {
-        player.Move(new Vector3(horizontalMove, 0, verticalMove) * playerSpeed * Time.deltaTime);
     }
 
     void Shoot()
