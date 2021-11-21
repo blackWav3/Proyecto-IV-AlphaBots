@@ -8,18 +8,19 @@ public class DeployHealing : MonoBehaviour
     private Transform targetpoint;      //punto del target al que apunta el rayo sanador
     public GameObject myLine = null;    //gameobject del rayo
     private bool isIn;                   //bool para comprobar si esta dentro del area de sanacion o fuera
+    public Material lineMaterial;
 
     void Start()
     {
         isIn = false;
     }
 
-    void DrawLine(Vector3 start, Vector3 end, Color color)
+    void DrawLine(Vector3 start, Vector3 end)
     {
         if (myLine == null)
         {
             myLine = new GameObject();
-            myLine.AddComponent<LineRenderer>();
+            myLine.AddComponent<LineRenderer>();   
         }
 
         myLine.name = "Cuerda";
@@ -27,8 +28,8 @@ public class DeployHealing : MonoBehaviour
 
         LineRenderer lineRend = myLine.GetComponent<LineRenderer>();
 
-        lineRend.startColor = color;
-        lineRend.startWidth = 0.05f;
+        lineRend.material = lineMaterial;
+        lineRend.startWidth = 0.1f;
         lineRend.SetPosition(0, start);              //asignamos las caracteristicas del rayo
         lineRend.SetPosition(1, end);
     }
@@ -38,7 +39,7 @@ public class DeployHealing : MonoBehaviour
         if (isIn)
         {
             targetpoint = Target.transform;
-            DrawLine(transform.position, targetpoint.position, Color.red);            
+            DrawLine(transform.position, targetpoint.position);            
         }
     }
     private void OnTriggerEnter(Collider other)

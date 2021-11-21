@@ -633,6 +633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   myLine: {fileID: 0}
+  lineMaterial: {fileID: 2100000, guid: fd8ed0d8974c1974199ccb397c6bc319, type: 2}
 --- !u!135 &1231530039
 SphereCollider:
   m_ObjectHideFlags: 0
