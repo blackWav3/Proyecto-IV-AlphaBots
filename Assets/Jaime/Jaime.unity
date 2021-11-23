@@ -10054,7 +10054,6 @@ GameObject:
   - component: {fileID: 654062782}
   - component: {fileID: 654062781}
   - component: {fileID: 654062780}
-  - component: {fileID: 654062783}
   m_Layer: 0
   m_Name: curacionArea
   m_TagString: Untagged
@@ -10144,20 +10143,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654062778}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &654062783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654062778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66dab32cc7543634ba2d2a515940c1dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  area: {fileID: 0}
-  vida_curada: 0
 --- !u!1 &790191229
 GameObject:
   m_ObjectHideFlags: 0
@@ -20203,6 +20188,7 @@ GameObject:
   - component: {fileID: 1504529976}
   - component: {fileID: 1504529975}
   - component: {fileID: 1504529977}
+  - component: {fileID: 1504529978}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -20333,6 +20319,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpVector: {x: 0, y: 5, z: 0}
+--- !u!114 &1504529978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504529970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66dab32cc7543634ba2d2a515940c1dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  area: {fileID: 654062778}
+  activadaCuracion: 0
 --- !u!1 &1512256369
 GameObject:
   m_ObjectHideFlags: 0
