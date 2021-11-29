@@ -28,10 +28,10 @@ public class Estados : MonoBehaviour
         Vector3 move = transform.forward * verticalmove + transform.right * horizontalmove;
         characterController.Move(velocidad * Time.deltaTime * move);
         #endregion  
-
-
     }
     
+
+
 
 // LISTA DE ESTADOS
 // I N H A B I L I T A R
@@ -63,7 +63,7 @@ public class Estados : MonoBehaviour
 // D A Ñ O
 // Daño(x) --------------------------------------------- recibe x puntos de daño instantaneamente
 // StartCoroutine(DañoPorSegundo(x,y,z)) --------------- rebice x puntos de daño durante y segundos cada z segundos
-// StartDaño(DañoActivo(x,y)) -------------------------- recibe x puntos de daño cada y segundos(el efecto termina cuando se vuelve a llamar la coroutina)
+// StartCoroutine(DañoActivo(x,y)) -------------------------- recibe x puntos de daño cada y segundos(el efecto termina cuando se vuelve a llamar la coroutina)
 #region Daño
     public void Daño(int o){
         vida-=o;
@@ -90,7 +90,7 @@ public class Estados : MonoBehaviour
 }
 #endregion
 // C U R A C I O N
-// Curacion() ------------------------------------------ recibe x puntos de curacion instantaneamente
+// Curacion(x) ------------------------------------------ recibe x puntos de curacion instantaneamente
 // StartCoroutine(CuracionPorSegundo(x,y,z)) ----------- recibe x puntos de curacion durante y segundos cada z segundos
 // StartCoroutine(CuracionActiva(x,y)) ----------------- recibe x puntos de curacion cada y segundos(el efecto termina cuando se vuelve a llamar la coroutina)
 #region Curacion

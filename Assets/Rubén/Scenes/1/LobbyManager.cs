@@ -11,7 +11,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public GameObject lobbyPanel;
     public GameObject roomPanel;
     public Text roomName;
-
     public RoomItem roomItemPrefab;
     List<RoomItem> roomItemsList = new List<RoomItem>();
     public Transform contentObject;
@@ -25,11 +24,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public GameObject playButton;
 
-
-
-
     void Start(){
         PhotonNetwork.JoinLobby();
+        
     }
     public void OnClickCreate(){
         if(roomInputField.text.Length>=1){
