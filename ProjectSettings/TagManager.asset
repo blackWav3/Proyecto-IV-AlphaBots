@@ -12,6 +12,7 @@ TagManager:
   - proyectil
   - Bullet
   - Mine
+  - DeployHeal
   layers:
   - Default
   - TransparentFX

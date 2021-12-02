@@ -27,16 +27,32 @@ public class Estados : MonoBehaviour
         float verticalmove = Input.GetAxis("Vertical");
         Vector3 move = transform.forward * verticalmove + transform.right * horizontalmove;
         characterController.Move(velocidad * Time.deltaTime * move);
-        #endregion  
+        #endregion
     }
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        #region Deploy
+        if (other.gameObject.CompareTag("DeployHeal"))
+        {
+            StartCoroutine(CuracionActiva(1, 1f));
+        }
+        #endregion
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        #region Deploy
+        if (other.gameObject.CompareTag("DeployHeal"))
+        {
+            StartCoroutine(CuracionActiva(1, 1f));
+        }
+        #endregion
+    }
 
 
-
-// LISTA DE ESTADOS
-// I N H A B I L I T A R
-// StartCoroutine(Inhabilitar(x)) ---------------------- se inhabilita durante x segundos
-#region Inhabilitar
+    // LISTA DE ESTADOS
+    // I N H A B I L I T A R
+    // StartCoroutine(Inhabilitar(x)) ---------------------- se inhabilita durante x segundos
+    #region Inhabilitar
     IEnumerator Inhabilitar(float o){ 
         velocidad = 0;
         yield return new WaitForSeconds(o);
