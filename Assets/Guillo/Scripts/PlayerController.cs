@@ -9,7 +9,7 @@ public enum ShotType
 }
 public class PlayerController : MonoBehaviour
 {
-    [Header("Player Movement")]
+    [Header("Player Parameters")]
     public CharacterController player;
     private float horizontalMove;   //movimiento en x
     private float verticalMove;    //movimiento en z
@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
         {
             Shoot();
         }
+
         /*if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             shotType = ShotType.Basic;
