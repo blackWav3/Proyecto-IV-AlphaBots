@@ -10,6 +10,8 @@ public class DeployHealing : MonoBehaviour
     private bool isIn;                   //bool para comprobar si esta dentro del area de sanacion o fuera
     public Material lineMaterial;
 
+    public float lifeTime = 5f;
+
     void Start()
     {
         isIn = false;
@@ -40,6 +42,16 @@ public class DeployHealing : MonoBehaviour
         {
             targetpoint = Target.transform;
             DrawLine(transform.position, targetpoint.position);            
+        }
+
+        lifeTime -= Time.deltaTime;
+        if (lifeTime <= 0)
+        {
+            Destroy(gameObject);
+            isIn = false;
+            Target = null;
+            Destroy(myLine);
+            myLine = null;
         }
     }
     private void OnTriggerEnter(Collider other)

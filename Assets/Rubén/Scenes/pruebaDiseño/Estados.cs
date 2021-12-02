@@ -48,6 +48,16 @@ public class Estados : MonoBehaviour
         #endregion
     }
 
+    /*private void OnTriggerStay(Collider other)
+    {
+        #region Deploy
+        if (other.gameObject.CompareTag("DeployHeal"))
+        {
+            StartCoroutine(CuracionActiva(1, 1f));
+        }
+        #endregion
+    }*/
+
 
     // LISTA DE ESTADOS
     // I N H A B I L I T A R

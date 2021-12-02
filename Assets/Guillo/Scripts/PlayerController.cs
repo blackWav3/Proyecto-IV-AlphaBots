@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     public GameObject specialBulletPrefab;
     public float specialFireRate;
 
+    public bool healDeployed = false;
+
     private float nextFire = 0f;
     void Start()
     {
@@ -55,6 +57,10 @@ public class PlayerController : MonoBehaviour
         {
             Shoot();
         }
+        if (Input.GetButton("Fire2") && healDeployed == false)
+        {
+
+        }
 
         /*if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -65,7 +71,7 @@ public class PlayerController : MonoBehaviour
         {
             shotType = ShotType.Special;
             rendBrazo.material = specialMat;
-        }*/    //para cuando añadamos el disparo basico
+        }*/                                                     //para cuando añadamos el disparo basico
 
     }
 
