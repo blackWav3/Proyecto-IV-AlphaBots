@@ -10,7 +10,7 @@ public class TPMovement : MonoBehaviour
     public bool groundedPlayer;
     public float playerSpeed = 4.0f;
     public float jumpHeight = 1.0f;
-    private float gravityValue = -9.81f;
+    public float gravityValue = -9.81f;
 
     public Transform target;
     public bool bajando = false;
@@ -119,11 +119,11 @@ public class TPMovement : MonoBehaviour
         {
             
             if (bajando == true)
-                jumpHeight = 3;
+                jumpHeight = 10;
             
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
             doubleJump = false;
-            jumpHeight = 1;
+            jumpHeight = 10;
         }
     }
 }
