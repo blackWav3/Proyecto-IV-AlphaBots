@@ -9,7 +9,7 @@ public class TPMovement : MonoBehaviour
     private Vector3 playerVelocity;
     public bool groundedPlayer;
     public float playerSpeed = 4.0f;
-    private float jumpHeight = 1.0f;
+    public float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
 
     public Transform target;
