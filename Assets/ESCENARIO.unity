@@ -457,7 +457,7 @@ MonoBehaviour:
   groundedPlayer: 0
   playerSpeed: 70
   jumpHeight: 10
-  gravityValue: -150
+  gravityValue: -200
   target: {fileID: 1110277057}
   bajando: 0
   jump: 1
