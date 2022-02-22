@@ -15,7 +15,6 @@ public class TPMovement : MonoBehaviour
     public Transform target;
     public bool bajando = false;
     public bool jump = true;
-    public bool doubleJump = true;
 
     private Vector3 movimiento;
     private Vector3 gravedad;
@@ -38,27 +37,17 @@ public class TPMovement : MonoBehaviour
             jump = false;
         }
 
-        //StartCoroutine(comprobarGround());
-
-        
-
         //Recoje si esta tocando el suelo del Character Controller
         groundedPlayer = controller.isGrounded;
         //Si esta tocando el suelo se reinician los bools de saltar
         if (groundedPlayer)
         {
-            doubleJump = true;
             jump = true;
         }
         else if (groundedPlayer != true)
         {
             jump = false;
         }
-
-
-        //Si no esta en el suelo y ya ha saltado llama a la funcion de doble salto
-        if (groundedPlayer == false && jump == false && doubleJump == true)
-            StartCoroutine(doubleJumpF());
 
         //Si la ultima posicion de altura recogida es más baja que la anterior significa que esta cayendo. Si no esta subiendo
         if (this.transform.position.y <= checkGravityPos.y && groundedPlayer == false)
@@ -102,28 +91,5 @@ public class TPMovement : MonoBehaviour
 
         //Lo sumas y lo mueves
         controller.Move(movimiento + gravedad);
-    }
-
-    private IEnumerator comprobarGround()
-    {
-        yield return new WaitForSeconds(2f);
-
-        
-    }
-
-    private IEnumerator doubleJumpF()
-    {
-        yield return new WaitForSeconds(0.01f);
-
-        if (Input.GetButtonDown("Jump") && doubleJump)
-        {
-            
-            if (bajando == true)
-                jumpHeight = 3;
-            
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-            doubleJump = false;
-            jumpHeight = 1;
-        }
     }
 }
