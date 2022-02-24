@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -506,6 +506,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9177416288412809886, guid: f5304b11f796f0947bf4d57413d15a23, type: 3}
+      propertyPath: camOffset.z
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9177416289817139749, guid: f5304b11f796f0947bf4d57413d15a23, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9177416289817139749, guid: f5304b11f796f0947bf4d57413d15a23, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9177416289817139752, guid: f5304b11f796f0947bf4d57413d15a23, type: 3}
+      propertyPath: gravityValue
+      value: -70
+      objectReference: {fileID: 0}
     - target: {fileID: 9177416290392575988, guid: f5304b11f796f0947bf4d57413d15a23, type: 3}
       propertyPath: m_Name
       value: CharacterCam
