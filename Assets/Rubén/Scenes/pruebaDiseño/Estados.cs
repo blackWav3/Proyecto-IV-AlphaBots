@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Estados : MonoBehaviour
@@ -33,18 +32,22 @@ public class Estados : MonoBehaviour
     {
         #region Deploy
         if (other.gameObject.CompareTag("DeployHeal"))
-        {
             StartCoroutine(CuracionActiva(1, 1f));
-        }
+        #endregion
+        #region Chainsaw
+        if (other.gameObject.CompareTag("Chainsaw"))
+            Daño(2);
+        #endregion
+        #region Sword
+        if (other.gameObject.CompareTag("Sword"))
+            Daño(1);
         #endregion
     }
     private void OnTriggerExit(Collider other)
     {
         #region Deploy
         if (other.gameObject.CompareTag("DeployHeal"))
-        {
             StartCoroutine(CuracionActiva(1, 1f));
-        }
         #endregion
     }
 

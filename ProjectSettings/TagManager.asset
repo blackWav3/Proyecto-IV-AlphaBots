@@ -13,6 +13,8 @@ TagManager:
   - Bullet
   - Mine
   - DeployHeal
+  - Chainsaw
+  - Sword
   layers:
   - Default
   - TransparentFX

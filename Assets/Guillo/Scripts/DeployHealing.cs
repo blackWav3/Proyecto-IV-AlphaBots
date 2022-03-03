@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DeployHealing : MonoBehaviour
@@ -31,7 +29,7 @@ public class DeployHealing : MonoBehaviour
         LineRenderer lineRend = myLine.GetComponent<LineRenderer>();
 
         lineRend.material = lineMaterial;
-        lineRend.startWidth = 0.1f;
+        lineRend.startWidth = 0.25f;
         lineRend.SetPosition(0, start);              //asignamos las caracteristicas del rayo
         lineRend.SetPosition(1, end);
     }
