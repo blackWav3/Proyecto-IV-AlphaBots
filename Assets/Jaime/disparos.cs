@@ -13,11 +13,6 @@ public class disparos : MonoBehaviour
     public float velocidadaBala;
     public GameObject prefabBala;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
     void OnMouseDown()
     {
         if (!PV.IsMine) return;
@@ -27,8 +22,7 @@ public class disparos : MonoBehaviour
     [PunRPC]
     void disparo()
     {
-        StartCoroutine(disparacion());
-        
+        StartCoroutine(disparacion());        
     }
 
     IEnumerator disparacion()
