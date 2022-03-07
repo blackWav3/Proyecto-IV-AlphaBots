@@ -27,9 +27,9 @@ public class disparos : MonoBehaviour
 
     IEnumerator disparacion()
     {
-        for (int i = 0; i <= cantidad; i++)
+        for (int i = 0; i <= cantidad; i++)//poner prefab en carpeta que toca
         {
-            GameObject balaActual = PhotonNetwork.Instantiate("prefabBala", Muzzle.transform.position, Quaternion.identity);
+            GameObject balaActual = PhotonNetwork.Instantiate("prefabBala", Muzzle.transform.position, Quaternion.identity); 
             balaActual.GetComponent<Rigidbody>().AddForce(transform.forward * velocidadaBala);
             yield return new WaitForSeconds(TiempoEspaciado);
         }
