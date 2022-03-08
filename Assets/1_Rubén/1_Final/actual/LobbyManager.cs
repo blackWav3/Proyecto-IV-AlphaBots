@@ -24,6 +24,11 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public GameObject playButton;
 
+    [Space(10)]
+    //LEVEL TO LOAD
+    public string levelToLoad;
+
+
     void Start(){
         PhotonNetwork.JoinLobby();
         
@@ -103,6 +108,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
        }
    }
    public void OnClickPlayButton(){
-       PhotonNetwork.LoadLevel("multiplayer");
+       PhotonNetwork.LoadLevel(levelToLoad);
    }   
 }

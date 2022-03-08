@@ -23,12 +23,10 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
         SetUpPlayerAndCamera();
     }
 
-
-
     #region spawnjugadores
     public void SetUpPlayerAndCamera()//instancia pj y settea los componentes de camara y jugador por id
     {
-        PJplayer = PhotonNetwork.Instantiate(playerID.ToString(), spawnPoints[0].transform.position, Quaternion.identity);
+        PJplayer = PhotonNetwork.Instantiate("Characters/"+playerID.ToString(), spawnPoints[0].transform.position, Quaternion.identity);
         PJcamara.GetComponent<PJ_camara>().player = GameObject.Find(playerID.ToString() + "(Clone)").gameObject.transform;
         GameObject.Find(playerID + "(Clone)").GetComponent<PJ_movement>().target = PJcamara.transform.GetChild(0).gameObject.transform;
         PJcamara.GetComponent<PJ_camara>().can = true;
@@ -38,11 +36,11 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
     [PunRPC]
     void RPCmontajeRobotEscena(string brazoIzq, string brazoDer, string cabeza, string pecho, string piernas)
     {
-        PhotonNetwork.Instantiate(brazoIzq,PJplayer.transform.Find("leftArm").gameObject.transform.position,Quaternion.identity);
-        PhotonNetwork.Instantiate(brazoDer, PJplayer.transform.Find("rightArm").gameObject.transform.position, Quaternion.identity);
-        PhotonNetwork.Instantiate(cabeza, PJplayer.transform.Find("head").gameObject.transform.position, Quaternion.identity);
-        PhotonNetwork.Instantiate(pecho, PJplayer.transform.Find("chest").gameObject.transform.position, Quaternion.identity);
-        PhotonNetwork.Instantiate(piernas, PJplayer.transform.Find("legs").gameObject.transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(brazoIzq,PJplayer.transform.Find("Piezas/leftArm").gameObject.transform.position,Quaternion.identity);
+        PhotonNetwork.Instantiate(brazoDer, PJplayer.transform.Find("Piezas/rightArm").gameObject.transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(cabeza, PJplayer.transform.Find("Piezas/head").gameObject.transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(pecho, PJplayer.transform.Find("Piezas/chest").gameObject.transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(piernas, PJplayer.transform.Find("Piezas/legs").gameObject.transform.position, Quaternion.identity);
     }
     #endregion
 }
