@@ -30,10 +30,8 @@ public class Estados : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        #region Deploy
-        if (other.gameObject.CompareTag("DeployHeal"))
-            StartCoroutine(CuracionActiva(1, 1f));
-        #endregion
+        #region Armas melee
+
         #region Chainsaw
         if (other.gameObject.CompareTag("Chainsaw"))
             Daño(2);
@@ -42,12 +40,54 @@ public class Estados : MonoBehaviour
         if (other.gameObject.CompareTag("Sword"))
             Daño(1);
         #endregion
+        #region Hammer
+        if (other.gameObject.CompareTag("Hammer"))
+            Daño(2);
+        #endregion
+
+        #endregion
+        #region Armas distancia
+
+        #region Rafagas(3)
+        if (other.gameObject.CompareTag("Rafaga"))
+            Daño(2);
+        #endregion
+        #region Lanzallamas
+        if (other.gameObject.CompareTag("Lanzallamas"))
+            StartCoroutine(DañoPorSegundo(1, 5, 1));
+        #endregion
+        #region Blaster
+        if (other.gameObject.CompareTag("Blaster"))
+            Daño(5);
+        #endregion
+
+        #endregion
+        #region Armas utilidad
+
+        #region DeployHealingPiece
+        if (other.gameObject.CompareTag("DeployHeal"))
+            StartCoroutine(CuracionActiva(1, 1f));
+        #endregion
+        #region Slow
+        if (other.gameObject.CompareTag("slow"))
+            RalentizarActivado();
+        #endregion
+        #region Stun
+        if (other.gameObject.CompareTag("Stun"))
+            StartCoroutine(Inhabilitar(3));
+        #endregion
+
+        #endregion
     }
     private void OnTriggerExit(Collider other)
     {
         #region Deploy
         if (other.gameObject.CompareTag("DeployHeal"))
             StartCoroutine(CuracionActiva(1, 1f));
+        #endregion
+        #region Slow
+        if (other.gameObject.CompareTag("slow"))
+            RalentizarDesactivado();
         #endregion
     }
 
