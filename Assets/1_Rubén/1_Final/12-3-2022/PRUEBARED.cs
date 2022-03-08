@@ -15,7 +15,7 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
     public GameObject PJplayer;
     //dropdowns
 
-    public Dropdown brazoIzq, brazoDer, cabeza, pecho, piernas;
+    //public Dropdown brazoIzq, brazoDer, cabeza, pecho, piernas;
     [Header("GUI")]
     [Space(15)]    
     public GameObject[] playersReady;
@@ -32,10 +32,10 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
     {
 
         //set actie false de la mierda
-        canvas_dropdowns.SetActive(false);
+        //canvas_dropdowns.SetActive(false);
 
         //spawn jugador - movimiento camara al jugador
-        PJplayer = PhotonNetwork.Instantiate("Characters/"+playerID.ToString(), spawnPoints[0].transform.position, Quaternion.identity);
+        PJplayer = PhotonNetwork.Instantiate("Characters/"+playerID.ToString(), spawnPoints[playerID-1].transform.position, spawnPoints[playerID-1].transform.rotation);
         PJcamara.GetComponent<PJ_camara>().player = GameObject.Find(playerID.ToString() + "(Clone)").gameObject.transform;
         GameObject.Find(playerID + "(Clone)").GetComponent<PJ_movement>().target = PJcamara.transform.GetChild(0).gameObject.transform;
         PJcamara.GetComponent<PJ_camara>().can = true;

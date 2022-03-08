@@ -20,19 +20,19 @@ public class disparos : MonoBehaviour
     private void Update()
     {
         if (!PV.IsMine) return;
-        if(Input.GetKeyDown(KeyCode.Mouse0)) PV.RPC("disparo", RpcTarget.AllBuffered);
+        if(Input.GetKeyDown(KeyCode.Mouse0)) PV.RPC("disparacion", RpcTarget.AllBuffered);
     }
 
-    [PunRPC]
+    
     void disparo()
     {
         StartCoroutine(disparacion());        
     }
-
+    [PunRPC]
     IEnumerator disparacion()
     {
         print("c_disparo");
-        for (int i = 0; i <= cantidad; i++)//poner prefab en carpeta que toca
+        for (int i = 0; i < cantidad; i++)//poner prefab en carpeta que toca
         {
             GameObject balaActual = PhotonNetwork.Instantiate("Bala", Muzzle.transform.position, Quaternion.identity); 
             balaActual.GetComponent<Rigidbody>().AddForce(transform.forward * velocidadaBala);

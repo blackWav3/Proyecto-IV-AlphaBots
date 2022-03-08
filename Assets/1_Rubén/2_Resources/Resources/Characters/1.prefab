@@ -90,7 +90,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2b6100d5229179a4a9cebaa542153f07, type: 2}
+  - {fileID: 2100000, guid: 64982984cee42534d872ea3d44a7dae9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -249,7 +249,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundedPlayer: 0
-  playerSpeed: 4
+  playerSpeed: 7
+  jumpHeight: 2
+  gravityValue: -25
   target: {fileID: 0}
   bajando: 0
   jump: 1
