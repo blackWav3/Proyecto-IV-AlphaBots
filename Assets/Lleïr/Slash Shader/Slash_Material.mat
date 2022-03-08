@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_404b3441ff3b4f40bbe6ae7958cb8d5b:
+        m_Texture: {fileID: 2800000, guid: 70a30cb5439be9b4fb307ca3df12e677, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -76,6 +80,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_d6d66f473e2f49d58ae46ba9b89c889a: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -103,12 +108,13 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_3a6fcb94341d42dbb90f4b896cc23391: {r: 150.4945, g: 115.00052, b: 0, a: 0.7372549}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &7916244679660646591
+--- !u!114 &4872669547554881271
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
