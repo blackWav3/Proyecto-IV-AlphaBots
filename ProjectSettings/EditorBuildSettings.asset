@@ -15,15 +15,15 @@ EditorBuildSettings:
     path: "Assets/Lle\xEFr/o.unity"
     guid: a9781e8e1e24c244b8c560065138a484
   - enabled: 1
-    path: "Assets/Rub\xE9n/1_Final/actual/ConnectTo.unity"
+    path: "Assets/1_Rub\xE9n/1_Final/actual/ConnectTo.unity"
     guid: 14aa7648c73d8114cae2acce9c375538
   - enabled: 1
-    path: "Assets/Rub\xE9n/1_Final/actual/Lobby.unity"
+    path: "Assets/1_Rub\xE9n/1_Final/actual/Lobby.unity"
     guid: e166463f48853d041b40b8995f9cf1a8
   - enabled: 1
-    path: "Assets/Rub\xE9n/1_Final/actual/multiplayer.unity"
+    path: "Assets/1_Rub\xE9n/1_Final/actual/multiplayer.unity"
     guid: 372adbd392ab1fc44bd82097788c53a1
   - enabled: 1
-    path: "Assets/Rub\xE9n/1_Final/12-3-2022/gameplay.unity"
+    path: "Assets/1_Rub\xE9n/1_Final/12-3-2022/gameplay.unity"
     guid: 10ba3423f20d524459dc50f5d40e0ecb
   m_configObjects: {}

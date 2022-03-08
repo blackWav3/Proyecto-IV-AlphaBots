@@ -11,12 +11,16 @@ public class disparos : MonoBehaviour
     public int cantidad;
     public float TiempoEspaciado;
     public float velocidadaBala;
-    public GameObject prefabBala;
 
-    void OnMouseDown()
+    private void Start()
+    {
+        PV = GetComponent<PhotonView>();
+    }
+
+    private void Update()
     {
         if (!PV.IsMine) return;
-        PV.RPC("disparo", RpcTarget.AllBuffered);
+        if(Input.GetKeyDown(KeyCode.Mouse0)) PV.RPC("disparo", RpcTarget.AllBuffered);
     }
 
     [PunRPC]
@@ -27,9 +31,10 @@ public class disparos : MonoBehaviour
 
     IEnumerator disparacion()
     {
+        print("c_disparo");
         for (int i = 0; i <= cantidad; i++)//poner prefab en carpeta que toca
         {
-            GameObject balaActual = PhotonNetwork.Instantiate("prefabBala", Muzzle.transform.position, Quaternion.identity); 
+            GameObject balaActual = PhotonNetwork.Instantiate("Bala", Muzzle.transform.position, Quaternion.identity); 
             balaActual.GetComponent<Rigidbody>().AddForce(transform.forward * velocidadaBala);
             yield return new WaitForSeconds(TiempoEspaciado);
         }

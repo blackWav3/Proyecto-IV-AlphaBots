@@ -15,6 +15,11 @@ TagManager:
   - DeployHeal
   - Chainsaw
   - Sword
+  - Hammer
+  - Rafaga
+  - Lanzallamas
+  - Blaster
+  - Stun
   layers:
   - Default
   - TransparentFX
