@@ -634,6 +634,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7857700283533660500, guid: e323c32f8cf4c93459b5ce3bca257ab0, type: 3}
+      propertyPath: sceneViewId
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857700283566457440, guid: e323c32f8cf4c93459b5ce3bca257ab0, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7857700283906466568, guid: e323c32f8cf4c93459b5ce3bca257ab0, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -681,6 +689,14 @@ PrefabInstance:
     - target: {fileID: 7857700283906466569, guid: e323c32f8cf4c93459b5ce3bca257ab0, type: 3}
       propertyPath: m_Name
       value: ESCENARIO
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857700284836479922, guid: e323c32f8cf4c93459b5ce3bca257ab0, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857700284906482679, guid: e323c32f8cf4c93459b5ce3bca257ab0, type: 3}
+      propertyPath: sceneViewId
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e323c32f8cf4c93459b5ce3bca257ab0, type: 3}
