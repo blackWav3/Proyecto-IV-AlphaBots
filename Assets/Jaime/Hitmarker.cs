@@ -24,5 +24,6 @@ public class Hitmarker : MonoBehaviour
         {
             HitSound.Play();
         }
-    }
+        Destroy(gameObject);
+    }    
 }
