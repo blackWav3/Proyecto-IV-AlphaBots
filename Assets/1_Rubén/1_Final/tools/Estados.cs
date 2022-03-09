@@ -13,15 +13,28 @@ public class Estados : MonoBehaviour
     public int velocidadRalentizado;
     public int vida;
 
-    #endregion
-    private void Start() {
-        velocidad = velocidadNormal;
+    PJ_movement pjmovement;
 
+    #endregion
+    private void Start() 
+    {
+        velocidad = velocidadNormal;
+                
     }
     private void Update()
     {
-        
+        gameObject.GetComponent<PJ_movement>().playerSpeed = velocidad;
     }
+    //-----------
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == ("Slower")) print("Slowed");
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == ("Slower")) RalentizarDesactivado();
+    }
+    //-----------
     private void OnTriggerEnter(Collider other)
     {
         #region Armas melee
@@ -64,7 +77,7 @@ public class Estados : MonoBehaviour
             StartCoroutine(CuracionActiva(1, 1f));
         #endregion
         #region Slow
-        if (other.gameObject.CompareTag("slow"))
+        if (other.gameObject.CompareTag("Slower"))
             RalentizarActivado();
         #endregion
         #region Stun
@@ -81,7 +94,7 @@ public class Estados : MonoBehaviour
             StartCoroutine(CuracionActiva(1, 1f));
         #endregion
         #region Slow
-        if (other.gameObject.CompareTag("slow"))
+        if (other.gameObject.CompareTag("Slower"))
             RalentizarDesactivado();
         #endregion
     }
@@ -104,7 +117,7 @@ public class Estados : MonoBehaviour
     IEnumerator Inhabilitar(float o){ 
         velocidad = 0;
         yield return new WaitForSeconds(o);
-        velocidad = 6;
+        velocidad = velocidadNormal;
     }
 #endregion
 // R A L E N T I Z A R
