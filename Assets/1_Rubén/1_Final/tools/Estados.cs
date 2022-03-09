@@ -26,17 +26,11 @@ public class Estados : MonoBehaviour
         gameObject.GetComponent<PJ_movement>().playerSpeed = velocidad;
     }
     //-----------
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == ("Slower")) print("Slowed");
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == ("Slower")) RalentizarDesactivado();
-    }
+    
     //-----------
     private void OnTriggerEnter(Collider other)
     {
+        print("oooooooooooooooooooooooooooooo");
         #region Armas melee
 
         //Chainsaw
