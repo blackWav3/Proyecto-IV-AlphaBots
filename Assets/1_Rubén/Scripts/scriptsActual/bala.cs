@@ -20,7 +20,7 @@ public class bala : MonoBehaviour
         transform.position += transform.forward * Time.deltaTime * speed ;
     }
 
-    private void OnCollisionEnter(Collision other)
+    /*private void OnCollisionEnter(Collision other)
     {
 
 
@@ -31,5 +31,5 @@ public class bala : MonoBehaviour
 
         }
         Destroy(this.gameObject);
-    }
+    }*/
 }
