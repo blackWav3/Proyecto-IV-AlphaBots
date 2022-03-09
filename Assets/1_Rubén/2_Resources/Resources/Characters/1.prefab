@@ -432,7 +432,6 @@ MonoBehaviour:
   velocidadNormal: 0
   velocidadRalentizado: 0
   vida: 0
-  characterController: {fileID: 0}
 --- !u!1 &8501628029203195219
 GameObject:
   m_ObjectHideFlags: 0

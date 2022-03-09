@@ -18,7 +18,10 @@ public class Estados : MonoBehaviour
         velocidad = velocidadNormal;
 
     }
-
+    private void Update()
+    {
+        
+    }
     private void OnTriggerEnter(Collider other)
     {
         #region Armas melee
