@@ -1,95 +1,90 @@
 using System.Collections;
 using UnityEngine;
 
+using Photon.Pun;
 public class Estados : MonoBehaviour
 {
     #region Parámetros
     [Header("Parámetros")]
-    int velocidad;
+    float velocidad;
     bool curacionA;
     bool dañoA;
 
-    public int velocidadNormal;
-    public int velocidadRalentizado;
+    public float velocidadNormal;
+    public float velocidadRalentizado;
     public int vida;
+
+
+    PhotonView photonview;
+
 
     PJ_movement pjmovement;
 
     #endregion
     private void Start() 
     {
+        photonview = GetComponent<PhotonView>();
         velocidad = velocidadNormal;
-                
+       
+        //camera2 = GameObject.Find("Camera").gameObject;
+
     }
     private void Update()
     {
         gameObject.GetComponent<PJ_movement>().playerSpeed = velocidad;
+        if (vida <= 0)
+        {
+            if (!photonview.IsMine) return;
+            GameObject.Find("Camera").GetComponent<Camera>().targetDisplay = 0;
+            photonview.RPC("RPCsetactive", RpcTarget.AllBuffered);
+        }
     }
-    //-----------
-    
-    //-----------
+    [PunRPC]
+    void RPCsetactive()
+    {
+        gameObject.SetActive(false);
+    }
+
+
+
+    //-----------------------------------
     private void OnTriggerEnter(Collider other)
     {
-        print("oooooooooooooooooooooooooooooo");
-        #region Armas melee
-
-        //Chainsaw
-        if (other.gameObject.CompareTag("Chainsaw"))
-            Daño(2);
-        
-        //Sword
-        if (other.gameObject.CompareTag("Sword"))
-            Daño(1);
-        
-        //Hammer
+        // S L O W
+        if (other.gameObject.CompareTag("Slower")) RalentizarActivado();
+        // S T U N
+        if (other.gameObject.CompareTag("Zapper"))
+        {
+            StopCoroutine(Inhabilitar(0));
+            StartCoroutine(Inhabilitar(3f));
+        } 
+        // G A T L I N G
+        if (other.gameObject.CompareTag("Gatling")) Daño(8);
+        // F L A M E T H R O W E R
+        if (other.gameObject.CompareTag("Flamethrower"))
+        {
+            StopCoroutine(DañoPorSegundo(0, 0, 0));
+            StartCoroutine(DañoPorSegundo(5,6,1));//hace 5 de daño por segundo durante 6 segundos no stackeable se reinicia el tiempo de sangrado
+        }
+        // S N I P E R
+        if (other.gameObject.CompareTag("Sniper")) Daño(75);
+        // S W O R D
+        if (other.gameObject.CompareTag("Sword")) Daño(30);
+        // M A R T I L L O
         if (other.gameObject.CompareTag("Hammer"))
-            Daño(2);
-
-        #endregion
-
-        #region Armas distancia
-
-        #region Rafagas(3)
-        if (other.gameObject.CompareTag("Rafaga"))
-            Daño(2);
-        #endregion
-        #region Lanzallamas
-        if (other.gameObject.CompareTag("Lanzallamas"))
-            StartCoroutine(DañoPorSegundo(1, 5, 1));
-        #endregion
-        #region Blaster
-        if (other.gameObject.CompareTag("Blaster"))
-            Daño(5);
-        #endregion
-
-        #endregion
-
-        #region Armas utilidad
-
-        #region DeployHealingPiece
-        if (other.gameObject.CompareTag("DeployHeal"))
-            StartCoroutine(CuracionActiva(1, 1f));
-        #endregion
-        #region Slow
-        if (other.gameObject.CompareTag("Slower"))
-            RalentizarActivado();
-        #endregion
-        #region Stun
-        if (other.gameObject.CompareTag("Stun"))
-            StartCoroutine(Inhabilitar(3));
-        #endregion
-
-        #endregion
+        {
+            Daño(45);
+            StopCoroutine(Inhabilitar(0));
+            StartCoroutine(Inhabilitar(2));
+        }     
     }
     private void OnTriggerExit(Collider other)
     {
+        // S L O W
+        if (other.gameObject.CompareTag("Slower")) RalentizarDesactivado();
         #region Deploy
         if (other.gameObject.CompareTag("DeployHeal"))
             StartCoroutine(CuracionActiva(1, 1f));
-        #endregion
-        #region Slow
-        if (other.gameObject.CompareTag("Slower"))
-            RalentizarDesactivado();
         #endregion
     }
 
@@ -104,10 +99,10 @@ public class Estados : MonoBehaviour
     }*/
 
 
-    // LISTA DE ESTADOS
-    // I N H A B I L I T A R
-    // StartCoroutine(Inhabilitar(x)) ---------------------- se inhabilita durante x segundos
-    #region Inhabilitar
+// LISTA DE ESTADOS
+// I N H A B I L I T A R
+// StartCoroutine(Inhabilitar(x)) ---------------------- se inhabilita durante x segundos
+#region Inhabilitar
     IEnumerator Inhabilitar(float o){ 
         velocidad = 0;
         yield return new WaitForSeconds(o);

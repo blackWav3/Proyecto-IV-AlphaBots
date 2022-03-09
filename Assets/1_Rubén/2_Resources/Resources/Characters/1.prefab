@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598557769518602043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.485, z: 1}
+  m_LocalPosition: {x: 0, y: 0.485, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7806322902614127831}
@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadNormal: 7
-  velocidadRalentizado: 2
+  velocidadRalentizado: 0.5
   vida: 100
 --- !u!136 &2034504078464515026
 CapsuleCollider:
