@@ -6,17 +6,6 @@ public class DamageManager : MonoBehaviour
 {
     public GameObject DañoFlotante;
     public int dañoRealizado;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        dañoRealizado = Random.Range(1,20);
-    }
 
     public void mostrarDañoRealizado(Transform spawnPadre)
     {
@@ -33,5 +22,4 @@ public class DamageManager : MonoBehaviour
             mostrarDañoRealizado(other.gameObject.transform.Find("DañoVolador"));
         }
     }
-    
 }

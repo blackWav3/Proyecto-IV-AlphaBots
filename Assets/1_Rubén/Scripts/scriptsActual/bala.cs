@@ -1,23 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class bala : MonoBehaviour
 {
+    [HideInInspector]
     public int speed;
-    public GameObject area;
+    //public GameObject area;
     private void Start()
     {
         StartCoroutine(timer());
     }
     IEnumerator timer()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         Destroy(this.gameObject);
     }
     private void Update()
     {
         transform.position += transform.forward * Time.deltaTime * speed ;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (gameObject.tag == "Slower")
+        {
+            if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Sceneario")
+            {
+                PhotonNetwork.Instantiate("Area", transform.position = new Vector3(transform.position.x, 0f, transform.position.z), transform.rotation * Quaternion.Euler(0f, 0f, 0f));
+                Destroy(gameObject);
+            }
+        }
+       
+        if(collision.gameObject.tag=="Player"||collision.gameObject.tag=="Scenario")
+        {
+            if(gameObject.tag == "Area") PhotonNetwork.Instantiate("Area", transform.position = new Vector3(transform.position.x, 0f, transform.position.z), transform.rotation * Quaternion.Euler(0f, 0f, 0f));
+            Destroy(gameObject);
+        }
+
     }
 
     /*private void OnCollisionEnter(Collision other)

@@ -20,6 +20,12 @@ TagManager:
   - Lanzallamas
   - Blaster
   - Stun
+  - Gatling
+  - Scenario
+  - Flamethrower
+  - Sniper
+  - Zapper
+  - Slower
   layers:
   - Default
   - TransparentFX

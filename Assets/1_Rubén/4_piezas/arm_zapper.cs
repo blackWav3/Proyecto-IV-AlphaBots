@@ -4,19 +4,17 @@ using UnityEngine;
 
 using Photon.Pun;
 
-public class arm_gatling : MonoBehaviour
+public class arm_zapper : MonoBehaviour
 {
     [Header("Propiedades")]
     public int bulletSpeed;
-    public float fireRatio;
-    public int bulletsPerBurst;
 
     PhotonView photonview;
     GameObject muzzleOrigin;
     GameObject muzzleDirection;
 
     private void Start()
-    {        
+    {
         photonview = GetComponent<PhotonView>();
         if (!photonview.IsMine) return;
         muzzleOrigin = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzle").gameObject;
@@ -26,22 +24,18 @@ public class arm_gatling : MonoBehaviour
     private void Update()
     {
         if (!photonview.IsMine) return;
-        if (Input.GetKeyDown(KeyCode.E)) Gatling();
+        if (Input.GetKeyDown(KeyCode.E)) Zapper();
     }
 
-    public void Gatling()
+    public void Zapper()
     {
-        photonview.RPC("RPCgatling", RpcTarget.AllBuffered);
+        photonview.RPC("RPCzapper", RpcTarget.AllBuffered);
     }
     [PunRPC]
-    IEnumerator RPCgatling()
+    void RPCzapper()
     {
-        for(int i = 0; i < bulletsPerBurst; i++)
-        {
-            GameObject bala = PhotonNetwork.Instantiate ("Proyectiles/gatling_proyectile", muzzleOrigin.transform.position, transform.rotation * Quaternion.Euler(0f, 0f, 0f));
-            bala.transform.LookAt(muzzleDirection.transform);
-            bala.GetComponent<bala>().speed = bulletSpeed;
-            yield return new WaitForSeconds(fireRatio);
-        }        
+        GameObject bala = PhotonNetwork.Instantiate("Proyectiles/zapper_proyectile", muzzleOrigin.transform.position, transform.rotation * Quaternion.Euler(0f, 0f, 0f));
+        bala.transform.LookAt(muzzleDirection.transform);
+        bala.GetComponent<bala>().speed = bulletSpeed;
     }
 }

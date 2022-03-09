@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 4271884896572371258}
   - component: {fileID: 266719797313553989}
   - component: {fileID: -5656453216901757259}
+  - component: {fileID: -4069063904299081624}
   m_Layer: 0
-  m_Name: gutling_proyectile
-  m_TagString: proyectil
+  m_Name: gatling_proyectile
+  m_TagString: Gatling
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
-  area: {fileID: 2428765224619089495, guid: 73939c6a8511db64994322ea8936eba0, type: 3}
 --- !u!54 &266719797313553989
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -150,3 +150,17 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-4069063904299081624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5155311190641484980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee6262e591799046962f2f65ca49996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "Da\xF1oFlotante": {fileID: 1389915953939657875, guid: 00ae3777a0e73424380e20b10f76f612, type: 3}
+  "da\xF1oRealizado": 0

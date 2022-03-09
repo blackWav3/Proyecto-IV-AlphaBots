@@ -12,22 +12,13 @@ public class Estados : MonoBehaviour
     public int velocidadNormal;
     public int velocidadRalentizado;
     public int vida;
-    public CharacterController characterController;
-
 
     #endregion
     private void Start() {
         velocidad = velocidadNormal;
+
     }
-    private void Update()
-    {
-        #region  Movimiento AWSD
-        float horizontalmove = Input.GetAxis("Horizontal");
-        float verticalmove = Input.GetAxis("Vertical");
-        Vector3 move = transform.forward * verticalmove + transform.right * horizontalmove;
-        characterController.Move(velocidad * Time.deltaTime * move);
-        #endregion
-    }
+
     private void OnTriggerEnter(Collider other)
     {
         #region Armas melee
