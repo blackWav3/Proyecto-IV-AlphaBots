@@ -90,7 +90,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 64982984cee42534d872ea3d44a7dae9, type: 2}
+  - {fileID: 2100000, guid: a1cd455470d3b1444ad75454b34117a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 7728693751516593787}
   - component: {fileID: 8410304541070441287}
   m_Layer: 6
-  m_Name: 2
+  m_Name: 6
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -249,9 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundedPlayer: 0
-  playerSpeed: 7
-  jumpHeight: 2
-  gravityValue: -25
+  playerSpeed: 4
   target: {fileID: 0}
   bajando: 0
   jump: 1
