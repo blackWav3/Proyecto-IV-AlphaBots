@@ -32,20 +32,20 @@ public class Estados : MonoBehaviour
     {
         #region Armas melee
 
-        #region Chainsaw
+        //Chainsaw
         if (other.gameObject.CompareTag("Chainsaw"))
             Daño(2);
-        #endregion
-        #region Sword
+        
+        //Sword
         if (other.gameObject.CompareTag("Sword"))
             Daño(1);
-        #endregion
-        #region Hammer
+        
+        //Hammer
         if (other.gameObject.CompareTag("Hammer"))
             Daño(2);
-        #endregion
 
         #endregion
+
         #region Armas distancia
 
         #region Rafagas(3)
@@ -62,6 +62,7 @@ public class Estados : MonoBehaviour
         #endregion
 
         #endregion
+
         #region Armas utilidad
 
         #region DeployHealingPiece
