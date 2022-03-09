@@ -8,19 +8,21 @@ using Photon.Realtime;
 public class arm_gatling : MonoBehaviour
 {
     PhotonView photonview;
-    GameObject muzzle;
-    public GameObject gutling_proyectile;
+    GameObject muzzleOrigin;
+    GameObject muzzleDireciton;
 
     private void Start()
     {
-        muzzle = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + ("Clone")).gameObject.transform.Find("muzzle").gameObject;
+        
         photonview = GetComponent<PhotonView>();
+        if (!photonview.IsMine) return;
+        muzzleOrigin = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzle").gameObject;
+        muzzleDireciton = GameObject.Find("Main Camera").transform.GetChild(0).gameObject;
     }
 
     private void Update()
     {
         if (!photonview.IsMine) return;
-
         if (Input.GetKeyDown(KeyCode.E)) Gatling();
     }
 
@@ -29,13 +31,12 @@ public class arm_gatling : MonoBehaviour
         photonview.RPC("RPCgatling", RpcTarget.AllBuffered);
     }
     [PunRPC]
-
     IEnumerator RPCgatling()
     {
         for(int i = 0; i < 8; i++)
         {
-            Instantiate(gutling_proyectile, muzzle.transform.position, muzzle.transform.rotation * Quaternion.Euler(0f, 0f, 0f));
-            yield return new WaitForSeconds(0.5f);
+            PhotonNetwork.Instantiate ("gutling_proyectile", muzzleOrigin.transform.position, muzzleDireciton.transform.rotation * Quaternion.Euler(0f, 0f, 0f));
+            yield return new WaitForSeconds(0.2f);
         }        
     }
 }
