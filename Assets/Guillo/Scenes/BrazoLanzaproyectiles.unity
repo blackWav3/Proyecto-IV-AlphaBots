@@ -320,6 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 517487301}
+  - component: {fileID: 517487302}
   m_Layer: 0
   m_Name: hombro
   m_TagString: Untagged
@@ -343,6 +344,20 @@ Transform:
   m_Father: {fileID: 9177416289169046459}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &517487302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517487300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0146fcfbf1f8a82449164eeba059ae40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 9177416289586461880}
+  pene: 0
 --- !u!1 &614437941
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,10 +784,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65628d9c2dea00d47b322f3cd1bd48d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
   velocidadNormal: 0
   velocidadRalentizado: 0
   vida: 6
-  characterController: {fileID: 9177416288844815372}
 --- !u!1 &1360936234
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,10 +928,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65628d9c2dea00d47b322f3cd1bd48d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
   velocidadNormal: 0
   velocidadRalentizado: 0
   vida: 6
-  characterController: {fileID: 1376899742}
 --- !u!143 &1376899742
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1405,10 +1420,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c0ff3fed887d7418786a3731563ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   attackPoint: {fileID: 993419000}
-  attackRange: 0.6
-  attackRate: 1
-  attackDamage: 1
+  attackRange: 0.44
+  fireRate: 0
+  meleeDamage: 0
 --- !u!95 &9177416288844815377
 Animator:
   serializedVersion: 3
