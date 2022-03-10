@@ -30,6 +30,7 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
     [Space(15)]    
     public GameObject[] playersReady;
     public GameObject canvas_dropdowns;
+    public GameObject canvas_match;
     
     private void Start()
     {
@@ -40,6 +41,7 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
     IEnumerator empezarpartida()
     {
         yield return new WaitForSeconds(10f);
+        canvas_match.SetActive(true);
         SetUpPlayerAndCamera();
     }
     private void Update()

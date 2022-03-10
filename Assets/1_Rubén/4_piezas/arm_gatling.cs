@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using Photon.Pun;
+using UnityEngine.UI;
 
 public class arm_gatling : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class arm_gatling : MonoBehaviour
     public int bulletSpeed;
     public float fireRatio;
     public int bulletsPerBurst;
+    public int cooldown;
+    bool canUseAbility = true;
 
     PhotonView photonview;
     GameObject muzzleOrigin;
@@ -28,14 +31,33 @@ public class arm_gatling : MonoBehaviour
         if (!photonview.IsMine) return;
         if (transform.parent.name == "leftarm")
         {
-            if (Input.GetKeyDown(KeyCode.Q)) Gatling();
+            if (Input.GetKeyDown(KeyCode.Q) && canUseAbility == true)
+            {
+                Gatling();
+                StartCoroutine(StartCooldown("txt_q"));
+
+            }
         }
         if (transform.parent.name == "rightarm")
         {
-            if (Input.GetKeyDown(KeyCode.E)) Gatling();
+            if (Input.GetKeyDown(KeyCode.E) && canUseAbility == true)
+            {
+                Gatling();
+                StartCoroutine(StartCooldown("txt_e"));
+            }
         }
     }
-
+    IEnumerator StartCooldown(string txt)
+    {
+        canUseAbility = false;
+        for (int i = cooldown; i > 0; i--)
+        {
+            GameObject.Find(txt).GetComponent<Text>().text = i.ToString();
+            yield return new WaitForSeconds(1f);
+        }
+        canUseAbility = true;
+        GameObject.Find(txt).GetComponent<Text>().text = "gatling";
+    }
     public void Gatling()
     {
         photonview.RPC("RPCgatling", RpcTarget.AllBuffered);

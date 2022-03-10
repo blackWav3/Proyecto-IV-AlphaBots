@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5187455522261366158}
   - component: {fileID: 9153240513057112817}
   - component: {fileID: 5563491704624841217}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: slower_proyectile
   m_TagString: Slower
   m_Icon: {fileID: 0}

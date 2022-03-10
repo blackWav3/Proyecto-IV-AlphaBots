@@ -49,6 +49,7 @@ MonoBehaviour:
   bulletSpeed: 120
   fireRatio: 0.1
   bulletsPerBurst: 8
+  cooldown: 10
 --- !u!33 &3128890282161454847
 MeshFilter:
   m_ObjectHideFlags: 0

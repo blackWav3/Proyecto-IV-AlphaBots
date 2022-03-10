@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 4271884896572371258}
   - component: {fileID: 266719797313553989}
   - component: {fileID: -5656453216901757259}
-  m_Layer: 0
+  - component: {fileID: -2336904112190880312}
+  m_Layer: 7
   m_Name: zapper_proyectile
   m_TagString: Zapper
   m_Icon: {fileID: 0}
@@ -149,3 +150,17 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-2336904112190880312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5155311190641484980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee6262e591799046962f2f65ca49996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "Da\xF1oFlotante": {fileID: 1389915953939657875, guid: 00ae3777a0e73424380e20b10f76f612, type: 3}
+  "da\xF1oRealizado": 0

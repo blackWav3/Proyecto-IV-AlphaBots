@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using Photon.Pun;
+using UnityEngine.UI;
 
 
 public class arm_sniper : MonoBehaviour
 {
     [Header("Propiedades")]
     public int bulletSpeed;
+    public int cooldown;
+    bool canUseAbility = true;
 
     PhotonView photonview;
     GameObject muzzleOrigin;
@@ -27,14 +30,32 @@ public class arm_sniper : MonoBehaviour
         if (!photonview.IsMine) return;
         if (transform.parent.name == "leftarm")
         {
-            if (Input.GetKeyDown(KeyCode.Q)) Sniper();
+            if (Input.GetKeyDown(KeyCode.Q) && canUseAbility == true)
+            {
+                Sniper();
+                StartCoroutine(StartCooldown("txt_q"));
+            } 
         }
         if (transform.parent.name == "rightarm")
         {
-            if (Input.GetKeyDown(KeyCode.E)) Sniper();
+            if (Input.GetKeyDown(KeyCode.E) && canUseAbility == true)
+            {
+                Sniper();
+                StartCoroutine(StartCooldown("txt_e"));
+            }
         }
     }
-
+    IEnumerator StartCooldown(string txt)
+    {
+        canUseAbility = false;
+        for (int i = cooldown; i > 0; i--)
+        {
+            GameObject.Find(txt).GetComponent<Text>().text = i.ToString();
+            yield return new WaitForSeconds(1f);
+        }
+        canUseAbility = true;
+        GameObject.Find(txt).GetComponent<Text>().text = "sniper";
+    }
     public void Sniper()
     {
         photonview.RPC("RPCsniper", RpcTarget.AllBuffered);

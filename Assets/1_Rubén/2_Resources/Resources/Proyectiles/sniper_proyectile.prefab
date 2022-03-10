@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 3224741517728486915}
   - component: {fileID: 6252104636908691395}
   - component: {fileID: 7296290086451198600}
-  m_Layer: 0
+  - component: {fileID: -3343507559148180326}
+  m_Layer: 7
   m_Name: sniper_proyectile
   m_TagString: Sniper
   m_Icon: {fileID: 0}
@@ -149,3 +150,17 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-3343507559148180326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3047632300292236689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee6262e591799046962f2f65ca49996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "Da\xF1oFlotante": {fileID: 1389915953939657875, guid: 00ae3777a0e73424380e20b10f76f612, type: 3}
+  "da\xF1oRealizado": 75

@@ -46,9 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ccb59001d6a434a86a1a212e4f44eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 40
+  bulletSpeed: 25
   fireRatio: 0.2
   bulletsPerBurst: 12
+  cooldown: 10
 --- !u!33 &3128890282161454847
 MeshFilter:
   m_ObjectHideFlags: 0

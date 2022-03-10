@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 using Photon.Pun;
+using UnityEngine.UI;
 public class Estados : MonoBehaviour
 {
     #region Parámetros
@@ -9,6 +10,9 @@ public class Estados : MonoBehaviour
     float velocidad;
     bool curacionA;
     bool dañoA;
+    bool canUseAbility = true;
+    [Header("piernas")]
+    public int cooldown;
 
     public float velocidadNormal;
     public float velocidadRalentizado;
@@ -25,13 +29,39 @@ public class Estados : MonoBehaviour
     {
         photonview = GetComponent<PhotonView>();
         velocidad = velocidadNormal;
-       
-        //camera2 = GameObject.Find("Camera").gameObject;
 
+
+    }
+    IEnumerator correr()
+    {
+        StartCoroutine(c_correr());
+        canUseAbility = false;
+        for (int i = cooldown; i > 0; i--)
+        {
+            GameObject.Find("txt_x").GetComponent<Text>().text = i.ToString();
+            yield return new WaitForSeconds(1f);
+        }
+        canUseAbility = true;
+        GameObject.Find("txt_x").GetComponent<Text>().text = "boost";
+    }
+    IEnumerator c_correr()
+    {
+        velocidad = 14;
+        for (int i = 0; i < 3; i++)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+        velocidad = 7;
     }
     private void Update()
     {
+       
         gameObject.GetComponent<PJ_movement>().playerSpeed = velocidad;
+        if (!photonview.IsMine) return;
+        if (Input.GetKeyDown(KeyCode.X) && canUseAbility == true)
+        {
+            StartCoroutine(correr());
+        }
         if (vida <= 0)
         {
             if (!photonview.IsMine) return;
@@ -46,7 +76,7 @@ public class Estados : MonoBehaviour
     }
 
 
-
+    //-----------------------------------
     //-----------------------------------
     private void OnTriggerEnter(Collider other)
     {
@@ -97,6 +127,7 @@ public class Estados : MonoBehaviour
         }
         #endregion
     }*/
+
 
 
 // LISTA DE ESTADOS

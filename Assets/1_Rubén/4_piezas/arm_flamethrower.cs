@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using Photon.Pun;
+using UnityEngine.UI;
 
 public class arm_flamethrower : MonoBehaviour
 {
@@ -10,10 +11,13 @@ public class arm_flamethrower : MonoBehaviour
     public int bulletSpeed;
     public float fireRatio;
     public int bulletsPerBurst;
-
+    public int cooldown;
+    bool canUseAbility = true;
     PhotonView photonview;
     GameObject muzzleOrigin;
     GameObject muzzleDirection;
+
+
 
     private void Start()
     {
@@ -28,17 +32,36 @@ public class arm_flamethrower : MonoBehaviour
         if (!photonview.IsMine) return;
         if(transform.parent.name == "leftarm")
         {
-            if(Input.GetKeyDown(KeyCode.Q)) Flamethrower();
+            if (Input.GetKeyDown(KeyCode.Q) && canUseAbility == true)
+            {
+                Flamethrower();
+                StartCoroutine(StartCooldown("txt_q"));
+            } 
         }
         if(transform.parent.name == "rightarm")
         {
-            if (Input.GetKeyDown(KeyCode.E)) Flamethrower();
+            if (Input.GetKeyDown(KeyCode.E) && canUseAbility == true)
+            {
+                Flamethrower();
+                StartCoroutine(StartCooldown("txt_e"));
+            }
         }        
     }
-
+    IEnumerator StartCooldown(string txt)
+    {
+        canUseAbility = false;
+        for(int i = cooldown; i > 0; i--)
+        {
+            GameObject.Find(txt).GetComponent<Text>().text = i.ToString();
+            yield return new WaitForSeconds(1f);
+        }
+        canUseAbility = true;
+        GameObject.Find(txt).GetComponent<Text>().text = "flamethrower";
+    }
     public void Flamethrower()
     {
         photonview.RPC("RPCflamethrower", RpcTarget.AllBuffered);
+
     }
     [PunRPC]
     IEnumerator RPCflamethrower()
