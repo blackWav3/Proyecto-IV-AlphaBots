@@ -86,18 +86,22 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
 
 
 
+        GameObject.Find(playerID + "(Clone)").transform.Find("leftarm").GetChild(brazoIzq.value).gameObject.SetActive(true);
+        GameObject.Find(playerID + "(Clone)").transform.Find("rightarm").GetChild(brazoDer.value).gameObject.SetActive(true);
 
-        PJplayer.transform.Find("leftarm").GetChild(brazoIzq.value).gameObject.SetActive(true);
-        PJplayer.transform.Find("rightarm").GetChild(brazoDer.value).gameObject.SetActive(true);
+        //PJplayer.transform.Find("leftarm").GetChild(brazoIzq.value).gameObject.SetActive(true);
+        //PJplayer.transform.Find("rightarm").GetChild(brazoDer.value).gameObject.SetActive(true);
 
-        photonView.RPC(nameof(RPCmontaje), RpcTarget.OthersBuffered, brazoIzq.value, brazoDer.value);
+        photonView.RPC(nameof(RPCmontaje), RpcTarget.OthersBuffered, brazoIzq.value, brazoDer.value, playerID);
         
     }
     [PunRPC]
-    void RPCmontaje(int dpI,int dpD)
+    void RPCmontaje(int dpI,int dpD,int id)
     {
-        PJplayer.transform.Find("leftarm").GetChild(dpI).gameObject.SetActive(true);
-        PJplayer.transform.Find("rightarm").GetChild(dpD).gameObject.SetActive(true);
+        GameObject.Find(id + "(Clone)").transform.Find("leftarm").GetChild(brazoIzq.value).gameObject.SetActive(true);
+        GameObject.Find(id + "(Clone)").transform.Find("rightarm").GetChild(brazoDer.value).gameObject.SetActive(true);
+        //PJplayer.transform.Find("leftarm").GetChild(dpI).gameObject.SetActive(true);
+        //PJplayer.transform.Find("rightarm").GetChild(dpD).gameObject.SetActive(true);
     }
 
     #endregion
