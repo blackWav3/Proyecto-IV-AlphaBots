@@ -27,7 +27,7 @@ public class bala : MonoBehaviour
         {
             if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Sceneario")
             {
-                PhotonNetwork.Instantiate("Area", transform.position = new Vector3(transform.position.x, 0f, transform.position.z), transform.rotation * Quaternion.Euler(0f, 0f, 0f));
+                PhotonNetwork.Instantiate("Area", transform.position = new Vector3(transform.position.x, 7.7f, transform.position.z), transform.rotation * Quaternion.Euler(0f, 0f, 0f));
                 Destroy(gameObject);
             }
         }
