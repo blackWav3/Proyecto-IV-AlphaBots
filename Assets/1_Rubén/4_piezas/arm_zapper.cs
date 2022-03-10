@@ -24,7 +24,14 @@ public class arm_zapper : MonoBehaviour
     private void Update()
     {
         if (!photonview.IsMine) return;
-        if (Input.GetKeyDown(KeyCode.E)) Zapper();
+        if (transform.parent.name == "leftarm")
+        {
+            if (Input.GetKeyDown(KeyCode.Q)) Zapper();
+        }
+        if (transform.parent.name == "rightarm")
+        {
+            if (Input.GetKeyDown(KeyCode.E)) Zapper();
+        }
     }
 
     public void Zapper()

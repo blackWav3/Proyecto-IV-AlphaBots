@@ -24,7 +24,14 @@ public class arm_slower : MonoBehaviour
     private void Update()
     {
         if (!photonview.IsMine) return;
-        if (Input.GetKeyDown(KeyCode.E)) Slower();
+        if (transform.parent.name == "leftarm")
+        {
+            if (Input.GetKeyDown(KeyCode.Q)) Slower();
+        }
+        if (transform.parent.name == "rightarm")
+        {
+            if (Input.GetKeyDown(KeyCode.E)) Slower();
+        }
     }
 
     public void Slower()

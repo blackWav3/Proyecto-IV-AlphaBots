@@ -26,7 +26,14 @@ public class arm_flamethrower : MonoBehaviour
     private void Update()
     {
         if (!photonview.IsMine) return;
-        if (Input.GetKeyDown(KeyCode.E)) Flamethrower();
+        if(transform.parent.name == "leftarm")
+        {
+            if(Input.GetKeyDown(KeyCode.Q)) Flamethrower();
+        }
+        if(transform.parent.name == "rightarm")
+        {
+            if (Input.GetKeyDown(KeyCode.E)) Flamethrower();
+        }        
     }
 
     public void Flamethrower()

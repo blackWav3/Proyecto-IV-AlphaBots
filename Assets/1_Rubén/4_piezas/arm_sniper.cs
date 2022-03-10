@@ -25,7 +25,14 @@ public class arm_sniper : MonoBehaviour
     private void Update()
     {
         if (!photonview.IsMine) return;
-        if (Input.GetKeyDown(KeyCode.E)) Sniper();
+        if (transform.parent.name == "leftarm")
+        {
+            if (Input.GetKeyDown(KeyCode.Q)) Sniper();
+        }
+        if (transform.parent.name == "rightarm")
+        {
+            if (Input.GetKeyDown(KeyCode.E)) Sniper();
+        }
     }
 
     public void Sniper()

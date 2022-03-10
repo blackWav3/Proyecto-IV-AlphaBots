@@ -26,7 +26,14 @@ public class arm_gatling : MonoBehaviour
     private void Update()
     {
         if (!photonview.IsMine) return;
-        if (Input.GetKeyDown(KeyCode.E)) Gatling();
+        if (transform.parent.name == "leftarm")
+        {
+            if (Input.GetKeyDown(KeyCode.Q)) Gatling();
+        }
+        if (transform.parent.name == "rightarm")
+        {
+            if (Input.GetKeyDown(KeyCode.E)) Gatling();
+        }
     }
 
     public void Gatling()
