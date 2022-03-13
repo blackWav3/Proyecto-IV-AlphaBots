@@ -913,8 +913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb0bee8fb4953348a204c5a61416d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageShield: {fileID: 2100000, guid: 7053d2f1855a1374dbb551e5b8deacdc, type: 2}
-  shieldMat: {fileID: 0}
 --- !u!1 &388524699 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e755550d419fc5f4185713a0db8664ea, type: 3}
@@ -4284,7 +4282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679317337}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.65, y: -2.0206, z: 4.85}
+  m_LocalPosition: {x: 5.13, y: -2.0206, z: 2.34}
   m_LocalScale: {x: 5.0912, y: 3.8389, z: 4.7445}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4535,7 +4533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788892274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.37, y: -1.8199997, z: 3.1760006}
+  m_LocalPosition: {x: -4.76, y: -1.8199997, z: 3.1760006}
   m_LocalScale: {x: 3.2749002, y: 1.7185173, z: 0.13070428}
   m_Children: []
   m_Father: {fileID: 0}
