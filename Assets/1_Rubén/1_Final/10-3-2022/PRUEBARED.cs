@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Realtime;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class PRUEBARED : MonoBehaviourPunCallbacks
 {
@@ -50,6 +51,15 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
         infoPieza2.text = info2;
         infoPieza3.text = info3;
         SetInfoDP();
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            PhotonNetwork.Disconnect();
+            SceneManager.LoadScene("ConnectTo");
+        }
     }
     private void SetInfoDP()
     {

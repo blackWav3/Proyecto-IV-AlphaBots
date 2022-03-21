@@ -29,8 +29,6 @@ public class Estados : MonoBehaviour
     {
         photonview = GetComponent<PhotonView>();
         velocidad = velocidadNormal;
-
-
     }
     IEnumerator correr()
     {
@@ -66,6 +64,7 @@ public class Estados : MonoBehaviour
         {
             if (!photonview.IsMine) return;
             GameObject.Find("Camera").GetComponent<Camera>().targetDisplay = 0;
+            GameObject.Find("Canvas").gameObject.SetActive(false);
             photonview.RPC("RPCsetactive", RpcTarget.AllBuffered);
         }
     }
