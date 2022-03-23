@@ -336,7 +336,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517487300}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.7, y: 0.112, z: 0}
+  m_LocalPosition: {x: 0.7, y: 0.11199999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1578426456}
@@ -356,8 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0146fcfbf1f8a82449164eeba059ae40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 9177416289586461880}
-  pene: 0
+  target: {fileID: 9177416288858170792}
 --- !u!1 &614437941
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,22 +771,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1321016303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9177416288844815374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65628d9c2dea00d47b322f3cd1bd48d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 0
-  velocidadNormal: 0
-  velocidadRalentizado: 0
-  vida: 6
 --- !u!1 &1360936234
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,7 +914,7 @@ MonoBehaviour:
   cooldown: 0
   velocidadNormal: 0
   velocidadRalentizado: 0
-  vida: 6
+  vida: 20
 --- !u!143 &1376899742
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1379,7 +1362,6 @@ GameObject:
   - component: {fileID: 9177416288844815373}
   - component: {fileID: 9177416288844815372}
   - component: {fileID: 9177416288844815375}
-  - component: {fileID: 1321016303}
   - component: {fileID: 9177416288844815377}
   - component: {fileID: 9177416288844815376}
   m_Layer: 0
@@ -1433,7 +1415,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9177416288844815374}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fcafd7d48a6bb9a4d8fa969e9a362812, type: 2}
   m_CullingMode: 0

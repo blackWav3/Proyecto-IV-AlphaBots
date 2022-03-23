@@ -9,6 +9,5 @@ public class PlayerCombat : Melee
         attackRange = 0.6f;
         fireRate = 1;
         meleeDamage = 20;
-
     }
 }

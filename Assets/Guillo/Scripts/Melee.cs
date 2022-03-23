@@ -25,6 +25,9 @@ public class Melee : MonoBehaviour
 
         Collider[] hitEnemy = Physics.OverlapSphere(attackPoint.position, attackRange);
 
+        if (hitEnemy == null)
+            return;
+
         foreach (Collider enemy in hitEnemy)
         {
             if (enemy.gameObject.CompareTag("Player"))
