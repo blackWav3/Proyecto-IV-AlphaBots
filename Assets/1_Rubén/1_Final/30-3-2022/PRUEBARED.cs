@@ -75,19 +75,19 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
         
         if (brazoIzq.value == 0) info1 = "Canalizado de 8 proyeciles seguidos. Alcance medio y daño moderado";//gatling
         if (brazoIzq.value == 1) info1 = "Proyectil que al impactar deja inmovilizado al objetivo";//stun
-        if (brazoIzq.value == 2) info1 = "Proyectil en parabola que al tocar el suelo se expande en un area ralentizadora";//slow
+        if (brazoIzq.value == 2) info1 = "Pieza fuera de servicio";//slow
         if (brazoIzq.value == 3) info1 = "Proyectil de alto daño , distancia y velocidad";//sniper
         if (brazoIzq.value == 4) info1 = "Canalizado de 12 proyectiles que dejan daño en el tiempo";//flamethrower
-        if (brazoIzq.value == 5) info1 = "Tajo con la espada en un area de 180 grados. Daño moderado";//sword
-        if (brazoIzq.value == 6) info1 = "Golpe descendente contra el suelo. Alto daño y atudirmiento al impactar";//hamer
+        if (brazoIzq.value == 5) info1 = "Pieza fuera de servicio";//sword
+        if (brazoIzq.value == 6) info1 = "Pieza fuera de servicio";//hamer
 
         if (brazoDer.value == 0) info3 = "Canalizado de 8 proyeciles seguidos. Alcance medio y daño moderado";//gatling
         if (brazoDer.value == 1) info3 = "Proyectil que al impactar deja inmovilizado al objetivo";//stun
-        if (brazoDer.value == 2) info3 = "Proyectil en parabola que al tocar el suelo se expande en un area ralentizadora";//slow
+        if (brazoDer.value == 2) info3 = "Pieza fuera de servicio";//slow
         if (brazoDer.value == 3) info3 = "Proyectil de alto daño , distancia y velocidad";//sniper
         if (brazoDer.value == 4) info3 = "Canalizado de 12 proyectiles que dejan daño en el tiempo";//flamethrower
-        if (brazoDer.value == 5) info3 = "Tajo con la espada en un area de 180 grados. Daño moderado";//sword
-        if (brazoDer.value == 6) info3 = "Golpe descendente contra el suelo. Alto daño y atudirmiento al impactar";//hamer
+        if (brazoDer.value == 5) info3 = "Pieza fuera de servicio";//sword
+        if (brazoDer.value == 6) info3 = "Pieza fuera de servicio";//hamer
     }
 
     #region spawnjugadores
