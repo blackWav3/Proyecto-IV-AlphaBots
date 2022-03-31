@@ -37,19 +37,5 @@ public class bala : MonoBehaviour
             if(gameObject.tag == "Area") PhotonNetwork.Instantiate("Area", transform.position = new Vector3(transform.position.x, 0f, transform.position.z), transform.rotation * Quaternion.Euler(0f, 0f, 0f));
             Destroy(gameObject);
         }
-
     }
-
-    /*private void OnCollisionEnter(Collision other)
-    {
-
-
-        if (other.gameObject.tag == "floor" && this.gameObject.tag == "slow" || other.gameObject.tag == "Player" && this.gameObject.tag == "slow")
-        {
-            Instantiate(area, transform.position = new Vector3(transform.position.x,-3.4f,transform.position.z), transform.rotation * Quaternion.Euler(0f, 0f, 0f));
-            //Destroy(this.gameObject);
-
-        }
-        Destroy(this.gameObject);
-    }*/
 }

@@ -62,8 +62,9 @@ public class arm_zapper : MonoBehaviour
     [PunRPC]
     void RPCzapper()
     {
-        GameObject bala = PhotonNetwork.Instantiate("Proyectiles/zapper_proyectile", muzzleOrigin.transform.position, transform.rotation * Quaternion.Euler(0f, 0f, 0f));
-        bala.transform.LookAt(muzzleDirection.transform);
+        //GameObject bala = PhotonNetwork.Instantiate("Proyectiles/zapper_proyectile", muzzleOrigin.transform.position, transform.rotation * Quaternion.Euler(0f, 0f, 0f));
+        GameObject bala = PhotonNetwork.Instantiate("Proyectiles/zapper_proyectile", muzzleOrigin.transform.position, muzzleDirection.transform.rotation);
+        //bala.transform.LookAt(muzzleDirection.transform);
         bala.GetComponent<bala>().speed = bulletSpeed;
     }
 }
