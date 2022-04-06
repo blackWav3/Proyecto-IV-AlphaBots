@@ -2881,7 +2881,7 @@ MonoBehaviour:
   contentObject: {fileID: 1785096212}
   timeBetweenUpdates: 1.5
   playerItemsList: []
-  playerItemPrefab: {fileID: 3034494976462180208, guid: f4583e362179744418d625074da85696, type: 3}
+  playerItemPrefab: {fileID: 7214498083568888431, guid: f4583e362179744418d625074da85696, type: 3}
   playerItemParent: {fileID: 205882183}
   playButton: {fileID: 1408566047}
   levelToLoad: gameplay
