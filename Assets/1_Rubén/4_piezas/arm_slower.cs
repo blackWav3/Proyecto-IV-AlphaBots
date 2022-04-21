@@ -26,11 +26,11 @@ public class arm_slower : MonoBehaviour
         if (!photonview.IsMine) return;
         if (transform.parent.name == "leftarm")
         {
-            if (Input.GetKeyDown(KeyCode.Q)) Slower();
+            if (Input.GetKeyDown(KeyCode.Mouse0)) Slower();
         }
         if (transform.parent.name == "rightarm")
         {
-            if (Input.GetKeyDown(KeyCode.E)) Slower();
+            if (Input.GetKeyDown(KeyCode.Mouse1)) Slower();
         }
     }
 

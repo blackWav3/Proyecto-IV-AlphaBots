@@ -28,7 +28,7 @@ public class arm_zapper : MonoBehaviour
         if (!photonview.IsMine) return;
         if (transform.parent.name == "leftarm")
         {
-            if (Input.GetKeyDown(KeyCode.Q) && canUseAbility == true)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && canUseAbility == true)
             {
                 Zapper();
                 StartCoroutine(StartCooldown("txt_q"));
@@ -36,7 +36,7 @@ public class arm_zapper : MonoBehaviour
         }
         if (transform.parent.name == "rightarm")
         {
-            if (Input.GetKeyDown(KeyCode.E) && canUseAbility == true)
+            if (Input.GetKeyDown(KeyCode.Mouse1) && canUseAbility == true)
             {
                 Zapper();
                 StartCoroutine(StartCooldown("txt_e"));

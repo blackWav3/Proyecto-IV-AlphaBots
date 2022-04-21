@@ -92,8 +92,9 @@ public class Estados : MonoBehaviour
         // F L A M E T H R O W E R
         if (other.gameObject.CompareTag("Flamethrower"))
         {
-            StopCoroutine(DañoPorSegundo(0, 0, 0));
-            StartCoroutine(DañoPorSegundo(5,6,1));//hace 5 de daño por segundo durante 6 segundos no stackeable se reinicia el tiempo de sangrado
+            StopCoroutine("QuemaduraLanzallamas");
+            StartCoroutine("QuemaduraLanzallamas");
+            //StartCoroutine(DañoPorSegundo(5,6,1));//hace 5 de daño por segundo durante 6 segundos no stackeable se reinicia el tiempo de sangrado
         }
         // S N I P E R
         if (other.gameObject.CompareTag("Sniper")) Daño(75);
@@ -171,6 +172,16 @@ public class Estados : MonoBehaviour
             vida -= daño;
             i++;
         }  
+    }
+    public IEnumerator QuemaduraLanzallamas()
+    {
+        int i = 0;
+        while (i < 6)//6 duracion del dot
+        {
+            yield return new WaitForSeconds(1);
+            vida -= 3;
+            i++;
+        }
     }
     public IEnumerator DañoActivo(int dañ,float seg){
     if(dañoA == false){
