@@ -694,7 +694,7 @@ MonoBehaviour:
   cooldown: 50
   velocidadNormal: 7
   velocidadRalentizado: 0.5
-  vida: 100
+  vida: 200
 --- !u!136 &2034504078464515026
 CapsuleCollider:
   m_ObjectHideFlags: 0

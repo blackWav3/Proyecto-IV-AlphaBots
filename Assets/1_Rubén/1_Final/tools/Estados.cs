@@ -178,8 +178,8 @@ public class Estados : MonoBehaviour
         int i = 0;
         while (i < 6)//6 duracion del dot
         {
-            yield return new WaitForSeconds(1);
             vida -= 3;
+            yield return new WaitForSeconds(1);           
             i++;
         }
     }
