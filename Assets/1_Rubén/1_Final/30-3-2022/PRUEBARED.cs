@@ -79,7 +79,7 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
         if (brazoIzq.value == 3) info1 = "Proyectil de alto daño , distancia y velocidad";//sniper
         if (brazoIzq.value == 4) info1 = "Canalizado de 12 proyectiles que dejan daño en el tiempo";//flamethrower
         if (brazoIzq.value == 5) info1 = "Pieza fuera de servicio";//sword
-        if (brazoIzq.value == 6) info1 = "Pieza fuera de servicio";//hamer
+        if (brazoIzq.value == 6) info1 = "Pieza fuera de servicio";//hammer
 
         if (brazoDer.value == 0) info3 = "Canalizado de 8 proyeciles seguidos. Alcance medio y daño moderado";//gatling
         if (brazoDer.value == 1) info3 = "Proyectil que al impactar deja inmovilizado al objetivo";//stun
