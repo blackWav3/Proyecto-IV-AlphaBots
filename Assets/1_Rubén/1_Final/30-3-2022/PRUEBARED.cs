@@ -34,11 +34,16 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
     public GameObject canvas_match;
     public Text txt_timeToGame;
 
+    public GameObject canvasPause;
+    public bool pauseAct;
+
     private void Start()
     {
         info2 = "Al activarse aumenta la velocidad de movimiento durante unos segundos";
         playerID = PhotonNetwork.LocalPlayer.ActorNumber;
         StartCoroutine(empezarpartida());
+        canvasPause.SetActive(false);
+        pauseAct = false;
     }
     IEnumerator empezarpartida()
     {
@@ -54,6 +59,8 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
         canvas_match.SetActive(true);
         SetUpPlayerAndCamera();
     }
+
+    
     private void Update()
     {
         infoPieza1.text = info1;
@@ -64,12 +71,36 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-            PhotonNetwork.Disconnect();
-            SceneManager.LoadScene("ConnectTo");
+            if (pauseAct == true)
+            {
+                BotonSeguir();
+            }
+            else if (pauseAct == false)
+            {
+                pauseAct = true;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                canvasPause.SetActive(true);
+            }
         }
     }
+
+    public void botonSalir()
+    {
+        canvasPause.SetActive(false);
+        PhotonNetwork.Disconnect();
+        SceneManager.LoadScene("ConnectTo");
+    }
+    public void BotonSeguir()
+    {
+        canvasPause.SetActive(false);
+        pauseAct = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+
+
     private void SetInfoDP()
     {
         
