@@ -33,7 +33,16 @@ public class PJ_camara : MonoBehaviour
 	public bool can;
 
 	public float GetH { get { return angleH; } }
-
+	public void sensibilidadHori(float sens)
+    {
+		horizontalAimingSpeed = sens;
+		//return horizontalAimingSpeed;
+	}
+	public void sensibilidadVerti(float sens)
+	{
+		verticalAimingSpeed = sens;
+		//return verticalAimingSpeed;
+	}
 	public void Start()
 	{
 		// Reference to the camera transform.
