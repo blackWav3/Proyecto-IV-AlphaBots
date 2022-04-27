@@ -20,7 +20,7 @@ public class PlayerCombat : Melee
         }
         if (brazos == Brazos.Espada)
         {
-            attackRange = 0.2f;
+            attackRange = 0.5f;
             fireRate = 3;
             meleeDamage = 10;
             transform.GetChild(0).GetChild(1).GetChild(0).gameObject.SetActive(false);
@@ -29,7 +29,7 @@ public class PlayerCombat : Melee
         }
         if (brazos == Brazos.Sierra)
         {
-            attackRange = 0.2f;
+            attackRange = 0.38f;
             fireRate = 1;
             meleeDamage = 20;
             transform.GetChild(0).GetChild(1).GetChild(0).gameObject.SetActive(false);

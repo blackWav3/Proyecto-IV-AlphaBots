@@ -7,9 +7,7 @@ public class Melee : MonoBehaviour
 {
     public Brazos brazos;
     public Animator animator;
-    public Transform martilloAttackPoint;
-    public Transform firstAttackPointE, secondAttackPointE, centerPointE;
-    public Transform firstAttackPointS, secondAttackPointS, centerPointS;
+    public Transform martilloAttackPoint, espadaAttackPoint, sierraAttackPoint;
     public float attackRange;
     public float fireRate;
     public int meleeDamage;
@@ -48,8 +46,9 @@ public class Melee : MonoBehaviour
                         enemy.gameObject.GetComponent<Estados>().Daño(meleeDamage);
                 }
                 return;
+
             case Brazos.Espada:
-                Collider[] hitEnemyE = Physics.OverlapCapsule(firstAttackPointE.position, secondAttackPointE.position, attackRange);
+                Collider[] hitEnemyE = Physics.OverlapSphere(espadaAttackPoint.position, attackRange);
 
                 if (hitEnemyE == null)
                     return;
@@ -60,8 +59,9 @@ public class Melee : MonoBehaviour
                         enemy.gameObject.GetComponent<Estados>().Daño(meleeDamage);
                 }
                 return;
+
             case Brazos.Sierra:
-                Collider[] hitEnemyS = Physics.OverlapCapsule(firstAttackPointS.position, secondAttackPointS.position, attackRange);
+                Collider[] hitEnemyS = Physics.OverlapSphere(sierraAttackPoint.position, attackRange);
 
                 if (hitEnemyS == null)
                     return;
@@ -85,38 +85,22 @@ public class Melee : MonoBehaviour
                     return;
                 Gizmos.DrawWireSphere(martilloAttackPoint.position, attackRange);
                 return;
+
             case Brazos.Espada:
-                DrawWireCapsule(centerPointE.position, martilloAttackPoint.rotation, 0.2f, 1f);
+                if (espadaAttackPoint == null)
+                    return;
+                Gizmos.DrawWireSphere(espadaAttackPoint.position, attackRange);
                 return;
+
             case Brazos.Sierra:
-                DrawWireCapsule(centerPointS.position, martilloAttackPoint.rotation, 0.2f, 1f);
+                if (sierraAttackPoint == null)
+                    return;
+                Gizmos.DrawWireSphere(sierraAttackPoint.position, attackRange);
                 return;
-        }
-    }
-    public static void DrawWireCapsule(Vector3 _pos, Quaternion _rot, float _radius, float _height, Color _color = default(Color))
-    {
-        if (_color != default(Color))
-            Handles.color = _color;
-        Matrix4x4 angleMatrix = Matrix4x4.TRS(_pos, _rot, Handles.matrix.lossyScale);
-        using (new Handles.DrawingScope(angleMatrix))
-        {
-            var pointOffset = (_height - (_radius * 2)) / 2;
 
-            //draw sideways
-            Handles.DrawWireArc(Vector3.up * pointOffset, Vector3.left, Vector3.back, -180, _radius);
-            Handles.DrawLine(new Vector3(0, pointOffset, -_radius), new Vector3(0, -pointOffset, -_radius));
-            Handles.DrawLine(new Vector3(0, pointOffset, _radius), new Vector3(0, -pointOffset, _radius));
-            Handles.DrawWireArc(Vector3.down * pointOffset, Vector3.left, Vector3.back, 180, _radius);
-            //draw frontways
-            Handles.DrawWireArc(Vector3.up * pointOffset, Vector3.back, Vector3.left, 180, _radius);
-            Handles.DrawLine(new Vector3(-_radius, pointOffset, 0), new Vector3(-_radius, -pointOffset, 0));
-            Handles.DrawLine(new Vector3(_radius, pointOffset, 0), new Vector3(_radius, -pointOffset, 0));
-            Handles.DrawWireArc(Vector3.down * pointOffset, Vector3.back, Vector3.left, -180, _radius);
-            //draw center
-            Handles.DrawWireDisc(Vector3.up * pointOffset, Vector3.up, _radius);
-            Handles.DrawWireDisc(Vector3.down * pointOffset, Vector3.up, _radius);
-
-        }
+            default:
+                return;
+        }        
     }
     public enum Brazos
     {
