@@ -25,11 +25,12 @@ TagManager:
   - Sniper
   - Zapper
   - Slower
+  - redelectrica
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Post Processing
   - Water
   - UI
   - post-process

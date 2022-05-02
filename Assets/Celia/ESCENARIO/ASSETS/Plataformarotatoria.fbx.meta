@@ -1,0 +1,522 @@
+fileFormatVersion: 2
+guid: 4f31fadf83ec91646a300ffe38a59180
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -3943077673803265316
+    second: Plataforma.001|Bot_Wall_01|Take 001|BaseLayer
+  - first:
+      74: 7085377050928226341
+    second: Plataforma.001|Bot_Wall_01|Take 001|BaseLayer.001
+  - first:
+      74: -6201779016854851353
+    second: Plataforma.001|Bot_Wall_02|Take 001|BaseLayer
+  - first:
+      74: -6461844740022280416
+    second: Plataforma.001|Bot_Wall_02|Take 001|BaseLayer.001
+  - first:
+      74: -8993066464383399302
+    second: Plataforma.001|Bot_Wall_03|Take 001|BaseLayer
+  - first:
+      74: -8366989991728960296
+    second: Plataforma.001|Bot_Wall_03|Take 001|BaseLayer.001
+  - first:
+      74: -2881523841492341158
+    second: Plataforma.001|Bot_Wall_Details_01|Take 001|BaseLayer
+  - first:
+      74: 2207678215498092040
+    second: Plataforma.001|Bot_Wall_Details_01|Take 001|BaseLayer.001
+  - first:
+      74: 1282031285853785102
+    second: Plataforma.001|Bot_Wall_Details_02|Take 001|BaseLayer
+  - first:
+      74: 672303935605094925
+    second: Plataforma.001|Bot_Wall_Details_02|Take 001|BaseLayer.001
+  - first:
+      74: -7446194730972157009
+    second: Plataforma.001|Bot_Wall_Details_03|Take 001|BaseLayer
+  - first:
+      74: -381218827415079173
+    second: Plataforma.001|Bot_Wall_Details_03|Take 001|BaseLayer.001
+  - first:
+      74: -6841997742071963393
+    second: Plataforma.001|Platform_Wall_Details|Take 001|BaseLayer
+  - first:
+      74: 4291901183518177708
+    second: Plataforma.001|Platform_Wall_Details|Take 001|BaseLayer.001
+  - first:
+      74: 6312498956349645075
+    second: Plataforma.001|Platform_Wall|Take 001|BaseLayer
+  - first:
+      74: 667633983447149694
+    second: Plataforma.001|Platform_Wall|Take 001|BaseLayer.001
+  - first:
+      74: 386994875313448121
+    second: Plataforma.001|Top_Wall_01|Take 001|BaseLayer
+  - first:
+      74: -5516012082362163651
+    second: Plataforma.001|Top_Wall_01|Take 001|BaseLayer.001
+  - first:
+      74: -1753057477401418396
+    second: Plataforma.001|Top_Wall_02|Take 001|BaseLayer
+  - first:
+      74: -7808277942379190687
+    second: Plataforma.001|Top_Wall_02|Take 001|BaseLayer.001
+  - first:
+      74: 763315559236643077
+    second: Plataforma.001|Top_Wall_03|Take 001|BaseLayer
+  - first:
+      74: -1449112565159060700
+    second: Plataforma.001|Top_Wall_03|Take 001|BaseLayer.001
+  - first:
+      74: -4251757142577261116
+    second: Plataforma.001|Top_Wall_Details_01|Take 001|BaseLayer
+  - first:
+      74: -6398262799576655931
+    second: Plataforma.001|Top_Wall_Details_01|Take 001|BaseLayer.001
+  - first:
+      74: -2639477074031133608
+    second: Plataforma.001|Top_Wall_Details_02|Take 001|BaseLayer
+  - first:
+      74: 6659769243585156132
+    second: Plataforma.001|Top_Wall_Details_02|Take 001|BaseLayer.001
+  - first:
+      74: -9097968377988326398
+    second: Plataforma.001|Top_Wall_Details_03|Take 001|BaseLayer
+  - first:
+      74: 6512457638941894905
+    second: Plataforma.001|Top_Wall_Details_03|Take 001|BaseLayer.001
+  - first:
+      74: -8060343121866395140
+    second: Plataforma.002|Bot_Wall_01|Take 001|BaseLayer
+  - first:
+      74: -4152392559071007795
+    second: Plataforma.002|Bot_Wall_01|Take 001|BaseLayer.001
+  - first:
+      74: -4342944404572623218
+    second: Plataforma.002|Bot_Wall_02|Take 001|BaseLayer
+  - first:
+      74: 2126893709151804729
+    second: Plataforma.002|Bot_Wall_02|Take 001|BaseLayer.001
+  - first:
+      74: -5442507788366914177
+    second: Plataforma.002|Bot_Wall_03|Take 001|BaseLayer
+  - first:
+      74: -1410016348290047593
+    second: Plataforma.002|Bot_Wall_03|Take 001|BaseLayer.001
+  - first:
+      74: 4951447592261401072
+    second: Plataforma.002|Bot_Wall_Details_01|Take 001|BaseLayer
+  - first:
+      74: 7373742376971567464
+    second: Plataforma.002|Bot_Wall_Details_01|Take 001|BaseLayer.001
+  - first:
+      74: 88932841605614348
+    second: Plataforma.002|Bot_Wall_Details_02|Take 001|BaseLayer
+  - first:
+      74: -4221767877542731546
+    second: Plataforma.002|Bot_Wall_Details_02|Take 001|BaseLayer.001
+  - first:
+      74: -8833928120298129935
+    second: Plataforma.002|Bot_Wall_Details_03|Take 001|BaseLayer
+  - first:
+      74: -28126247005016679
+    second: Plataforma.002|Bot_Wall_Details_03|Take 001|BaseLayer.001
+  - first:
+      74: 3339176896826172907
+    second: Plataforma.002|Platform_Wall_Details|Take 001|BaseLayer
+  - first:
+      74: -7645647450967569024
+    second: Plataforma.002|Platform_Wall_Details|Take 001|BaseLayer.001
+  - first:
+      74: -5760394961299324913
+    second: Plataforma.002|Platform_Wall|Take 001|BaseLayer
+  - first:
+      74: -2176772616380747628
+    second: Plataforma.002|Platform_Wall|Take 001|BaseLayer.001
+  - first:
+      74: -6007650597272536400
+    second: Plataforma.002|Top_Wall_01|Take 001|BaseLayer
+  - first:
+      74: -6945210432299663825
+    second: Plataforma.002|Top_Wall_01|Take 001|BaseLayer.001
+  - first:
+      74: 8851841331237796780
+    second: Plataforma.002|Top_Wall_02|Take 001|BaseLayer
+  - first:
+      74: -7496822791382625863
+    second: Plataforma.002|Top_Wall_02|Take 001|BaseLayer.001
+  - first:
+      74: -4597404042847593934
+    second: Plataforma.002|Top_Wall_03|Take 001|BaseLayer
+  - first:
+      74: -8786270700632529168
+    second: Plataforma.002|Top_Wall_03|Take 001|BaseLayer.001
+  - first:
+      74: 2870614800342487310
+    second: Plataforma.002|Top_Wall_Details_01|Take 001|BaseLayer
+  - first:
+      74: 8430415812894595243
+    second: Plataforma.002|Top_Wall_Details_01|Take 001|BaseLayer.001
+  - first:
+      74: 8652289738294471464
+    second: Plataforma.002|Top_Wall_Details_02|Take 001|BaseLayer
+  - first:
+      74: 3634659133025022919
+    second: Plataforma.002|Top_Wall_Details_02|Take 001|BaseLayer.001
+  - first:
+      74: 4094191345518516943
+    second: Plataforma.002|Top_Wall_Details_03|Take 001|BaseLayer
+  - first:
+      74: -5948885407627769159
+    second: Plataforma.002|Top_Wall_Details_03|Take 001|BaseLayer.001
+  - first:
+      74: 2222224125887643157
+    second: Plataforma.004|Bot_Wall_01|Take 001|BaseLayer
+  - first:
+      74: 2148541790521855979
+    second: Plataforma.004|Bot_Wall_01|Take 001|BaseLayer.001
+  - first:
+      74: -2884678249082165625
+    second: Plataforma.004|Bot_Wall_02|Take 001|BaseLayer
+  - first:
+      74: -217943020963677811
+    second: Plataforma.004|Bot_Wall_02|Take 001|BaseLayer.001
+  - first:
+      74: 1062699493623290240
+    second: Plataforma.004|Bot_Wall_03|Take 001|BaseLayer
+  - first:
+      74: 9067441860455275487
+    second: Plataforma.004|Bot_Wall_03|Take 001|BaseLayer.001
+  - first:
+      74: 7535346971767286279
+    second: Plataforma.004|Bot_Wall_Details_01|Take 001|BaseLayer
+  - first:
+      74: -3984233608909068008
+    second: Plataforma.004|Bot_Wall_Details_01|Take 001|BaseLayer.001
+  - first:
+      74: -1900033329945509909
+    second: Plataforma.004|Bot_Wall_Details_02|Take 001|BaseLayer
+  - first:
+      74: -1463690493948798678
+    second: Plataforma.004|Bot_Wall_Details_02|Take 001|BaseLayer.001
+  - first:
+      74: -6059236035340749972
+    second: Plataforma.004|Bot_Wall_Details_03|Take 001|BaseLayer
+  - first:
+      74: -6508183776708509849
+    second: Plataforma.004|Bot_Wall_Details_03|Take 001|BaseLayer.001
+  - first:
+      74: -6167749621394708257
+    second: Plataforma.004|Platform_Wall_Details|Take 001|BaseLayer
+  - first:
+      74: 5857218766400639050
+    second: Plataforma.004|Platform_Wall_Details|Take 001|BaseLayer.001
+  - first:
+      74: -3657340819323403490
+    second: Plataforma.004|Platform_Wall|Take 001|BaseLayer
+  - first:
+      74: -8666226538017376736
+    second: Plataforma.004|Platform_Wall|Take 001|BaseLayer.001
+  - first:
+      74: -2255393495713430773
+    second: Plataforma.004|Top_Wall_01|Take 001|BaseLayer
+  - first:
+      74: -4873110045594484994
+    second: Plataforma.004|Top_Wall_01|Take 001|BaseLayer.001
+  - first:
+      74: 708356437887152548
+    second: Plataforma.004|Top_Wall_02|Take 001|BaseLayer
+  - first:
+      74: 3834753370813984203
+    second: Plataforma.004|Top_Wall_02|Take 001|BaseLayer.001
+  - first:
+      74: 8596708345629096189
+    second: Plataforma.004|Top_Wall_03|Take 001|BaseLayer
+  - first:
+      74: -539385012622163965
+    second: Plataforma.004|Top_Wall_03|Take 001|BaseLayer.001
+  - first:
+      74: 372475235742747020
+    second: Plataforma.004|Top_Wall_Details_01|Take 001|BaseLayer
+  - first:
+      74: 3895185364551621818
+    second: Plataforma.004|Top_Wall_Details_01|Take 001|BaseLayer.001
+  - first:
+      74: 4292191719957089322
+    second: Plataforma.004|Top_Wall_Details_02|Take 001|BaseLayer
+  - first:
+      74: -7900465761030030385
+    second: Plataforma.004|Top_Wall_Details_02|Take 001|BaseLayer.001
+  - first:
+      74: -1837102044908769922
+    second: Plataforma.004|Top_Wall_Details_03|Take 001|BaseLayer
+  - first:
+      74: -4671627839621696778
+    second: Plataforma.004|Top_Wall_Details_03|Take 001|BaseLayer.001
+  - first:
+      74: -7364329395672686817
+    second: Plataforma.005|Bot_Wall_01|Take 001|BaseLayer
+  - first:
+      74: 7262894731564601520
+    second: Plataforma.005|Bot_Wall_01|Take 001|BaseLayer.001
+  - first:
+      74: -3584947061964989613
+    second: Plataforma.005|Bot_Wall_02|Take 001|BaseLayer
+  - first:
+      74: -2664756080740970799
+    second: Plataforma.005|Bot_Wall_02|Take 001|BaseLayer.001
+  - first:
+      74: 8957407870878888115
+    second: Plataforma.005|Bot_Wall_03|Take 001|BaseLayer
+  - first:
+      74: 3810160547018120192
+    second: Plataforma.005|Bot_Wall_03|Take 001|BaseLayer.001
+  - first:
+      74: -9199236844474399545
+    second: Plataforma.005|Bot_Wall_Details_01|Take 001|BaseLayer
+  - first:
+      74: 8682830326868375200
+    second: Plataforma.005|Bot_Wall_Details_01|Take 001|BaseLayer.001
+  - first:
+      74: 5020449779516368811
+    second: Plataforma.005|Bot_Wall_Details_02|Take 001|BaseLayer
+  - first:
+      74: -709534280563719677
+    second: Plataforma.005|Bot_Wall_Details_02|Take 001|BaseLayer.001
+  - first:
+      74: 8546981847168093554
+    second: Plataforma.005|Bot_Wall_Details_03|Take 001|BaseLayer
+  - first:
+      74: 8483083702002745055
+    second: Plataforma.005|Bot_Wall_Details_03|Take 001|BaseLayer.001
+  - first:
+      74: 4958655921017139461
+    second: Plataforma.005|Platform_Wall_Details|Take 001|BaseLayer
+  - first:
+      74: 5723397986443592679
+    second: Plataforma.005|Platform_Wall_Details|Take 001|BaseLayer.001
+  - first:
+      74: 5582157104760553342
+    second: Plataforma.005|Platform_Wall|Take 001|BaseLayer
+  - first:
+      74: 8364094722144819792
+    second: Plataforma.005|Platform_Wall|Take 001|BaseLayer.001
+  - first:
+      74: 7172185282920952127
+    second: Plataforma.005|Top_Wall_01|Take 001|BaseLayer
+  - first:
+      74: -8555238046329982245
+    second: Plataforma.005|Top_Wall_01|Take 001|BaseLayer.001
+  - first:
+      74: -5929539770934518747
+    second: Plataforma.005|Top_Wall_02|Take 001|BaseLayer
+  - first:
+      74: 5690812858164937716
+    second: Plataforma.005|Top_Wall_02|Take 001|BaseLayer.001
+  - first:
+      74: 520057972745796885
+    second: Plataforma.005|Top_Wall_03|Take 001|BaseLayer
+  - first:
+      74: 7809518128032086127
+    second: Plataforma.005|Top_Wall_03|Take 001|BaseLayer.001
+  - first:
+      74: -273333661651477748
+    second: Plataforma.005|Top_Wall_Details_01|Take 001|BaseLayer
+  - first:
+      74: -1335490784901898611
+    second: Plataforma.005|Top_Wall_Details_01|Take 001|BaseLayer.001
+  - first:
+      74: 2100107087286849186
+    second: Plataforma.005|Top_Wall_Details_02|Take 001|BaseLayer
+  - first:
+      74: -7450257486519667824
+    second: Plataforma.005|Top_Wall_Details_02|Take 001|BaseLayer.001
+  - first:
+      74: -2139780001913023096
+    second: Plataforma.005|Top_Wall_Details_03|Take 001|BaseLayer
+  - first:
+      74: 92131550794663885
+    second: Plataforma.005|Top_Wall_Details_03|Take 001|BaseLayer.001
+  - first:
+      74: -3651144850056893118
+    second: Plataforma.003|Bot_Wall_01|Take 001|BaseLayer
+  - first:
+      74: 9053427443875942926
+    second: Plataforma.003|Bot_Wall_01|Take 001|BaseLayer.001
+  - first:
+      74: 743651428017298347
+    second: Plataforma.003|Bot_Wall_02|Take 001|BaseLayer
+  - first:
+      74: -5496548833183391129
+    second: Plataforma.003|Bot_Wall_02|Take 001|BaseLayer.001
+  - first:
+      74: -8656963683500131269
+    second: Plataforma.003|Bot_Wall_03|Take 001|BaseLayer
+  - first:
+      74: 6771994113440500741
+    second: Plataforma.003|Bot_Wall_03|Take 001|BaseLayer.001
+  - first:
+      74: -8343447722153814296
+    second: Plataforma.003|Bot_Wall_Details_01|Take 001|BaseLayer
+  - first:
+      74: 401522311290685283
+    second: Plataforma.003|Bot_Wall_Details_01|Take 001|BaseLayer.001
+  - first:
+      74: -277946434033273380
+    second: Plataforma.003|Bot_Wall_Details_02|Take 001|BaseLayer
+  - first:
+      74: 8336601209278205117
+    second: Plataforma.003|Bot_Wall_Details_02|Take 001|BaseLayer.001
+  - first:
+      74: 9050036490910674334
+    second: Plataforma.003|Bot_Wall_Details_03|Take 001|BaseLayer
+  - first:
+      74: -2914481665948743337
+    second: Plataforma.003|Bot_Wall_Details_03|Take 001|BaseLayer.001
+  - first:
+      74: -492739687137305380
+    second: Plataforma.003|Platform_Wall_Details|Take 001|BaseLayer
+  - first:
+      74: 1178515253194192028
+    second: Plataforma.003|Platform_Wall_Details|Take 001|BaseLayer.001
+  - first:
+      74: 4916285278471459482
+    second: Plataforma.003|Platform_Wall|Take 001|BaseLayer
+  - first:
+      74: 1145545810870239843
+    second: Plataforma.003|Platform_Wall|Take 001|BaseLayer.001
+  - first:
+      74: 1582362799127457982
+    second: Plataforma.003|Top_Wall_01|Take 001|BaseLayer
+  - first:
+      74: 7489024145913622458
+    second: Plataforma.003|Top_Wall_01|Take 001|BaseLayer.001
+  - first:
+      74: 7353857077860328671
+    second: Plataforma.003|Top_Wall_02|Take 001|BaseLayer
+  - first:
+      74: 7666896823005740218
+    second: Plataforma.003|Top_Wall_02|Take 001|BaseLayer.001
+  - first:
+      74: -5137079731907731226
+    second: Plataforma.003|Top_Wall_03|Take 001|BaseLayer
+  - first:
+      74: -7890612831760715246
+    second: Plataforma.003|Top_Wall_03|Take 001|BaseLayer.001
+  - first:
+      74: 521229916185140064
+    second: Plataforma.003|Top_Wall_Details_01|Take 001|BaseLayer
+  - first:
+      74: 7121296313550550784
+    second: Plataforma.003|Top_Wall_Details_01|Take 001|BaseLayer.001
+  - first:
+      74: 887613190779493372
+    second: Plataforma.003|Top_Wall_Details_02|Take 001|BaseLayer
+  - first:
+      74: -7642513349498369144
+    second: Plataforma.003|Top_Wall_Details_02|Take 001|BaseLayer.001
+  - first:
+      74: 5489680614872165251
+    second: Plataforma.003|Top_Wall_Details_03|Take 001|BaseLayer
+  - first:
+      74: -6449961179310030408
+    second: Plataforma.003|Top_Wall_Details_03|Take 001|BaseLayer.001
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
