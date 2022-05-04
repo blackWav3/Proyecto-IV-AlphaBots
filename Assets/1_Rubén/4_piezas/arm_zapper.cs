@@ -26,7 +26,7 @@ public class arm_zapper : MonoBehaviour
     private void Update()
     {
         if (!photonview.IsMine) return;
-        if (transform.parent.name == "leftarm")
+        if (transform.parent.name == "leftarm" && PRUEBARED.pauseAct == false)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) && canUseAbility == true)
             {
@@ -34,7 +34,7 @@ public class arm_zapper : MonoBehaviour
                 StartCoroutine(StartCooldown("txt_q"));
             }
         }
-        if (transform.parent.name == "rightarm")
+        if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
         {
             if (Input.GetKeyDown(KeyCode.Mouse1) && canUseAbility == true)
             {

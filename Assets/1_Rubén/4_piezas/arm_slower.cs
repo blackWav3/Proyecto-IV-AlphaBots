@@ -24,11 +24,11 @@ public class arm_slower : MonoBehaviour
     private void Update()
     {
         if (!photonview.IsMine) return;
-        if (transform.parent.name == "leftarm")
+        if (transform.parent.name == "leftarm" && PRUEBARED.pauseAct)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0)) Slower();
         }
-        if (transform.parent.name == "rightarm")
+        if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct)
         {
             if (Input.GetKeyDown(KeyCode.Mouse1)) Slower();
         }

@@ -35,7 +35,7 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
     public Text txt_timeToGame;
 
     public GameObject canvasPause;
-    public bool pauseAct;
+    public static bool pauseAct;
 
     private void Start()
     {

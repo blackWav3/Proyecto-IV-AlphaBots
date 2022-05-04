@@ -18,8 +18,10 @@ public class Estados : MonoBehaviour
     public float velocidadRalentizado;
     public int vida;
 
+    int idplayer;
 
     PhotonView photonview;
+    GameObject respawnPos;
 
 
     PJ_movement pjmovement;
@@ -29,6 +31,10 @@ public class Estados : MonoBehaviour
     {
         photonview = GetComponent<PhotonView>();
         velocidad = velocidadNormal;
+        idplayer = PhotonNetwork.LocalPlayer.ActorNumber;
+        idplayer -= 1;
+        respawnPos = GameObject.Find("[spawn]").transform.GetChild(idplayer).gameObject;
+        print(idplayer);
     }
     IEnumerator correr()
     {
@@ -53,7 +59,10 @@ public class Estados : MonoBehaviour
     }
     private void Update()
     {
-       
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            vida = vida - 50;
+        }
         gameObject.GetComponent<PJ_movement>().playerSpeed = velocidad;
         if (!photonview.IsMine) return;
         if (Input.GetKeyDown(KeyCode.X) && canUseAbility == true)
@@ -63,15 +72,23 @@ public class Estados : MonoBehaviour
         if (vida <= 0)
         {
             if (!photonview.IsMine) return;
+            /*
             GameObject.Find("Camera").GetComponent<Camera>().targetDisplay = 0;
             GameObject.Find("Canvas").gameObject.SetActive(false);
+             */
+            vida = 200;
             photonview.RPC("RPCsetactive", RpcTarget.AllBuffered);
+           
+            
+            //gameObject.transform.position = respawnPos.transform.position;
+            //gameObject.transform.rotation = respawnPos.transform.rotation;
+            
         }
     }
     [PunRPC]
     void RPCsetactive()
     {
-        gameObject.SetActive(false);
+        gameObject.transform.position = Vector3.zero;
     }
 
 
