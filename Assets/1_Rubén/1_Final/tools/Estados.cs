@@ -59,10 +59,6 @@ public class Estados : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            vida = vida - 50;
-        }
         gameObject.GetComponent<PJ_movement>().playerSpeed = velocidad;
         if (!photonview.IsMine) return;
         if (Input.GetKeyDown(KeyCode.X) && canUseAbility == true)
@@ -72,12 +68,10 @@ public class Estados : MonoBehaviour
         if (vida <= 0)
         {
             if (!photonview.IsMine) return;
-            /*
+            
             GameObject.Find("Camera").GetComponent<Camera>().targetDisplay = 0;
             GameObject.Find("Canvas").gameObject.SetActive(false);
-             */
-            vida = 200;
-            photonview.RPC("RPCsetactive", RpcTarget.AllBuffered);
+            
            
             
             //gameObject.transform.position = respawnPos.transform.position;
