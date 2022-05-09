@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Air_Speed
-  m_Shader: {fileID: -6465566751694194690, guid: b9c2dc425d837334e935455db695e55e, type: 3}
+  m_Name: AirSpeedBoost
+  m_Shader: {fileID: -6465566751694194690, guid: dd27360ab5fa31940bb2941d08ca70bb, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -76,7 +76,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_7213eee8dae048348b451c1fc7ef83f1: 7.5
+    - Vector1_7213eee8dae048348b451c1fc7ef83f1: 5
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
