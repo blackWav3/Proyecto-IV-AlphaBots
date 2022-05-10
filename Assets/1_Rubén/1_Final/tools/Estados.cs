@@ -29,8 +29,21 @@ public class Estados : MonoBehaviour
 
 
     #endregion
-    private void Start()
+
+    IEnumerator RespawnPlayerToPosition()
     {
+        vida = 200;
+        gameObject.GetComponent<PJ_movement>().CanTP = true;
+        GameObject spwanPosition = GameObject.Find("[spawn]");
+        int idplayer = PhotonNetwork.LocalPlayer.ActorNumber;       
+        transform.position = spwanPosition.transform.GetChild(idplayer-1).gameObject.transform.position;        
+        yield return new WaitForSeconds(0.01f);
+        gameObject.GetComponent<PJ_movement>().CanTP = false;
+        if (gameObject.name == ("1(Clone)") || gameObject.name == ("2(Clone)") || gameObject.name == ("3(Clone)")) GameObject.Find("[PUNTUACION]").GetComponent<PuntacionGameplay>().Score1Up();
+        if (gameObject.name == ("4(Clone)") || gameObject.name == ("5(Clone)") || gameObject.name == ("6(Clone)")) GameObject.Find("[PUNTUACION]").GetComponent<PuntacionGameplay>().Score2Up();
+    }
+    private void Start()
+    {        
         photonview = GetComponent<PhotonView>();
         velocidad = velocidadNormal;
         idplayer = PhotonNetwork.LocalPlayer.ActorNumber;
@@ -61,35 +74,26 @@ public class Estados : MonoBehaviour
     }
     private void Update()
     {
+        if (vida <= 0) StartCoroutine(RespawnPlayerToPosition());
+        if (Input.GetKeyDown(KeyCode.O)) vida -= 50;
+
         gameObject.GetComponent<PJ_movement>().playerSpeed = velocidad;
         if (!photonview.IsMine) return;
         if (Input.GetKeyDown(KeyCode.X) && canUseAbility == true)
         {
             StartCoroutine(correr());
         }
-        if (vida <= 0)
+        /*if (vida <= 0)
         {
             if (!photonview.IsMine) return;
 
             GameObject.Find("Camera").GetComponent<Camera>().targetDisplay = 0;
             GameObject.Find("Canvas").gameObject.SetActive(false);
-        }
-        if (Input.GetKeyDown(KeyCode.P)) StartCoroutine(TPtoSpawn());
-        if (Input.GetKeyDown(KeyCode.O)) StartCoroutine(TPtoTop());
+        }*/
+        //if (Input.GetKeyDown(KeyCode.O)) StartCoroutine(TPtoTop());
     }
 
-    IEnumerator TPtoSpawn()
-    {
-        gameObject.GetComponent<PJ_movement>().CanTP = true;
-        GameObject spwanPosition = GameObject.Find("[spawn]");
-        transform.position = spwanPosition.transform.GetChild(0).gameObject.transform.position;
-        vida = 200;
-        yield return new WaitForSeconds(0.01f);
-        gameObject.GetComponent<PJ_movement>().CanTP = false;
-
-        //reset cooldown
-
-    }
+    
     IEnumerator TPtoTop()
     {
         gameObject.GetComponent<PJ_movement>().CanTP = true;
