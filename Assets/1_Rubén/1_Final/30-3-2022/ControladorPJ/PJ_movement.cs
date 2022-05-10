@@ -17,6 +17,8 @@ public class PJ_movement : MonoBehaviour
     public bool bajando = false;
     public bool jump = true;
 
+    public bool CanTP;
+
     private Vector3 movimiento;
     private Vector3 gravedad;
     private Vector3 checkGravityPos;
@@ -38,6 +40,9 @@ public class PJ_movement : MonoBehaviour
     }
     private void Update()
     {
+        if (CanTP) controller.enabled = false;
+        else controller.enabled = true;
+
         //multi
         if (!photonView.IsMine) return;
 
@@ -102,6 +107,7 @@ public class PJ_movement : MonoBehaviour
         gravedad = playerVelocity * Time.deltaTime;
 
         //Lo sumas y lo mueves
-        controller.Move(movimiento + gravedad);
+        if (!CanTP) controller.Move(movimiento + gravedad);
+
     }
 }

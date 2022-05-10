@@ -75,4 +75,7 @@ public class arm_flamethrower : MonoBehaviour
             yield return new WaitForSeconds(fireRatio);
         }
     }
+
+
+    
 }

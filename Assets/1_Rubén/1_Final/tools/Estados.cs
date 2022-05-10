@@ -26,8 +26,10 @@ public class Estados : MonoBehaviour
 
     PJ_movement pjmovement;
 
+
+
     #endregion
-    private void Start() 
+    private void Start()
     {
         photonview = GetComponent<PhotonView>();
         velocidad = velocidadNormal;
@@ -68,23 +70,34 @@ public class Estados : MonoBehaviour
         if (vida <= 0)
         {
             if (!photonview.IsMine) return;
-            
+
             GameObject.Find("Camera").GetComponent<Camera>().targetDisplay = 0;
             GameObject.Find("Canvas").gameObject.SetActive(false);
-            
-           
-            
-            //gameObject.transform.position = respawnPos.transform.position;
-            //gameObject.transform.rotation = respawnPos.transform.rotation;
-            
         }
-    }
-    [PunRPC]
-    void RPCsetactive()
-    {
-        gameObject.transform.position = Vector3.zero;
+        if (Input.GetKeyDown(KeyCode.P)) StartCoroutine(TPtoSpawn());
+        if (Input.GetKeyDown(KeyCode.O)) StartCoroutine(TPtoTop());
     }
 
+    IEnumerator TPtoSpawn()
+    {
+        gameObject.GetComponent<PJ_movement>().CanTP = true;
+        GameObject spwanPosition = GameObject.Find("[spawn]");
+        transform.position = spwanPosition.transform.GetChild(0).gameObject.transform.position;
+        vida = 200;
+        yield return new WaitForSeconds(0.01f);
+        gameObject.GetComponent<PJ_movement>().CanTP = false;
+
+        //reset cooldown
+
+    }
+    IEnumerator TPtoTop()
+    {
+        gameObject.GetComponent<PJ_movement>().CanTP = true;
+        GameObject spwanPosition = GameObject.Find("tpaqui");
+        transform.position = spwanPosition.transform.position;
+        yield return new WaitForSeconds(0.01f);
+        gameObject.GetComponent<PJ_movement>().CanTP = false;
+    }
 
     //-----------------------------------
     //-----------------------------------

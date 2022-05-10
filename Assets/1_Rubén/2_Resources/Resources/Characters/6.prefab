@@ -679,6 +679,7 @@ MonoBehaviour:
   target: {fileID: 0}
   bajando: 0
   jump: 1
+  CanTP: 0
 --- !u!114 &8879291674104941453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,7 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65628d9c2dea00d47b322f3cd1bd48d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 50
+  cooldown: 20
   velocidadNormal: 7
   velocidadRalentizado: 0.5
   vida: 200
