@@ -6,13 +6,42 @@ public class PlataformaRotatoria : MonoBehaviour
 {
     public Animator plataformaRotatoriaAnim;
     public int PlataformaRotatoriaSpeed = 1;
-    public int plataformaRotatoriaSpeed
+    public int random;
+
+    public void Awake()
     {
-        get { return PlataformaRotatoriaSpeed; }
-        set 
+        GetNewRandom();
+    }
+
+    private void GetNewRandom()
+    {
+        random = Random.Range(1, 7);
+        StartCoroutine(changeSpeed());
+    }
+
+    private IEnumerator changeSpeed()
+    {
+        
+        if (random > PlataformaRotatoriaSpeed)
         {
-            PlataformaRotatoriaSpeed = value;
+            yield return new WaitForSeconds(5);
+            PlataformaRotatoriaSpeed++;
+        }
+        else if (random < PlataformaRotatoriaSpeed)
+        {
+            yield return new WaitForSeconds(5);
+            PlataformaRotatoriaSpeed--;
+        }
+        if (random == PlataformaRotatoriaSpeed)
+        {
+            yield return new WaitForSeconds(15);
+            GetNewRandom();
+        }
+        else
+        {
             plataformaRotatoriaAnim.speed = PlataformaRotatoriaSpeed;
+            StartCoroutine(changeSpeed());
         }
     }
+
 }

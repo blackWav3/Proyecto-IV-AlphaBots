@@ -54844,7 +54844,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plataformaRotatoriaAnim: {fileID: 1601970039}
-  PlataformaRotatoriaSpeed: 0
+  PlataformaRotatoriaSpeed: 1
+  random: 0
 --- !u!4 &933935445952715561
 Transform:
   m_ObjectHideFlags: 0
