@@ -13,12 +13,15 @@ public class Estados : MonoBehaviour
     bool canUseAbility = true;
     [Header("piernas")]
     public int cooldown;
+    int actualcd;
 
     public float velocidadNormal;
     public float velocidadRalentizado;
     public int vida;
 
     int idplayer;
+
+    public GameObject[] piezasReset;
 
     PhotonView photonview;
     GameObject respawnPos;
@@ -29,8 +32,35 @@ public class Estados : MonoBehaviour
 
 
     #endregion
-    private void Start()
+
+    IEnumerator RespawnPlayerToPosition()
     {
+        vida = 200;
+        gameObject.GetComponent<PJ_movement>().CanTP = true;
+        GameObject spwanPosition = GameObject.Find("[spawn]");
+        int idplayer = PhotonNetwork.LocalPlayer.ActorNumber;       
+        transform.position = spwanPosition.transform.GetChild(idplayer-1).gameObject.transform.position;        
+        yield return new WaitForSeconds(0.01f);
+        gameObject.GetComponent<PJ_movement>().CanTP = false;
+        if (gameObject.name == ("1(Clone)") || gameObject.name == ("2(Clone)") || gameObject.name == ("3(Clone)")) GameObject.Find("[PUNTUACION]").GetComponent<PuntacionGameplay>().Score1Up();
+        if (gameObject.name == ("4(Clone)") || gameObject.name == ("5(Clone)") || gameObject.name == ("6(Clone)")) GameObject.Find("[PUNTUACION]").GetComponent<PuntacionGameplay>().Score2Up();
+
+        //resetcooldown
+        piezasReset[0].GetComponent<arm_gatling>().actualcd = 0;
+        piezasReset[1].GetComponent<arm_gatling>().actualcd = 0;
+        piezasReset[2].GetComponent<arm_zapper>().actualcd = 0;
+        piezasReset[3].GetComponent<arm_zapper>().actualcd = 0;
+        //piezasReset[4].GetComponent<arm_slower>().actualcd = 0;
+        //piezasReset[5].GetComponent<arm_slower>().actualcd = 0;
+        piezasReset[6].GetComponent<arm_sniper>().actualcd = 0;
+        piezasReset[7].GetComponent<arm_sniper>().actualcd = 0;
+        piezasReset[8].GetComponent<arm_flamethrower>().actualcd = 0;
+        piezasReset[9].GetComponent<arm_flamethrower>().actualcd = 0;
+        actualcd = 0;
+
+    }
+    private void Start()
+    {        
         photonview = GetComponent<PhotonView>();
         velocidad = velocidadNormal;
         idplayer = PhotonNetwork.LocalPlayer.ActorNumber;
@@ -42,10 +72,13 @@ public class Estados : MonoBehaviour
     {
         StartCoroutine(c_correr());
         canUseAbility = false;
-        for (int i = cooldown; i > 0; i--)
+        actualcd = cooldown;
+
+        while (actualcd > 0)
         {
-            GameObject.Find("txt_x").GetComponent<Text>().text = i.ToString();
+            GameObject.Find("txt_x").GetComponent<Text>().text = actualcd.ToString();
             yield return new WaitForSeconds(1f);
+            actualcd--;
         }
         canUseAbility = true;
         GameObject.Find("txt_x").GetComponent<Text>().text = "boost";
@@ -61,35 +94,25 @@ public class Estados : MonoBehaviour
     }
     private void Update()
     {
+        if (vida <= 0) StartCoroutine(RespawnPlayerToPosition());
+
         gameObject.GetComponent<PJ_movement>().playerSpeed = velocidad;
         if (!photonview.IsMine) return;
         if (Input.GetKeyDown(KeyCode.X) && canUseAbility == true)
         {
             StartCoroutine(correr());
         }
-        if (vida <= 0)
+        /*if (vida <= 0)
         {
             if (!photonview.IsMine) return;
 
             GameObject.Find("Camera").GetComponent<Camera>().targetDisplay = 0;
             GameObject.Find("Canvas").gameObject.SetActive(false);
-        }
-        if (Input.GetKeyDown(KeyCode.P)) StartCoroutine(TPtoSpawn());
-        if (Input.GetKeyDown(KeyCode.O)) StartCoroutine(TPtoTop());
+        }*/
+        //if (Input.GetKeyDown(KeyCode.O)) StartCoroutine(TPtoTop());
     }
 
-    IEnumerator TPtoSpawn()
-    {
-        gameObject.GetComponent<PJ_movement>().CanTP = true;
-        GameObject spwanPosition = GameObject.Find("[spawn]");
-        transform.position = spwanPosition.transform.GetChild(0).gameObject.transform.position;
-        vida = 200;
-        yield return new WaitForSeconds(0.01f);
-        gameObject.GetComponent<PJ_movement>().CanTP = false;
-
-        //reset cooldown
-
-    }
+    
     IEnumerator TPtoTop()
     {
         gameObject.GetComponent<PJ_movement>().CanTP = true;

@@ -11,8 +11,9 @@ public class TPMovement : MonoBehaviour
     public float gravityValue = -9.81f;
 
     public Transform target;
-    public bool bajando = false;
-    public bool jump = true;
+    [HideInInspector]public bool bajando = false;
+    [HideInInspector]public bool jump = true;
+    public bool tp = false;
 
     private Vector3 movimiento;
     private Vector3 gravedad;
@@ -59,6 +60,16 @@ public class TPMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+
+        if (tp)
+        {
+            controller.enabled = false;
+        }
+        else
+        {
+            controller.enabled = true;
+        }
+
         //Recoje el target que tiene la camara como hijo y siempre esta mirando hacia el
         var lookPos = target.position - transform.position;
         lookPos.y = 0;

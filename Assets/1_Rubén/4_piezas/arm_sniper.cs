@@ -11,6 +11,7 @@ public class arm_sniper : MonoBehaviour
     [Header("Propiedades")]
     public int bulletSpeed;
     public int cooldown;
+    public int actualcd;
     bool canUseAbility = true;
 
     PhotonView photonview;
@@ -48,11 +49,14 @@ public class arm_sniper : MonoBehaviour
     IEnumerator StartCooldown(string txt)
     {
         canUseAbility = false;
-        for (int i = cooldown; i > 0; i--)
+        actualcd = cooldown;
+
+        while (actualcd > 0)
         {
-            GameObject.Find(txt).GetComponent<Text>().text = i.ToString();
+            GameObject.Find(txt).GetComponent<Text>().text = actualcd.ToString();
             yield return new WaitForSeconds(1f);
-        }
+            actualcd--;
+        }       
         canUseAbility = true;
         GameObject.Find(txt).GetComponent<Text>().text = "sniper";
     }
@@ -68,4 +72,7 @@ public class arm_sniper : MonoBehaviour
         //bala.transform.LookAt(muzzleDirection.transform);
         bala.GetComponent<bala>().speed = bulletSpeed;
     }
+
+
+    //------------ ANIMACIONES
 }

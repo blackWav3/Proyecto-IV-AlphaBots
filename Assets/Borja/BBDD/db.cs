@@ -33,8 +33,6 @@ public class db : MonoBehaviour
     }
     public void Loggin(string name, string pass) // 1
     {
-        // http://localhost/
-        connectionInProcess = true;
         //Read data from ddbb
         string url = domain + "/Proyecto4/loggin.php?NAME=" + name + "&PASS=" + pass;
         WWWForm form = new WWWForm();
@@ -45,8 +43,6 @@ public class db : MonoBehaviour
 
     public void comprobarUsuarios(string name) // 1
     {
-        // http://localhost/
-        connectionInProcess = true;
         //Read data from ddbb
         string url = domain + "/Proyecto4/comprobarUsuario.php?NAME=" + name;
         WWWForm form = new WWWForm();
@@ -57,7 +53,6 @@ public class db : MonoBehaviour
 
     public void insertarUsuario(string name, string pass)
     {
-        connectionInProcess = true;
         //Read data from ddbb
         string url = domain + "/Proyecto4/insertarusuario.php?NAME=" + name + "&PASS=" + pass;
         WWWForm form = new WWWForm();
@@ -68,7 +63,6 @@ public class db : MonoBehaviour
 
     public void topPlayers() // 4
     {
-        connectionInProcess = true;
         //Read data from ddbb
         string url = domain + "/Proyecto4/topPlayers.php";
         WWWForm form = new WWWForm();
@@ -83,7 +77,6 @@ public class db : MonoBehaviour
     public string puerto;
 
     private string answerDB;
-    private bool connectionInProcess = false, connectionEnd;
     private int connectionType = 0;
 
     [Header("User Read")]
@@ -100,12 +93,6 @@ public class db : MonoBehaviour
         //connectionType = 0;
         string[] finalString = new string[0];
         // check for errors
-        if (www.isNetworkError || www.isHttpError)
-        {
-            Debug.Log("WWW Error: " + www.error);
-            connectionEnd = true;
-            yield break;
-        }
 
         userList.Clear();
         string JsonStringHP = www.downloadHandler.text;
@@ -160,23 +147,13 @@ public class db : MonoBehaviour
                 
             }
         }
-
-        connectionEnd = true;
     }
 
     private IEnumerator WaitForRequestCreate(UnityWebRequest www, int idConnectionType)
     {
         yield return www.SendWebRequest();
         // check for errors
-        if (www.isNetworkError || www.isHttpError)
-        {
-            Debug.Log("WWW Error: " + www.error);
-        }
-        else
-        {
-            //   listaArchivos = www.text.Split(';');
-            answerDB = www.downloadHandler.text;
-        }
+        answerDB = www.downloadHandler.text;
         //if we want to check both at the same time, we need to change the logic
         if (idConnectionType >= 0)
             connectionType = idConnectionType;
@@ -185,7 +162,5 @@ public class db : MonoBehaviour
         {
             canRegister = false;
         }
-
-        connectionEnd = true;
     }
 }
