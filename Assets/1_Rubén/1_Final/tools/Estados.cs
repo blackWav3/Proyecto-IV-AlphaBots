@@ -102,21 +102,14 @@ public class Estados : MonoBehaviour
         {
             StartCoroutine(correr());
         }
-        /*if (vida <= 0)
-        {
-            if (!photonview.IsMine) return;
-
-            GameObject.Find("Camera").GetComponent<Camera>().targetDisplay = 0;
-            GameObject.Find("Canvas").gameObject.SetActive(false);
-        }*/
-        //if (Input.GetKeyDown(KeyCode.O)) StartCoroutine(TPtoTop());
     }
 
     
-    IEnumerator TPtoTop()
+    
+    IEnumerator TptoPortal()
     {
         gameObject.GetComponent<PJ_movement>().CanTP = true;
-        GameObject spwanPosition = GameObject.Find("tpaqui");
+        GameObject spwanPosition = GameObject.Find("teleportfinaltarget");
         transform.position = spwanPosition.transform.position;
         yield return new WaitForSeconds(0.01f);
         gameObject.GetComponent<PJ_movement>().CanTP = false;
@@ -126,6 +119,8 @@ public class Estados : MonoBehaviour
     //-----------------------------------
     private void OnTriggerEnter(Collider other)
     {
+        // T E L E P O R T
+        if (other.gameObject.CompareTag("portal")) StartCoroutine(TptoPortal());
         // S L O W
         if (other.gameObject.CompareTag("Slower")) RalentizarActivado();
         // S T U N
