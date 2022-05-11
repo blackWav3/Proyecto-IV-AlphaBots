@@ -12,6 +12,7 @@ public class arm_flamethrower : MonoBehaviour
     public float fireRatio;
     public int bulletsPerBurst;
     public int cooldown;
+    public int actualcd;
     bool canUseAbility = true;
     PhotonView photonview;
     GameObject muzzleOrigin;
@@ -50,11 +51,14 @@ public class arm_flamethrower : MonoBehaviour
     IEnumerator StartCooldown(string txt)
     {
         canUseAbility = false;
-        for(int i = cooldown; i > 0; i--)
+        actualcd = cooldown;
+
+        while (actualcd > 0)
         {
-            GameObject.Find(txt).GetComponent<Text>().text = i.ToString();
+            GameObject.Find(txt).GetComponent<Text>().text = actualcd.ToString();
             yield return new WaitForSeconds(1f);
-        }
+            actualcd--;
+        }      
         canUseAbility = true;
         GameObject.Find(txt).GetComponent<Text>().text = "flamethrower";
     }
