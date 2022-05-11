@@ -3283,6 +3283,7 @@ GameObject:
   - component: {fileID: 224675474}
   - component: {fileID: 224675476}
   - component: {fileID: 224675475}
+  - component: {fileID: 224675478}
   - component: {fileID: 224675477}
   m_Layer: 0
   m_Name: Sparks_PS
@@ -3299,7 +3300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224675473}
   m_LocalRotation: {x: 0.18894227, y: -0.1329566, z: 0.70186853, w: 0.6737982}
-  m_LocalPosition: {x: -0.054, y: 0.795, z: 0.877}
+  m_LocalPosition: {x: -0.05, y: 0.82, z: 0.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1221198890}
@@ -8106,22 +8107,39 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!111 &224675477
-Animation:
+--- !u!95 &224675477
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224675473}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 6e2a81bf2aec9284885f0c4178a99bf1, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 6e2a81bf2aec9284885f0c4178a99bf1, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e612d289e69e84468d3bcbab7d4d810, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &224675478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224675473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2495c1e055fe1d41bee92a753308fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chispa1: {fileID: 224675476}
+  chispa2: {fileID: 640023119}
 --- !u!1 &226129703
 GameObject:
   m_ObjectHideFlags: 0
@@ -36398,6 +36416,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005925501}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1015686263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 83f63ed2bef8bcb49b203b2228a3b8c8, type: 3}
+  m_PrefabInstance: {fileID: 1589095779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1015686264
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015686263}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.71605, y: 0.87672424, z: 14.262772}
+  m_Center: {x: -0.66464996, y: -0.49973297, z: 0.36389923}
 --- !u!1 &1019738316 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 388019402679341759, guid: 94ebcdbc2dd9e004fbb632f67cdf8d7a, type: 3}
