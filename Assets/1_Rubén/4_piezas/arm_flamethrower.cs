@@ -80,6 +80,6 @@ public class arm_flamethrower : MonoBehaviour
         }
     }
 
+    //------------ ANIMACIONES
 
-    
 }

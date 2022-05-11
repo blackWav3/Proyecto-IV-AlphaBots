@@ -78,4 +78,6 @@ public class arm_gatling : MonoBehaviour
             yield return new WaitForSeconds(fireRatio);
         }        
     }
+
+    //------------ ANIMACIONES
 }

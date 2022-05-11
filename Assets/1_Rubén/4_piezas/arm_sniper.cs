@@ -72,4 +72,7 @@ public class arm_sniper : MonoBehaviour
         //bala.transform.LookAt(muzzleDirection.transform);
         bala.GetComponent<bala>().speed = bulletSpeed;
     }
+
+
+    //------------ ANIMACIONES
 }

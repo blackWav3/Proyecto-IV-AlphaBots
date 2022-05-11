@@ -71,4 +71,6 @@ public class arm_zapper : MonoBehaviour
         //bala.transform.LookAt(muzzleDirection.transform);
         bala.GetComponent<bala>().speed = bulletSpeed;
     }
+
+    //------------ ANIMACIONES
 }
