@@ -33,11 +33,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_36daffc892a44ee8864e61df828807d4: 0.5
-    - Vector1_489df0fb558045b5975a50181f14519a: 0.5
+    - Vector1_489df0fb558045b5975a50181f14519a: 0
     - Vector1_c70183165cdc47bb98c5a3b4be3ddeea: 0
     - Vector1_f2186464651d49adb572479a789f3d1f: 5
     - VoronoiAgitation_: 1
     - VoronoiPower_: 4
+    - WobbleAmount_: 0
+    - WoobleFrecuency_: 2
+    - WoobleHeight_: 0.05
+    - WoobleSpeed_: 0.5
     m_Colors:
     - BaseColor_: {r: 0.2086369, g: 1, b: 0, a: 1}
     - Vector2_68b2b27b8deb4c06a3a14ac6a9603c0b: {r: 0, g: 0.5, b: 0, a: 0}
