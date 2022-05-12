@@ -9842,6 +9842,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3395169558945029512}
     m_Modifications:
+    - target: {fileID: 1165953460054743033, guid: 58302f801ef18cb42a0ca3ab4d763d30, type: 3}
+      propertyPath: cooldown
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3128890282161454842, guid: 58302f801ef18cb42a0ca3ab4d763d30, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -9983,6 +9987,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3395169558933186084}
     m_Modifications:
+    - target: {fileID: 1165953460054743033, guid: 58302f801ef18cb42a0ca3ab4d763d30, type: 3}
+      propertyPath: cooldown
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3128890282161454842, guid: 58302f801ef18cb42a0ca3ab4d763d30, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -10070,6 +10078,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3395169558933186084}
     m_Modifications:
+    - target: {fileID: -3547479634252876383, guid: 7d51b76aea003604baa68d335fa0d3f1, type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3547479634252876383, guid: 7d51b76aea003604baa68d335fa0d3f1, type: 3}
+      propertyPath: bulletsPerBurst
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3128890282161454842, guid: 7d51b76aea003604baa68d335fa0d3f1, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -10157,6 +10173,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3395169558933186084}
     m_Modifications:
+    - target: {fileID: 3006065088568707989, guid: a8032c8fca7c8ed4baae46c7a86ca620, type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006065088568707989, guid: a8032c8fca7c8ed4baae46c7a86ca620, type: 3}
+      propertyPath: bulletsPerBurst
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3128890282161454842, guid: a8032c8fca7c8ed4baae46c7a86ca620, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -10248,6 +10272,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3395169558945029512}
     m_Modifications:
+    - target: {fileID: -3547479634252876383, guid: 7d51b76aea003604baa68d335fa0d3f1, type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3547479634252876383, guid: 7d51b76aea003604baa68d335fa0d3f1, type: 3}
+      propertyPath: bulletsPerBurst
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3128890282161454842, guid: 7d51b76aea003604baa68d335fa0d3f1, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -10327,6 +10359,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3395169558945029512}
     m_Modifications:
+    - target: {fileID: 3006065088568707989, guid: a8032c8fca7c8ed4baae46c7a86ca620, type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006065088568707989, guid: a8032c8fca7c8ed4baae46c7a86ca620, type: 3}
+      propertyPath: bulletsPerBurst
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3128890282161454842, guid: a8032c8fca7c8ed4baae46c7a86ca620, type: 3}
       propertyPath: m_RootOrder
       value: 0
