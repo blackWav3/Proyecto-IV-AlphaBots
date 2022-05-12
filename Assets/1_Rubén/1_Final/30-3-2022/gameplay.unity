@@ -34630,7 +34630,7 @@ MonoBehaviour:
   txt_score2: {fileID: 1481118709}
   txt_score1: {fileID: 1944138806}
   txt_time: {fileID: 918003068}
-  tiempoPartida: 300
+  tiempoPartida: 20
   posicionPERDEDOR1: {fileID: 1616160805}
   posicionPERDEDOR2: {fileID: 1580509326}
   posicionPERDEDOR3: {fileID: 1735782111}
