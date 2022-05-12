@@ -3894,13 +3894,13 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 9
-    SynchronizeType: 2
+    SynchronizeType: 1
     Name: Gatling
   - Type: 9
-    SynchronizeType: 2
+    SynchronizeType: 1
     Name: Laser
   - Type: 9
-    SynchronizeType: 2
+    SynchronizeType: 1
     Name: Flamethrower
   m_SynchronizeLayers:
   - SynchronizeType: 0

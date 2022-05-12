@@ -6575,13 +6575,13 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 9
-    SynchronizeType: 2
+    SynchronizeType: 1
     Name: Gatling
   - Type: 9
-    SynchronizeType: 2
+    SynchronizeType: 1
     Name: Laser
   - Type: 9
-    SynchronizeType: 2
+    SynchronizeType: 1
     Name: Flamethrower
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -9567,6 +9567,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3128890282161454844, guid: 128536946430a4e43a834f24cf859aa3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128890282161454844, guid: 128536946430a4e43a834f24cf859aa3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cf4591eca9fae0e4aa9fa3e72ae6c4aa, type: 2}
@@ -9639,6 +9643,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3128890282161454843, guid: 6cab408d54c74be4ba52fa5a0e24fdef, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128890282161454844, guid: 6cab408d54c74be4ba52fa5a0e24fdef, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3128890282161454844, guid: 6cab408d54c74be4ba52fa5a0e24fdef, type: 3}
@@ -9954,6 +9962,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3128890282161454843, guid: 58302f801ef18cb42a0ca3ab4d763d30, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128890282161454844, guid: 58302f801ef18cb42a0ca3ab4d763d30, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3128890282161454844, guid: 58302f801ef18cb42a0ca3ab4d763d30, type: 3}
@@ -10321,6 +10333,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3128890282161454844, guid: 7d51b76aea003604baa68d335fa0d3f1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128890282161454844, guid: 7d51b76aea003604baa68d335fa0d3f1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f5ea2a47237fdba49a201c4dc660ddcd, type: 2}
@@ -10401,6 +10417,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3128890282161454843, guid: a8032c8fca7c8ed4baae46c7a86ca620, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128890282161454844, guid: a8032c8fca7c8ed4baae46c7a86ca620, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3128890282161454844, guid: a8032c8fca7c8ed4baae46c7a86ca620, type: 3}
