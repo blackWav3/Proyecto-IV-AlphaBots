@@ -36,7 +36,6 @@ public class arm_gatling : MonoBehaviour
             {
                 Gatling();
                 StartCoroutine(StartCooldown("txt_q"));
-
             }
         }
         if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
