@@ -18,7 +18,7 @@ public class arm_flamethrower : MonoBehaviour
     GameObject muzzleOrigin;
     GameObject muzzleDirection;
 
-
+    ActivadorAnim animatorPlay;
 
     private void Start()
     {
@@ -26,6 +26,8 @@ public class arm_flamethrower : MonoBehaviour
         if (!photonview.IsMine) return;
         muzzleOrigin = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzle").gameObject;
         muzzleDirection = GameObject.Find("Main Camera").transform.GetChild(0).gameObject;
+
+        animatorPlay = GameObject.Find("Roboto").GetComponent<ActivadorAnim>();
     }
 
     private void Update()
@@ -37,6 +39,7 @@ public class arm_flamethrower : MonoBehaviour
             {
                 Flamethrower();
                 StartCoroutine(StartCooldown("txt_q"));
+                animatorPlay.Flamethrower();
             } 
         }
         if(transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
@@ -45,6 +48,7 @@ public class arm_flamethrower : MonoBehaviour
             {
                 Flamethrower();
                 StartCoroutine(StartCooldown("txt_e"));
+                animatorPlay.Flamethrower();
             }
         }        
     }

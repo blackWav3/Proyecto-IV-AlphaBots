@@ -19,12 +19,16 @@ public class arm_gatling : MonoBehaviour
     GameObject muzzleOrigin;
     GameObject muzzleDirection;
 
+    ActivadorAnim animatorPlay;
+
     private void Start()
     {        
         photonview = GetComponent<PhotonView>();
         if (!photonview.IsMine) return;
         muzzleOrigin = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzle").gameObject;
         muzzleDirection = GameObject.Find("Main Camera").transform.GetChild(0).gameObject;
+
+        animatorPlay = GameObject.Find("Roboto").GetComponent<ActivadorAnim>();
     }
 
     private void Update()
@@ -36,6 +40,7 @@ public class arm_gatling : MonoBehaviour
             {
                 Gatling();
                 StartCoroutine(StartCooldown("txt_q"));
+                animatorPlay.Gatling();
             }
         }
         if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
@@ -44,6 +49,7 @@ public class arm_gatling : MonoBehaviour
             {
                 Gatling();
                 StartCoroutine(StartCooldown("txt_e"));
+                animatorPlay.Gatling();
             }
         }
     }
