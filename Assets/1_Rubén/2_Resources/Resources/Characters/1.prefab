@@ -7701,7 +7701,7 @@ MonoBehaviour:
   cooldown: 20
   velocidadNormal: 7
   velocidadRalentizado: 0.5
-  vida: 500
+  vida: 200
   piezasReset:
   - {fileID: 6585917559805665485}
   - {fileID: 5284351628875159519}
