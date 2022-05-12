@@ -14,14 +14,14 @@ public class PlataformaPared : MonoBehaviour
 
     private IEnumerator Salir()
     {
-        int random = Random.Range(5, 15);
+        int random = 10;
         yield return new WaitForSeconds(random);
         PlataformaParedAnim.Play("Salir");
     }
 
     private IEnumerator Entrar()
     {
-        int random = Random.Range(5, 20);
+        int random = 15;
         yield return new WaitForSeconds(random);
         PlataformaParedAnim.Play("Entrar");
     }
