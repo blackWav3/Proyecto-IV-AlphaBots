@@ -40,6 +40,7 @@ public class arm_gatling : MonoBehaviour
             {
                 Gatling();
                 StartCoroutine(StartCooldown("txt_q"));
+                animatorPlay.Gatling();
             }
         }
         if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
@@ -48,6 +49,7 @@ public class arm_gatling : MonoBehaviour
             {
                 Gatling();
                 StartCoroutine(StartCooldown("txt_e"));
+                animatorPlay.Gatling();
             }
         }
     }
@@ -80,7 +82,6 @@ public class arm_gatling : MonoBehaviour
             bala.GetComponent<bala>().speed = bulletSpeed;
             yield return new WaitForSeconds(fireRatio);
         }
-        animatorPlay.Gatling();
     }
 
     //------------ ANIMACIONES
