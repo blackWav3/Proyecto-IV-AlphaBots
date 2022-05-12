@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ActivadorAnim : MonoBehaviour
 {
@@ -8,8 +10,16 @@ public class ActivadorAnim : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-    public void Attack()
+    public void Gatling()
     {
-        anim.SetTrigger("Attack");
+        anim.SetTrigger("Gatling");
+    }
+    public void Laser()
+    {
+        anim.SetTrigger("Laser");
+    }
+    public void Flamethrower()
+    {
+        anim.SetTrigger("Flamethrower");
     }
 }
