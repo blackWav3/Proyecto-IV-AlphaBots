@@ -16,6 +16,7 @@ public class arm_zapper : MonoBehaviour
     GameObject muzzleOrigin;
     GameObject muzzleDirection;
 
+    public GameObject roboto;
     ActivadorAnim animatorPlay;
 
     private void Start()
@@ -25,7 +26,7 @@ public class arm_zapper : MonoBehaviour
         muzzleOrigin = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzle").gameObject;
         muzzleDirection = GameObject.Find("Main Camera").transform.GetChild(0).gameObject;
 
-        animatorPlay = GameObject.Find("Roboto").GetComponent<ActivadorAnim>();
+        animatorPlay = roboto.GetComponent<ActivadorAnim>();
     }
 
     private void Update()

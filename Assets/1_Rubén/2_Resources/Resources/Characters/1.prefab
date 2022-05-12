@@ -9514,6 +9514,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3395169558945029512}
     m_Modifications:
+    - target: {fileID: 2300523014954793657, guid: 128536946430a4e43a834f24cf859aa3, type: 3}
+      propertyPath: roboto
+      value: 
+      objectReference: {fileID: 4123924714646855807}
     - target: {fileID: 3128890282161454842, guid: 128536946430a4e43a834f24cf859aa3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -9653,6 +9657,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 50368925973ac42438794d592815bb24, type: 2}
+    - target: {fileID: 6936636670712797338, guid: 6cab408d54c74be4ba52fa5a0e24fdef, type: 3}
+      propertyPath: roboto
+      value: 
+      objectReference: {fileID: 4123924714646855807}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cab408d54c74be4ba52fa5a0e24fdef, type: 3}
 --- !u!4 &1058933505161181688 stripped
@@ -9736,6 +9744,10 @@ PrefabInstance:
       propertyPath: ObservedComponents.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6936636670712797338, guid: 6cab408d54c74be4ba52fa5a0e24fdef, type: 3}
+      propertyPath: roboto
+      value: 
+      objectReference: {fileID: 4123924714646855807}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cab408d54c74be4ba52fa5a0e24fdef, type: 3}
 --- !u!4 &2094825364489339502 stripped
@@ -9755,6 +9767,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3395169558933186084}
     m_Modifications:
+    - target: {fileID: 2300523014954793657, guid: 128536946430a4e43a834f24cf859aa3, type: 3}
+      propertyPath: roboto
+      value: 
+      objectReference: {fileID: 4123924714646855807}
     - target: {fileID: 3128890282161454842, guid: 128536946430a4e43a834f24cf859aa3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -9842,6 +9858,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3395169558945029512}
     m_Modifications:
+    - target: {fileID: 1165953460054743033, guid: 58302f801ef18cb42a0ca3ab4d763d30, type: 3}
+      propertyPath: roboto
+      value: 
+      objectReference: {fileID: 4123924714646855807}
     - target: {fileID: 1165953460054743033, guid: 58302f801ef18cb42a0ca3ab4d763d30, type: 3}
       propertyPath: cooldown
       value: 4
@@ -9988,6 +10008,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 3395169558933186084}
     m_Modifications:
     - target: {fileID: 1165953460054743033, guid: 58302f801ef18cb42a0ca3ab4d763d30, type: 3}
+      propertyPath: roboto
+      value: 
+      objectReference: {fileID: 4123924714646855807}
+    - target: {fileID: 1165953460054743033, guid: 58302f801ef18cb42a0ca3ab4d763d30, type: 3}
       propertyPath: cooldown
       value: 4
       objectReference: {fileID: 0}
@@ -10078,6 +10102,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3395169558933186084}
     m_Modifications:
+    - target: {fileID: -3547479634252876383, guid: 7d51b76aea003604baa68d335fa0d3f1, type: 3}
+      propertyPath: roboto
+      value: 
+      objectReference: {fileID: 4123924714646855807}
     - target: {fileID: -3547479634252876383, guid: 7d51b76aea003604baa68d335fa0d3f1, type: 3}
       propertyPath: cooldown
       value: 2
@@ -10173,6 +10201,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3395169558933186084}
     m_Modifications:
+    - target: {fileID: 3006065088568707989, guid: a8032c8fca7c8ed4baae46c7a86ca620, type: 3}
+      propertyPath: roboto
+      value: 
+      objectReference: {fileID: 4123924714646855807}
     - target: {fileID: 3006065088568707989, guid: a8032c8fca7c8ed4baae46c7a86ca620, type: 3}
       propertyPath: cooldown
       value: 2
@@ -10273,6 +10305,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 3395169558945029512}
     m_Modifications:
     - target: {fileID: -3547479634252876383, guid: 7d51b76aea003604baa68d335fa0d3f1, type: 3}
+      propertyPath: roboto
+      value: 
+      objectReference: {fileID: 4123924714646855807}
+    - target: {fileID: -3547479634252876383, guid: 7d51b76aea003604baa68d335fa0d3f1, type: 3}
       propertyPath: cooldown
       value: 2
       objectReference: {fileID: 0}
@@ -10359,6 +10395,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3395169558945029512}
     m_Modifications:
+    - target: {fileID: 3006065088568707989, guid: a8032c8fca7c8ed4baae46c7a86ca620, type: 3}
+      propertyPath: roboto
+      value: 
+      objectReference: {fileID: 4123924714646855807}
     - target: {fileID: 3006065088568707989, guid: a8032c8fca7c8ed4baae46c7a86ca620, type: 3}
       propertyPath: cooldown
       value: 2
