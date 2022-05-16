@@ -17,6 +17,8 @@ public class arm_sniper : MonoBehaviour
     PhotonView photonview;
     GameObject muzzleOrigin;
     GameObject muzzleDirection;
+    GameObject muzzleIzq;
+    GameObject muzzleDrch;
 
     public GameObject roboto;
     ActivadorAnim animatorPlay;
@@ -25,7 +27,8 @@ public class arm_sniper : MonoBehaviour
     {
         photonview = GetComponent<PhotonView>();
         if (!photonview.IsMine) return;
-        muzzleOrigin = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzle").gameObject;
+        muzzleIzq = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzleIzq").gameObject;
+        muzzleDrch = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzleDrch").gameObject;
         muzzleDirection = GameObject.Find("Main Camera").transform.GetChild(0).gameObject;
 
         animatorPlay = roboto.GetComponent<ActivadorAnim>();
@@ -38,6 +41,7 @@ public class arm_sniper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) && canUseAbility == true)
             {
+                muzzleOrigin = muzzleIzq;
                 Sniper();
                 StartCoroutine(StartCooldown("txt_q"));
                 StartCoroutine(animatorPlay.Laser());
@@ -47,9 +51,9 @@ public class arm_sniper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse1) && canUseAbility == true)
             {
+                muzzleOrigin = muzzleDrch;
                 Sniper();
                 StartCoroutine(StartCooldown("txt_e"));
-                StartCoroutine(animatorPlay.Laser());
             }
         }
     }

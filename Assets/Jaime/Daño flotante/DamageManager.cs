@@ -18,8 +18,21 @@ public class DamageManager : MonoBehaviour
     {
         if (other.gameObject.tag=="Player")
         {
-            Debug.Log("colision");
-            mostrarDañoRealizado(other.gameObject.transform.Find("DañoVolador"));
+            if (this.gameObject.name == GameObject.Find("4(Clone)").name || this.gameObject.name == GameObject.Find("5(Clone)").name || this.gameObject.name == GameObject.Find("6(Clone)").name)
+            {
+                if (other.gameObject.name == GameObject.Find("1(Clone)").name || other.gameObject.name == GameObject.Find("2(Clone)").name || other.gameObject.name == GameObject.Find("3(Clone)").name)
+                {
+                    mostrarDañoRealizado(other.gameObject.transform.Find("DañoVolador"));
+                }
+            }
+            else if (this.gameObject.name == GameObject.Find("1(Clone)").name || this.gameObject.name == GameObject.Find("2(Clone)").name || this.gameObject.name == GameObject.Find("3(Clone)").name)
+            {
+                if (other.gameObject.name == GameObject.Find("4(Clone)").name || other.gameObject.name == GameObject.Find("5(Clone)").name || other.gameObject.name == GameObject.Find("6(Clone)").name)
+                {
+                    mostrarDañoRealizado(other.gameObject.transform.Find("DañoVolador"));
+                }
+            }
+
         }
     }
 }

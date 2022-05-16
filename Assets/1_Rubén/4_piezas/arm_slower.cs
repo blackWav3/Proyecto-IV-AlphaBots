@@ -12,6 +12,8 @@ public class arm_slower : MonoBehaviour
     PhotonView photonview;
     GameObject muzzleOrigin;
     GameObject muzzleDirection;
+    GameObject muzzleIzq;
+    GameObject muzzleDrch;
 
     public GameObject roboto;
     ActivadorAnim animatorPlay;
@@ -20,7 +22,8 @@ public class arm_slower : MonoBehaviour
     {
         photonview = GetComponent<PhotonView>();
         if (!photonview.IsMine) return;
-        muzzleOrigin = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzle").gameObject;
+        muzzleIzq = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzleIzq").gameObject;
+        muzzleDrch = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzleDrch").gameObject;
         muzzleDirection = GameObject.Find("Main Camera").transform.GetChild(0).gameObject;
 
         animatorPlay = roboto.GetComponent<ActivadorAnim>();
@@ -33,6 +36,7 @@ public class arm_slower : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+                muzzleOrigin = muzzleIzq;
                 Slower();
                 StartCoroutine(animatorPlay.Laser());
             }
@@ -41,8 +45,8 @@ public class arm_slower : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
+                muzzleOrigin = muzzleDrch;
                 Slower();
-                StartCoroutine(animatorPlay.Laser());
             }
         }
     }
