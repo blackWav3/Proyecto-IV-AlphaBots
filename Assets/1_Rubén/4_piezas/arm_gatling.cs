@@ -81,6 +81,7 @@ public class arm_gatling : MonoBehaviour
             GameObject bala = PhotonNetwork.Instantiate("Proyectiles/gatling_proyectile", muzzleOrigin.transform.position, muzzleDirection.transform.rotation);
             //bala.transform.LookAt(muzzleDirection.transform);
             bala.GetComponent<bala>().speed = bulletSpeed;
+            bala.GetComponent<bala>().parentName = transform.parent.parent.name;
             yield return new WaitForSeconds(fireRatio);
         }
     }
