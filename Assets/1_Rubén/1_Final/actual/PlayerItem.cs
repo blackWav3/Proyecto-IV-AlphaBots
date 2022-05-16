@@ -9,6 +9,7 @@ public class PlayerItem : MonoBehaviourPun
 {
     public Text playerName;
     public Image icon;
+    public Image border;
 
     private void Start()
     {

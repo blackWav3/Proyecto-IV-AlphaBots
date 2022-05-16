@@ -2422,6 +2422,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9e2eea983e2e18043b3ac8937dbd1977, type: 3}
   - {fileID: 21300000, guid: ef7cf11f6e0b5394f8673ea39640b094, type: 3}
   - {fileID: 21300000, guid: 71e52735f41978b478d72a3f66d17eee, type: 3}
+  marcos:
+  - {fileID: 21300000, guid: 4e105942fb15a0e47a62c0a3ac75b8ef, type: 3}
+  - {fileID: 21300000, guid: dbe4c5d983d00e14998eb727080f9520, type: 3}
   playerItemsList: []
   playerItemPrefab: {fileID: 7214498083568888431, guid: f4583e362179744418d625074da85696, type: 3}
   playerItemParent: {fileID: 205882183}
