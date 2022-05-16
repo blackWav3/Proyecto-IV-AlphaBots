@@ -93,8 +93,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
        }
         foreach (Photon.Realtime.Player player in PhotonNetwork.PlayerList){
             PlayerItem newPlayerItem = Instantiate(playerItemPrefab, playerItemParent);
-            
             playerItemsList.Add(newPlayerItem);
+            for (int i = 0; i < playerItemsList.Count; i++)
+            {
+                playerItemsList[i].playerName.text = PhotonNetwork.PlayerList[i].NickName;
+
+            }
         }
 
    }
