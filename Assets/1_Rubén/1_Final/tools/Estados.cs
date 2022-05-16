@@ -128,9 +128,25 @@ public class Estados : MonoBehaviour
         {
             StopCoroutine(Inhabilitar(0));
             StartCoroutine(Inhabilitar(3f));
-        } 
+        }
         // G A T L I N G
-        if (other.gameObject.CompareTag("Gatling")) Daño(8);
+        if (other.gameObject.CompareTag("Gatling"))
+        {
+            if (this.gameObject.name == GameObject.Find("4(Clone)").name || this.gameObject.name == GameObject.Find("5(Clone)").name || this.gameObject.name == GameObject.Find("6(Clone)").name)
+            {
+                if (other.gameObject.name == GameObject.Find("1(Clone)").name || other.gameObject.name == GameObject.Find("2(Clone)").name || other.gameObject.name == GameObject.Find("3(Clone)").name)
+                {
+                    Daño(8);
+                }
+            }
+            else if (this.gameObject.name == GameObject.Find("1(Clone)").name || this.gameObject.name == GameObject.Find("2(Clone)").name || this.gameObject.name == GameObject.Find("3(Clone)").name)
+            {
+                if (other.gameObject.name == GameObject.Find("4(Clone)").name || other.gameObject.name == GameObject.Find("5(Clone)").name || other.gameObject.name == GameObject.Find("6(Clone)").name)
+                {
+                    Daño(8);
+                }
+            }
+        }
         // F L A M E T H R O W E R
         if (other.gameObject.CompareTag("Flamethrower"))
         {
