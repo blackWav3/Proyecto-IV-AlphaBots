@@ -8,6 +8,7 @@ using Photon.Realtime;
 public class PlayerItem : MonoBehaviourPun
 {
     public Text playerName;
+    public Image icon;
 
     private void Start()
     {
