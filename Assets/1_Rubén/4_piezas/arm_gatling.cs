@@ -41,7 +41,7 @@ public class arm_gatling : MonoBehaviour
             {
                 Gatling();
                 StartCoroutine(StartCooldown("txt_q"));
-                animatorPlay.Gatling();
+                StartCoroutine(animatorPlay.Gatling());
             }
         }
         if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
@@ -50,7 +50,7 @@ public class arm_gatling : MonoBehaviour
             {
                 Gatling();
                 StartCoroutine(StartCooldown("txt_e"));
-                animatorPlay.Gatling();
+                StartCoroutine(animatorPlay.Gatling());
             }
         }
     }

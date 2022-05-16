@@ -5864,7 +5864,7 @@ MonoBehaviour:
     SynchronizeType: 1
     Name: Flamethrower
   m_SynchronizeLayers:
-  - SynchronizeType: 0
+  - SynchronizeType: 2
     LayerIndex: 0
 --- !u!1 &5648322973176837418
 GameObject:

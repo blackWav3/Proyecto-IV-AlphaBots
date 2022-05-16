@@ -10,16 +10,22 @@ public class ActivadorAnim : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-    public void Gatling()
+    public IEnumerator Gatling()
     {
-        anim.SetTrigger("Gatling");
+        anim.SetBool("Gatling", true);
+        yield return null;
+        anim.SetBool("Gatling", false);
     }
-    public void Laser()
+    public IEnumerator Laser()
     {
-        anim.SetTrigger("Laser");
+        anim.SetBool("Laser", true);
+        yield return null;
+        anim.SetBool("Laser", false);
     }
-    public void Flamethrower()
+    public IEnumerator Flamethrower()
     {
-        anim.SetTrigger("Flamethrower");
+        anim.SetBool("Flamethrower", true);
+        yield return null;
+        anim.SetBool("Flamethrower", false);
     }
 }

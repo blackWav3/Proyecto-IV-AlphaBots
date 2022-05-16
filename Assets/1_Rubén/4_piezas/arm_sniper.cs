@@ -40,7 +40,7 @@ public class arm_sniper : MonoBehaviour
             {
                 Sniper();
                 StartCoroutine(StartCooldown("txt_q"));
-                animatorPlay.Laser();
+                StartCoroutine(animatorPlay.Laser());
             } 
         }
         if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
@@ -49,7 +49,7 @@ public class arm_sniper : MonoBehaviour
             {
                 Sniper();
                 StartCoroutine(StartCooldown("txt_e"));
-                animatorPlay.Laser();
+                StartCoroutine(animatorPlay.Laser());
             }
         }
     }

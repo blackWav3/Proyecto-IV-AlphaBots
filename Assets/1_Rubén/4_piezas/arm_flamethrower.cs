@@ -40,7 +40,7 @@ public class arm_flamethrower : MonoBehaviour
             {
                 Flamethrower();
                 StartCoroutine(StartCooldown("txt_q"));
-                animatorPlay.Flamethrower();
+                StartCoroutine(animatorPlay.Flamethrower());
             } 
         }
         if(transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
@@ -49,7 +49,7 @@ public class arm_flamethrower : MonoBehaviour
             {
                 Flamethrower();
                 StartCoroutine(StartCooldown("txt_e"));
-                animatorPlay.Flamethrower();
+                StartCoroutine(animatorPlay.Flamethrower());
             }
         }        
     }

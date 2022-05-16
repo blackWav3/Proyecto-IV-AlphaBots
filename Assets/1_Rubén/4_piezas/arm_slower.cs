@@ -34,7 +34,7 @@ public class arm_slower : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Slower();
-                animatorPlay.Laser();
+                StartCoroutine(animatorPlay.Laser());
             }
         }
         if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct)
@@ -42,7 +42,7 @@ public class arm_slower : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 Slower();
-                animatorPlay.Laser();
+                StartCoroutine(animatorPlay.Laser());
             }
         }
     }
