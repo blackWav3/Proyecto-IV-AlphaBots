@@ -12,11 +12,8 @@ public class PlayerItem : MonoBehaviourPun
 
     private void Start()
     {
-        if (photonView.IsMine) 
-        {  
-            playerName02.text = PhotonNetwork.LocalPlayer.NickName;
-            playerName.text = PhotonNetwork.LocalPlayer.NickName;
-        }
+        playerName02.text = PhotonNetwork.LocalPlayer.NickName;
+        playerName.text = PhotonNetwork.LocalPlayer.NickName;
 
 
         SetName();
