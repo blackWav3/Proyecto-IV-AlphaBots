@@ -13836,6 +13836,7 @@ GameObject:
   m_Component:
   - component: {fileID: 565624273}
   - component: {fileID: 565624272}
+  - component: {fileID: 565624274}
   m_Layer: 0
   m_Name: placeholder(NO BORRAR)
   m_TagString: Untagged
@@ -13877,6 +13878,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &565624274
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565624271}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &566135037
 GameObject:
   m_ObjectHideFlags: 0
@@ -65695,7 +65714,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plataformaRotatoriaAnim: {fileID: 1601970039}
-  PlataformaRotatoriaSpeed: 1
   random: 0
 --- !u!114 &919132147991799834
 MonoBehaviour:
