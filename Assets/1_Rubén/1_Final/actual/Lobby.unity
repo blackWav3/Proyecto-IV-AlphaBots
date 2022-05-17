@@ -2415,16 +2415,6 @@ MonoBehaviour:
   roomItemPrefab: {fileID: 6061876217889033512, guid: db84863e603fbb54ea9892fb05621268, type: 3}
   contentObject: {fileID: 1785096212}
   timeBetweenUpdates: 1.5
-  iconos:
-  - {fileID: 21300000, guid: 4b573952114bd1c429d63ca7b48d74d3, type: 3}
-  - {fileID: 21300000, guid: e05e4c171e596f446967402120e4a9e6, type: 3}
-  - {fileID: 21300000, guid: f60d6980dc28b2248b0c2160cd6ac58b, type: 3}
-  - {fileID: 21300000, guid: 9e2eea983e2e18043b3ac8937dbd1977, type: 3}
-  - {fileID: 21300000, guid: ef7cf11f6e0b5394f8673ea39640b094, type: 3}
-  - {fileID: 21300000, guid: 71e52735f41978b478d72a3f66d17eee, type: 3}
-  marcos:
-  - {fileID: 21300000, guid: 4e105942fb15a0e47a62c0a3ac75b8ef, type: 3}
-  - {fileID: 21300000, guid: dbe4c5d983d00e14998eb727080f9520, type: 3}
   playerItemsList: []
   playerItemPrefab: {fileID: 7214498083568888431, guid: f4583e362179744418d625074da85696, type: 3}
   playerItemParent: {fileID: 205882183}

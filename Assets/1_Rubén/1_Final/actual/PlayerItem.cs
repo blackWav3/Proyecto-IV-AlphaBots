@@ -8,13 +8,13 @@ using Photon.Realtime;
 public class PlayerItem : MonoBehaviourPun
 {
     public Text playerName;
-    public Image icon;
-    public Image border;
+    public Text playerName02;
 
     private void Start()
     {
         if (photonView.IsMine) 
         {  
+            playerName02.text = PhotonNetwork.LocalPlayer.NickName;
             playerName.text = PhotonNetwork.LocalPlayer.NickName;
         }
 
@@ -30,6 +30,7 @@ public class PlayerItem : MonoBehaviourPun
 
     private void SetName()
     {
+        playerName02.text = photonView.Owner.NickName;
         playerName.text = photonView.Owner.NickName;
     }
 }

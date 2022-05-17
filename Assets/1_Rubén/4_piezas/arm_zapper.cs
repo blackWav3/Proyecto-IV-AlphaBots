@@ -15,21 +15,13 @@ public class arm_zapper : MonoBehaviour
     PhotonView photonview;
     GameObject muzzleOrigin;
     GameObject muzzleDirection;
-    GameObject muzzleIzq;
-    GameObject muzzleDrch;
-
-    public GameObject roboto;
-    ActivadorAnim animatorPlay;
 
     private void Start()
     {
         photonview = GetComponent<PhotonView>();
         if (!photonview.IsMine) return;
-        muzzleIzq = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzleIzq").gameObject;
-        muzzleDrch = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzleDrch").gameObject;
+        muzzleOrigin = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzle").gameObject;
         muzzleDirection = GameObject.Find("Main Camera").transform.GetChild(0).gameObject;
-
-        animatorPlay = roboto.GetComponent<ActivadorAnim>();
     }
 
     private void Update()
@@ -39,17 +31,14 @@ public class arm_zapper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) && canUseAbility == true)
             {
-                muzzleOrigin = muzzleIzq;
                 Zapper();
                 StartCoroutine(StartCooldown("txt_q"));
-                StartCoroutine(animatorPlay.Laser());
             }
         }
         if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
         {
             if (Input.GetKeyDown(KeyCode.Mouse1) && canUseAbility == true)
             {
-                muzzleOrigin = muzzleDrch;
                 Zapper();
                 StartCoroutine(StartCooldown("txt_e"));
             }

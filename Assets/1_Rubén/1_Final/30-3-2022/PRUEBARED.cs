@@ -41,14 +41,9 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
     {
         info2 = "Al activarse aumenta la velocidad de movimiento durante unos segundos";
         playerID = PhotonNetwork.LocalPlayer.ActorNumber;
-
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
         StartCoroutine(empezarpartida());
         canvasPause.SetActive(false);
         pauseAct = false;
-
-
     }
     IEnumerator empezarpartida()
     {
@@ -62,8 +57,6 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
         }
 
         canvas_match.SetActive(true);
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
         SetUpPlayerAndCamera();
     }
 

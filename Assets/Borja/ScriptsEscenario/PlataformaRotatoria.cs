@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlataformaRotatoria : MonoBehaviour
 {
     public Animator plataformaRotatoriaAnim;
-    public int PlataformaRotatoriaSpeed = 2;
+    public int PlataformaRotatoriaSpeed = 1;
     public int random;
 
     public void Awake()
@@ -16,8 +16,7 @@ public class PlataformaRotatoria : MonoBehaviour
     private void GetNewRandom()
     {
         random = Random.Range(1, 7);
-        //StartCoroutine(changeSpeed());
-        plataformaRotatoriaAnim.speed = PlataformaRotatoriaSpeed;
+        StartCoroutine(changeSpeed());
     }
 
     private IEnumerator changeSpeed()

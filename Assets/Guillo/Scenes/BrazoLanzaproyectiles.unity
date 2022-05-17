@@ -922,7 +922,6 @@ MonoBehaviour:
   velocidadNormal: 0
   velocidadRalentizado: 0
   vida: 20
-  piezasReset: []
 --- !u!143 &1376899742
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1626,7 +1625,6 @@ MonoBehaviour:
   target: {fileID: 9177416288858170792}
   bajando: 0
   jump: 1
-  tp: 0
 --- !u!114 &9177416288844815376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1787,7 +1785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9177416289217284563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -13.97}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9177416289586461880}
