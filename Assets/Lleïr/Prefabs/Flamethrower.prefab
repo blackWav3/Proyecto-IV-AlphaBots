@@ -74,34 +74,34 @@ VisualEffect:
       - m_Value:
           serializedVersion: 2
           key0: {r: 0.7169812, g: 0.2213667, b: 0, a: 0}
-          key1: {r: 0.7176471, g: 0, b: 0.0067550438, a: 1}
-          key2: {r: 0, g: 0, b: 0, a: 0.8}
+          key1: {r: 0.7169812, g: 0.2213667, b: 0, a: 1}
+          key2: {r: 6.807843, g: 1.3490196, b: 0, a: 0.8}
           key3: {r: 0, g: 0, b: 0, a: 0}
-          key4: {r: 0, g: 0, b: 0, a: 0}
-          key5: {r: 0, g: 0, b: 0, a: 0}
-          key6: {r: 0, g: 0, b: 0, a: 0}
+          key4: {r: 0, g: 0, b: 0, a: 0.040836453}
+          key5: {r: 0, g: 0, b: 0, a: 0.040836453}
+          key6: {r: 0, g: 0, b: 0, a: 0.040836453}
           key7: {r: 0, g: 0, b: 0, a: 0}
-          ctime0: 18311
-          ctime1: 29298
-          ctime2: 0
+          ctime0: 7132
+          ctime1: 12722
+          ctime2: 18119
           ctime3: 0
           ctime4: 0
           ctime5: 0
           ctime6: 0
           ctime7: 0
           atime0: 0
-          atime1: 5204
-          atime2: 52428
-          atime3: 65535
-          atime4: 0
-          atime5: 0
-          atime6: 0
+          atime1: 10601
+          atime2: 18890
+          atime3: 32575
+          atime4: 36623
+          atime5: 36623
+          atime6: 39514
           atime7: 0
           m_Mode: 0
-          m_NumColorKeys: 2
+          m_NumColorKeys: 3
           m_NumAlphaKeys: 4
         m_Name: SmokeGradient
-        m_Overridden: 0
+        m_Overridden: 1
     m_NamedObject:
       m_Array: []
     m_Bool:

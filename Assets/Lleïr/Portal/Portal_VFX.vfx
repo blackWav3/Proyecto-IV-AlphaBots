@@ -288,7 +288,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.7358490228652954,"g":0.0,"b":0.7358490228652954,"a":1.0}'
+      m_SerializableObject: '{"r":0.10196078568696976,"g":1.458823561668396,"b":1.090196132659912,"a":1.0}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -2589,7 +2589,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.7358490228652954,"g":0.0,"b":0.7358490228652954,"a":1.0}'
+      m_SerializableObject: '{"r":0.10196078568696976,"g":1.458823561668396,"b":1.090196132659912,"a":1.0}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -11062,7 +11062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
-  m_Parent: {fileID: 0}
+  m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
@@ -11185,7 +11185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
-  m_Parent: {fileID: 0}
+  m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
@@ -12136,7 +12136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
-  m_Parent: {fileID: 0}
+  m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
@@ -12259,7 +12259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
-  m_Parent: {fileID: 0}
+  m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
@@ -12442,7 +12442,7 @@ MonoBehaviour:
   m_InputSlots: []
   m_OutputSlots: []
   m_Disabled: 0
-  mode: 0
+  mode: 1
   axes: 4
 --- !u!114 &8926484042661615170
 MonoBehaviour:
@@ -12995,7 +12995,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":3.4415907859802248,"g":0.0,"b":1.6577295064926148,"a":0.9647058844566345}'
+      m_SerializableObject: '{"r":1.0666667222976685,"g":11.670588493347168,"b":8.721569061279297,"a":1.0}'
     m_Space: 2147483647
   m_Property:
     name: Color_
