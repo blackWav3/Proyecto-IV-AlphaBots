@@ -35,8 +35,8 @@ public class PJ_movement : MonoBehaviour
         controller = gameObject.GetComponent<CharacterController>();
 
         //Bloquea el cursor mientras juegas
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
     private void Update()
     {

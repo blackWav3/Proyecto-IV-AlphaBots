@@ -18,13 +18,21 @@ public class arm_gatling : MonoBehaviour
     PhotonView photonview;
     GameObject muzzleOrigin;
     GameObject muzzleDirection;
+    GameObject muzzleIzq;
+    GameObject muzzleDrch;
+
+    public GameObject roboto;
+    ActivadorAnim animatorPlay;
 
     private void Start()
     {        
         photonview = GetComponent<PhotonView>();
         if (!photonview.IsMine) return;
-        muzzleOrigin = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzle").gameObject;
+        muzzleIzq = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzleIzq").gameObject;
+        muzzleDrch = GameObject.Find(PhotonNetwork.LocalPlayer.ActorNumber + "(Clone)").gameObject.transform.Find("muzzleDrch").gameObject;
         muzzleDirection = GameObject.Find("Main Camera").transform.GetChild(0).gameObject;
+
+        animatorPlay = roboto.GetComponent<ActivadorAnim>();
     }
 
     private void Update()
@@ -34,15 +42,17 @@ public class arm_gatling : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) && canUseAbility == true)
             {
+                muzzleOrigin = muzzleIzq;
                 Gatling();
                 StartCoroutine(StartCooldown("txt_q"));
-
+                StartCoroutine(animatorPlay.Gatling());
             }
         }
         if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
         {
             if (Input.GetKeyDown(KeyCode.Mouse1) && canUseAbility == true)
             {
+                muzzleOrigin = muzzleDrch;
                 Gatling();
                 StartCoroutine(StartCooldown("txt_e"));
             }
@@ -75,8 +85,9 @@ public class arm_gatling : MonoBehaviour
             GameObject bala = PhotonNetwork.Instantiate("Proyectiles/gatling_proyectile", muzzleOrigin.transform.position, muzzleDirection.transform.rotation);
             //bala.transform.LookAt(muzzleDirection.transform);
             bala.GetComponent<bala>().speed = bulletSpeed;
+            bala.GetComponent<bala>().parentName = transform.parent.parent.name;
             yield return new WaitForSeconds(fireRatio);
-        }        
+        }
     }
 
     //------------ ANIMACIONES

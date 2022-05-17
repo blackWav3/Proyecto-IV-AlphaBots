@@ -18,6 +18,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public float timeBetweenUpdates = 1.5f;
     float nextUpdateTime;
 
+    public Sprite[] iconos = new Sprite[6]; 
+    public Sprite[] marcos = new Sprite[2]; 
+
     public List<PlayerItem> playerItemsList = new List<PlayerItem>();
     public PlayerItem playerItemPrefab;
     public Transform playerItemParent;
@@ -93,8 +96,20 @@ public class LobbyManager : MonoBehaviourPunCallbacks
        }
         foreach (Photon.Realtime.Player player in PhotonNetwork.PlayerList){
             PlayerItem newPlayerItem = Instantiate(playerItemPrefab, playerItemParent);
-            
+            newPlayerItem.icon.sprite = iconos[playerItemsList.Count];
             playerItemsList.Add(newPlayerItem);
+            for (int i = 0; i < playerItemsList.Count; i++)
+            {
+                playerItemsList[i].playerName.text = PhotonNetwork.PlayerList[i].NickName;
+            }
+            if (playerItemsList.Count > 3)
+            {
+                newPlayerItem.border.sprite = marcos[1];
+            }
+            else
+            {
+                newPlayerItem.border.sprite = marcos[0];
+            }
         }
 
    }
