@@ -29306,7 +29306,7 @@ PrefabInstance:
     - target: {fileID: 6357405287742808653, guid: 94ebcdbc2dd9e004fbb632f67cdf8d7a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7be4aa1c597e2a045bb11671eb64aecb, type: 2}
+      objectReference: {fileID: 2100000, guid: fb5431a20ae63054486711beb50e3260, type: 2}
     - target: {fileID: 7386460838862253288, guid: 94ebcdbc2dd9e004fbb632f67cdf8d7a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -50468,6 +50468,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: d07bd600656f0a94a9fff2efd4ce5aca, type: 2}
     - target: {fileID: -3881656239362629309, guid: fed1e4f4655a04c4c8e6d257ffb0bac3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.536876
+      objectReference: {fileID: 0}
+    - target: {fileID: -3881656239362629309, guid: fed1e4f4655a04c4c8e6d257ffb0bac3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.536876
+      objectReference: {fileID: 0}
+    - target: {fileID: -3881656239362629309, guid: fed1e4f4655a04c4c8e6d257ffb0bac3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5368757
+      objectReference: {fileID: 0}
+    - target: {fileID: -3881656239362629309, guid: fed1e4f4655a04c4c8e6d257ffb0bac3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.31
       objectReference: {fileID: 0}
@@ -59228,7 +59240,8 @@ GameObject:
   - component: {fileID: 1796185943}
   - component: {fileID: 1796185942}
   - component: {fileID: 1796185941}
-  m_Layer: 0
+  - component: {fileID: 1796185944}
+  m_Layer: 3
   m_Name: Camera victoria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59242,13 +59255,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796185939}
-  m_LocalRotation: {x: -0, y: 0.96613914, z: -0.2580217, w: 0}
-  m_LocalPosition: {x: 1.6600037, y: 5.3599977, z: 4.580002}
+  m_LocalRotation: {x: -0, y: 0.90126175, z: -0.43327504, w: 0}
+  m_LocalPosition: {x: 1.6600037, y: 11.3, z: 6.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 145416797}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 29.905, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 51.351, y: 180, z: 0}
 --- !u!114 &1796185941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59271,7 +59284,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -59332,6 +59345,66 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1796185944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796185939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1796185940}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1799988209
 GameObject:
   m_ObjectHideFlags: 0
