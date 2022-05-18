@@ -9,7 +9,8 @@ public class PJ_movement : MonoBehaviour
     private CharacterController controller;
     private Vector3 playerVelocity;
     public bool groundedPlayer;
-    public float playerSpeed = 4.0f;
+    [HideInInspector]public float playerSpeed = 7.0f;
+    [HideInInspector] public float playerMaxSpeed = 7.0f;
     public float jumpHeight = 1.0f;
     public float gravityValue = -9.81f;
 

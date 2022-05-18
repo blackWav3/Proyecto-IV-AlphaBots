@@ -89,6 +89,6 @@ public class ArmShield : MonoBehaviour
     IEnumerator CDescudo()
     {
         yield return new WaitForSeconds(cooldown);
-        lifeShield = 10;
+        lifeShield = 100;
     }
 }

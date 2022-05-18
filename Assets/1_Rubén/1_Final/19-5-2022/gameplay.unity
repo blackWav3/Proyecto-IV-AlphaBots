@@ -2121,6 +2121,7 @@ MonoBehaviour:
   infoPieza1: {fileID: 921978007}
   infoPieza2: {fileID: 2001299098}
   infoPieza3: {fileID: 1313470249}
+  valorPiernas: 0
   brazoIzq: {fileID: 766563753}
   brazoDer: {fileID: 1410255841}
   piernas: {fileID: 1159483010}
@@ -14646,6 +14647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundedPlayer: 0
   playerSpeed: 4
+  playerMaxSpeed: 7
   jumpHeight: 1
   gravityValue: -9.81
   target: {fileID: 0}
@@ -28632,6 +28634,8 @@ MonoBehaviour:
     - m_Text: sniper
       m_Image: {fileID: 0}
     - m_Text: flamethrower
+      m_Image: {fileID: 0}
+    - m_Text: shield
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -49149,6 +49153,8 @@ MonoBehaviour:
     - m_Text: sniper
       m_Image: {fileID: 0}
     - m_Text: flamethrower
+      m_Image: {fileID: 0}
+    - m_Text: shield
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
