@@ -22,21 +22,7 @@ public class DamageManager : MonoBehaviour
     {
         if (other.gameObject.tag=="Player")
         {
-            if (balaScript.parentName == GameObject.Find("4(Clone)").name || balaScript.parentName == GameObject.Find("5(Clone)").name || balaScript.parentName == GameObject.Find("6(Clone)").name)
-            {
-                if (other.gameObject.name == GameObject.Find("1(Clone)").name || other.gameObject.name == GameObject.Find("2(Clone)").name || other.gameObject.name == GameObject.Find("3(Clone)").name)
-                {
-                    mostrarDañoRealizado(other.gameObject.transform.Find("DañoVolador"));
-                }
-            }
-            else if (balaScript.parentName == GameObject.Find("1(Clone)").name || balaScript.parentName == GameObject.Find("2(Clone)").name || balaScript.parentName == GameObject.Find("3(Clone)").name)
-            {
-                if (other.gameObject.name == GameObject.Find("4(Clone)").name || other.gameObject.name == GameObject.Find("5(Clone)").name || other.gameObject.name == GameObject.Find("6(Clone)").name)
-                {
-                    mostrarDañoRealizado(other.gameObject.transform.Find("DañoVolador"));
-                }
-            }
-
+            mostrarDañoRealizado(other.gameObject.transform.Find("DañoVolador"));
         }
     }
 }

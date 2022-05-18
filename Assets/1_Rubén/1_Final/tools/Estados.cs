@@ -132,20 +132,7 @@ public class Estados : MonoBehaviour
         // G A T L I N G
         if (other.gameObject.CompareTag("Gatling"))
         {
-            if (this.gameObject.name == GameObject.Find("4(Clone)").name || this.gameObject.name == GameObject.Find("5(Clone)").name || this.gameObject.name == GameObject.Find("6(Clone)").name)
-            {
-                if (other.GetComponent<bala>().parentName == GameObject.Find("1(Clone)").name || other.GetComponent<bala>().parentName == GameObject.Find("2(Clone)").name || other.GetComponent<bala>().parentName == GameObject.Find("3(Clone)").name)
-                {
-                    Daño(8);
-                }
-            }
-            else if (this.gameObject.name == GameObject.Find("1(Clone)").name || this.gameObject.name == GameObject.Find("2(Clone)").name || this.gameObject.name == GameObject.Find("3(Clone)").name)
-            {
-                if (other.GetComponent<bala>().parentName == GameObject.Find("4(Clone)").name || other.GetComponent<bala>().parentName == GameObject.Find("5(Clone)").name || other.GetComponent<bala>().parentName == GameObject.Find("6(Clone)").name)
-                {
-                    Daño(8);
-                }
-            }
+            Daño(8);
         }
         // F L A M E T H R O W E R
         if (other.gameObject.CompareTag("Flamethrower"))
