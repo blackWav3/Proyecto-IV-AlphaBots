@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "Da\xF1oFlotante": {fileID: 1389915953939657875, guid: 00ae3777a0e73424380e20b10f76f612, type: 3}
   "da\xF1oRealizado": 75
+  balaScript: {fileID: 0}
 --- !u!2083052967 &2967251346729489270
 VisualEffect:
   m_ObjectHideFlags: 0

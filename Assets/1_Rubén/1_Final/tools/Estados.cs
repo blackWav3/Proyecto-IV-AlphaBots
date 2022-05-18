@@ -11,9 +11,12 @@ public class Estados : MonoBehaviour
     bool curacionA;
     bool dañoA;
     bool canUseAbility = true;
-    [Header("piernas")]
+    [Header("piernasFlyer")]
     public int cooldown;
     int actualcd;
+    [Header("piernasTanque")]
+    public int t_cooldown;
+    int t_actualcd;
 
     public float velocidadNormal;
     public float velocidadRalentizado;
@@ -57,10 +60,15 @@ public class Estados : MonoBehaviour
         piezasReset[8].GetComponent<arm_flamethrower>().actualcd = 0;
         piezasReset[9].GetComponent<arm_flamethrower>().actualcd = 0;
         actualcd = 0;
+        t_actualcd = 0;
 
     }
     private void Start()
-    {        
+    {
+
+        print(GameObject.Find("[MANAGER]").gameObject.GetComponent<PRUEBARED>().valorPiernas);
+        //
+
         photonview = GetComponent<PhotonView>();
         velocidad = velocidadNormal;
         idplayer = PhotonNetwork.LocalPlayer.ActorNumber;
@@ -100,10 +108,25 @@ public class Estados : MonoBehaviour
         if (!photonview.IsMine) return;
         if (Input.GetKeyDown(KeyCode.X) && canUseAbility == true)
         {
-            StartCoroutine(correr());
+            if(GameObject.Find("[MANAGER]").gameObject.GetComponent<PRUEBARED>().valorPiernas == 0) StartCoroutine(correr());
+            if (GameObject.Find("[MANAGER]").gameObject.GetComponent<PRUEBARED>().valorPiernas == 1) StartCoroutine(tank());
         }
     }
+    IEnumerator tank()
+    {
+        vida += 50;
+        canUseAbility = false;
+        actualcd = cooldown;
 
+        while (actualcd > 0)
+        {
+            GameObject.Find("txt_x").GetComponent<Text>().text = actualcd.ToString();
+            yield return new WaitForSeconds(1f);
+            actualcd--;
+        }
+        canUseAbility = true;
+        GameObject.Find("txt_x").GetComponent<Text>().text = "heal";
+    }
     
     
     IEnumerator TptoPortal()

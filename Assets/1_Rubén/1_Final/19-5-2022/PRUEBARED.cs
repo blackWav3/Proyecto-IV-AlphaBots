@@ -20,11 +20,14 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
     string info1;
     string info2;
     string info3;
+
+    public int valorPiernas;
     //dropdowns
 
     //public Dropdown brazoIzq, brazoDer, cabeza, pecho, piernas;
     public Dropdown brazoIzq;
     public Dropdown brazoDer;
+    public Dropdown piernas;
     public Dropdown cabeza;
 
 
@@ -70,6 +73,7 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
     
     private void Update()
     {
+        
         infoPieza1.text = info1;
         infoPieza2.text = info2;
         infoPieza3.text = info3;
@@ -111,27 +115,25 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
     private void SetInfoDP()
     {
         
-        if (brazoIzq.value == 0) info1 = "Canalizado de 8 proyeciles seguidos. Alcance medio y daño moderado";//gatling
-        if (brazoIzq.value == 1) info1 = "Proyectil que al impactar deja inmovilizado al objetivo";//stun
-        if (brazoIzq.value == 2) info1 = "Pieza fuera de servicio";//slow
-        if (brazoIzq.value == 3) info1 = "Proyectil de alto daño , distancia y velocidad";//sniper
-        if (brazoIzq.value == 4) info1 = "Canalizado de 12 proyectiles que dejan daño en el tiempo";//flamethrower
-        if (brazoIzq.value == 5) info1 = "Pieza fuera de servicio";//sword
-        if (brazoIzq.value == 6) info1 = "Pieza fuera de servicio";//hammer
+        if (brazoIzq.value == 0) info1 = "Canalizado de 8 proyeciles seguidos. Alcance medio y daño moderado";
+        if (brazoIzq.value == 1) info1 = "Proyectil que al impactar deja inmovilizado al objetivo";
+        if (brazoIzq.value == 2) info1 = "Proyectil de alto daño , distancia y velocidad";
+        if (brazoIzq.value == 3) info1 = "Canalizado de 12 proyectiles que aplican daño en el tiempo";
 
-        if (brazoDer.value == 0) info3 = "Canalizado de 8 proyeciles seguidos. Alcance medio y daño moderado";//gatling
-        if (brazoDer.value == 1) info3 = "Proyectil que al impactar deja inmovilizado al objetivo";//stun
-        if (brazoDer.value == 2) info3 = "Pieza fuera de servicio";//slow
-        if (brazoDer.value == 3) info3 = "Proyectil de alto daño , distancia y velocidad";//sniper
-        if (brazoDer.value == 4) info3 = "Canalizado de 12 proyectiles que dejan daño en el tiempo";//flamethrower
-        if (brazoDer.value == 5) info3 = "Pieza fuera de servicio";//sword
-        if (brazoDer.value == 6) info3 = "Pieza fuera de servicio";//hamer
+        if (brazoDer.value == 0) info3 = "Canalizado de 8 proyeciles seguidos. Alcance medio y daño moderado";
+        if (brazoDer.value == 1) info3 = "Proyectil que al impactar deja inmovilizado al objetivo";
+        if (brazoDer.value == 2) info3 = "Proyectil de alto daño , distancia y velocidad";
+        if (brazoDer.value == 3) info3 = "Canalizado de 12 proyectiles que aplican daño en el tiempo";
+
+        if (piernas.value == 0) info2 = "Al activarse se obtiene un acelerón que durará algunos segundos";
+        if (piernas.value == 1) info2 = "Al activarse se obtiene un aumento de vida";
+
     }
 
     #region spawnjugadores
     public void SetUpPlayerAndCamera()//instancia pj y settea los componentes de camara y jugador por id
     {
-        
+        valorPiernas = piernas.value;
         //set actie false de la mierda
         canvas_dropdowns.SetActive(false);
         PJcamara.GetComponent<PJ_camara>().enabled = true;
@@ -147,10 +149,9 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
 
         GameObject.Find(playerID + "(Clone)").transform.Find("leftarm").GetChild(brazoIzq.value).gameObject.SetActive(true);
         GameObject.Find(playerID + "(Clone)").transform.Find("rightarm").GetChild(brazoDer.value).gameObject.SetActive(true);
-        GameObject.Find(playerID + "(Clone)").transform.Find("legs").GetChild(brazoDer.value).gameObject.SetActive(true);
+        GameObject.Find(playerID + "(Clone)").transform.Find("legs").GetChild(piernas.value).gameObject.SetActive(true);
+        GameObject.Find(playerID + "(Clone)").transform.Find("head").GetChild(cabeza.value).gameObject.SetActive(true);
 
-        //PJplayer.transform.Find("leftarm").GetChild(brazoIzq.value).gameObject.SetActive(true);
-        //PJplayer.transform.Find("rightarm").GetChild(brazoDer.value).gameObject.SetActive(true);
         fumo();
         
         
@@ -158,16 +159,17 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
 
     void fumo()
     {
-        photonView.RPC(nameof(RPCmontaje), RpcTarget.OthersBuffered, brazoIzq.value, brazoDer.value, playerID);
+        photonView.RPC(nameof(RPCmontaje), RpcTarget.OthersBuffered, brazoIzq.value, brazoDer.value,piernas.value,cabeza.value, playerID);
     }
     [PunRPC]
 
 
-    void RPCmontaje(int dpI,int dpD,int id)
+    void RPCmontaje(int dpI,int dpD,int leg, int head,int id)
     {
         GameObject.Find(id + "(Clone)").transform.Find("leftarm").GetChild(dpI).gameObject.SetActive(true);
         GameObject.Find(id + "(Clone)").transform.Find("rightarm").GetChild(dpD).gameObject.SetActive(true);
-        GameObject.Find(id + "(Clone)").transform.Find("legs").GetChild(dpD).gameObject.SetActive(true);
+        GameObject.Find(id + "(Clone)").transform.Find("legs").GetChild(leg).gameObject.SetActive(true);
+        GameObject.Find(id + "(Clone)").transform.Find("head").GetChild(head).gameObject.SetActive(true);
         //PJplayer.transform.Find("leftarm").GetChild(dpI).gameObject.SetActive(true);
         //PJplayer.transform.Find("rightarm").GetChild(dpD).gameObject.SetActive(true);
     }
