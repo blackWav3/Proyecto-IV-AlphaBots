@@ -41,7 +41,7 @@ public class PuntacionGameplay : MonoBehaviour
 
     private void Start()
     {
-        int_score1 = 2;
+        int_score1 = 0;
         int_score2 = 0;
 
         
@@ -137,7 +137,7 @@ public class PuntacionGameplay : MonoBehaviour
             {
                 jugador1.GetComponent<PJ_movement>().CanTP = true;
                 jugador1.transform.SetParent(posicionGANADOR1.transform);
-                jugador1.transform.position = posicionGANADOR1.transform.position;
+                jugador1.transform.position = posicionGANADOR3.transform.position;
 
                 jugador2.GetComponent<PJ_movement>().CanTP = true;
                 jugador2.transform.SetParent(posicionGANADOR2.transform);
