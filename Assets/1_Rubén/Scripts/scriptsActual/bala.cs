@@ -7,7 +7,6 @@ public class bala : MonoBehaviour
 {
     [HideInInspector]
     public int speed;
-    public string parentName;
     //public GameObject area;
     private void Start()
     {

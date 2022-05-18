@@ -81,11 +81,18 @@ public class arm_gatling : MonoBehaviour
     {
         for(int i = 0; i < bulletsPerBurst; i++)
         {
+            GameObject bala = null;
             //GameObject bala = PhotonNetwork.Instantiate ("Proyectiles/gatling_proyectile", muzzleOrigin.transform.position, transform.rotation * Quaternion.Euler(0f, 0f, 0f));
-            GameObject bala = PhotonNetwork.Instantiate("Proyectiles/gatling_proyectile", muzzleOrigin.transform.position, muzzleDirection.transform.rotation);
+            if (this.gameObject.transform.parent.parent.name == "1(Clone)" || this.gameObject.transform.parent.parent.name == "2(Clone)" || this.gameObject.transform.parent.parent.name == "3(Clone)")
+            {
+                bala = PhotonNetwork.Instantiate("Proyectiles/gatling_proyectile", muzzleOrigin.transform.position, muzzleDirection.transform.rotation);
+            }
+            else
+            {
+                bala = PhotonNetwork.Instantiate("Proyectiles/gatling_proyectile 1", muzzleOrigin.transform.position, muzzleDirection.transform.rotation);
+            }
             //bala.transform.LookAt(muzzleDirection.transform);
             bala.GetComponent<bala>().speed = bulletSpeed;
-            bala.GetComponent<bala>().parentName = transform.parent.parent.name;
             yield return new WaitForSeconds(fireRatio);
         }
     }
