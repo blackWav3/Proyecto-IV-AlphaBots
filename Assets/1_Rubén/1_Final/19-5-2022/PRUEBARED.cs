@@ -25,6 +25,7 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
     //public Dropdown brazoIzq, brazoDer, cabeza, pecho, piernas;
     public Dropdown brazoIzq;
     public Dropdown brazoDer;
+    public Dropdown cabeza;
 
 
     [Header("GUI")]
@@ -146,6 +147,7 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
 
         GameObject.Find(playerID + "(Clone)").transform.Find("leftarm").GetChild(brazoIzq.value).gameObject.SetActive(true);
         GameObject.Find(playerID + "(Clone)").transform.Find("rightarm").GetChild(brazoDer.value).gameObject.SetActive(true);
+        GameObject.Find(playerID + "(Clone)").transform.Find("legs").GetChild(brazoDer.value).gameObject.SetActive(true);
 
         //PJplayer.transform.Find("leftarm").GetChild(brazoIzq.value).gameObject.SetActive(true);
         //PJplayer.transform.Find("rightarm").GetChild(brazoDer.value).gameObject.SetActive(true);
@@ -165,6 +167,7 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
     {
         GameObject.Find(id + "(Clone)").transform.Find("leftarm").GetChild(dpI).gameObject.SetActive(true);
         GameObject.Find(id + "(Clone)").transform.Find("rightarm").GetChild(dpD).gameObject.SetActive(true);
+        GameObject.Find(id + "(Clone)").transform.Find("legs").GetChild(dpD).gameObject.SetActive(true);
         //PJplayer.transform.Find("leftarm").GetChild(dpI).gameObject.SetActive(true);
         //PJplayer.transform.Find("rightarm").GetChild(dpD).gameObject.SetActive(true);
     }
