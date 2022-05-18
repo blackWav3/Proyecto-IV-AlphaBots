@@ -41,15 +41,37 @@ public class PuntacionGameplay : MonoBehaviour
 
     private void Start()
     {
-        int_score1 = 0;
+        int_score1 = 2;
         int_score2 = 0;
 
         
 
+        
+
+
+        StartCoroutine(CuentaAtras());
+    }
+
+    IEnumerator CuentaAtras()
+    {
+        for(int i = tiempoPartida; i >= 0; i--)
+        {
+            txt_time.text = i.ToString();
+            yield return new WaitForSeconds(1f);
+        }
+        tiempoPartida = 0;
+    }
+    
+
+     void Update()
+    {
+        txt_score1.text = int_score1.ToString();
+        txt_score2.text = int_score2.ToString();
+
         jugador1 = GameObject.Find("1(Clone)");
 
         if (GameObject.Find("2(Clone)") != null)
-        { 
+        {
             jugador2 = GameObject.Find("2(Clone)");
         }
 
@@ -73,27 +95,6 @@ public class PuntacionGameplay : MonoBehaviour
             jugador6 = GameObject.Find("6(Clone)");
         }
 
-
-
-        StartCoroutine(CuentaAtras());
-    }
-
-    IEnumerator CuentaAtras()
-    {
-        for(int i = tiempoPartida; i >= 0; i--)
-        {
-            txt_time.text = i.ToString();
-            yield return new WaitForSeconds(1f);
-        }
-        tiempoPartida = 0;
-    }
-    
-
-     void Update()
-    {
-        txt_score1.text = int_score1.ToString();
-        txt_score2.text = int_score2.ToString();
-
         if (tiempoPartida<=0 ) //poner tambien si se llega a x puntuacion
         {
 
@@ -102,28 +103,28 @@ public class PuntacionGameplay : MonoBehaviour
                 
                 jugador4.GetComponent<PJ_movement>().CanTP = true;
                 jugador4.transform.SetParent(posicionGANADOR1.transform);
-                jugador4.transform.position = new Vector3(0,0,0);
+                jugador4.transform.position = posicionGANADOR1.transform.position;
 
                 jugador5.GetComponent<PJ_movement>().CanTP = true;
                 jugador5.transform.SetParent(posicionGANADOR2.transform);
-                jugador5.transform.position = new Vector3(0, 0, 0);
+                jugador5.transform.position = posicionGANADOR2.transform.position;
 
                 jugador6.GetComponent<PJ_movement>().CanTP = true;
                 jugador6.transform.SetParent(posicionGANADOR3.transform);
-                jugador6.transform.position = new Vector3(0, 0, 0);
+                jugador6.transform.position = posicionGANADOR3.transform.position;
 
 
                 jugador1.GetComponent<PJ_movement>().CanTP = true;
                 jugador1.transform.SetParent(posicionPERDEDOR1.transform);
-                jugador1.transform.position = new Vector3(0, 0, 0);
+                jugador1.transform.position = posicionPERDEDOR1.transform.position;
 
                 jugador2.GetComponent<PJ_movement>().CanTP = true;
                 jugador2.transform.SetParent(posicionPERDEDOR2.transform);
-                jugador2.transform.position = new Vector3(0, 0, 0);
+                jugador2.transform.position = posicionPERDEDOR2.transform.position;
 
                 jugador3.GetComponent<PJ_movement>().CanTP = true;
                 jugador3.transform.SetParent(posicionPERDEDOR3.transform);
-                jugador3.transform.position = new Vector3(0, 0, 0);
+                jugador3.transform.position = posicionPERDEDOR3.transform.position;
 
                 canvasDesaparecer.SetActive(false);
                 textoVictoriaAzules.SetActive(true);
@@ -136,28 +137,28 @@ public class PuntacionGameplay : MonoBehaviour
             {
                 jugador1.GetComponent<PJ_movement>().CanTP = true;
                 jugador1.transform.SetParent(posicionGANADOR1.transform);
-                jugador1.transform.position = new Vector3(0, 0, 0);
+                jugador1.transform.position = posicionGANADOR1.transform.position;
 
                 jugador2.GetComponent<PJ_movement>().CanTP = true;
                 jugador2.transform.SetParent(posicionGANADOR2.transform);
-                jugador2.transform.position = new Vector3(0, 0, 0);
+                jugador2.transform.position = posicionGANADOR2.transform.position;
 
                 jugador3.GetComponent<PJ_movement>().CanTP = true;
                 jugador3.transform.SetParent(posicionGANADOR3.transform);
-                jugador3.transform.position = new Vector3(0, 0, 0);
+                jugador3.transform.position = posicionGANADOR3.transform.position;
 
 
                 jugador4.GetComponent<PJ_movement>().CanTP = true;
                 jugador4.transform.SetParent(posicionPERDEDOR1.transform);
-                jugador4.transform.position = new Vector3(0, 0, 0);
+                jugador4.transform.position = posicionPERDEDOR1.transform.position;
 
                 jugador5.GetComponent<PJ_movement>().CanTP = true;
                 jugador5.transform.SetParent(posicionPERDEDOR2.transform);
-                jugador5.transform.position = new Vector3(0, 0, 0);
+                jugador5.transform.position = posicionPERDEDOR2.transform.position;
 
                 jugador6.GetComponent<PJ_movement>().CanTP = true;
                 jugador6.transform.SetParent(posicionPERDEDOR3.transform);
-                jugador6.transform.position = new Vector3(0, 0, 0);
+                jugador6.transform.position = posicionPERDEDOR3.transform.position;
 
 
                 canvasDesaparecer.SetActive(false);
