@@ -29,7 +29,6 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
 
     [Header("GUI")]
     [Space(15)]    
-    public GameObject[] playersReady;
     public GameObject canvas_dropdowns;
     public GameObject canvas_match;
     public Text txt_timeToGame;
