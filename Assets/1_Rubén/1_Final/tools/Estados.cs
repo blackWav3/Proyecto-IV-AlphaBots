@@ -47,27 +47,25 @@ public class Estados : MonoBehaviour
         gameObject.GetComponent<PJ_movement>().CanTP = false;
         if (gameObject.name == ("1(Clone)") || gameObject.name == ("2(Clone)") || gameObject.name == ("3(Clone)")) GameObject.Find("[PUNTUACION]").GetComponent<PuntacionGameplay>().Score1Up();
         if (gameObject.name == ("4(Clone)") || gameObject.name == ("5(Clone)") || gameObject.name == ("6(Clone)")) GameObject.Find("[PUNTUACION]").GetComponent<PuntacionGameplay>().Score2Up();
-
         //resetcooldown
         piezasReset[0].GetComponent<arm_gatling>().actualcd = 0;
         piezasReset[1].GetComponent<arm_gatling>().actualcd = 0;
         piezasReset[2].GetComponent<arm_zapper>().actualcd = 0;
         piezasReset[3].GetComponent<arm_zapper>().actualcd = 0;
-        //piezasReset[4].GetComponent<arm_slower>().actualcd = 0;
-        //piezasReset[5].GetComponent<arm_slower>().actualcd = 0;
         piezasReset[6].GetComponent<arm_sniper>().actualcd = 0;
         piezasReset[7].GetComponent<arm_sniper>().actualcd = 0;
         piezasReset[8].GetComponent<arm_flamethrower>().actualcd = 0;
         piezasReset[9].GetComponent<arm_flamethrower>().actualcd = 0;
         actualcd = 0;
         t_actualcd = 0;
-
     }
+
+
+
+
     private void Start()
     {
-
-        print(GameObject.Find("[MANAGER]").gameObject.GetComponent<PRUEBARED>().valorPiernas);
-        //
+        print(GameObject.Find("[MANAGER]").gameObject.GetComponent<PRUEBARED>().valorPiernas);        
 
         photonview = GetComponent<PhotonView>();
         velocidad = velocidadNormal;
@@ -102,13 +100,18 @@ public class Estados : MonoBehaviour
     }
     private void Update()
     {
-        if (vida <= 0) StartCoroutine(RespawnPlayerToPosition());
+        if (Input.GetKeyDown(KeyCode.O)) vida -= 50;
+        if (vida <= 0)
+        {
+            gameObject.GetComponent<explosionPJ>().InstanciarExplosion();
+            StartCoroutine(RespawnPlayerToPosition());
+        }
 
         gameObject.GetComponent<PJ_movement>().playerSpeed = velocidad;
         if (!photonview.IsMine) return;
         if (Input.GetKeyDown(KeyCode.X) && canUseAbility == true)
         {
-            if(GameObject.Find("[MANAGER]").gameObject.GetComponent<PRUEBARED>().valorPiernas == 0) StartCoroutine(correr());
+            if (GameObject.Find("[MANAGER]").gameObject.GetComponent<PRUEBARED>().valorPiernas == 0) StartCoroutine(correr());
             if (GameObject.Find("[MANAGER]").gameObject.GetComponent<PRUEBARED>().valorPiernas == 1) StartCoroutine(tank());
         }
     }
@@ -185,16 +188,6 @@ public class Estados : MonoBehaviour
             StartCoroutine(CuracionActiva(1, 1f));
         #endregion
     }
-
-    /*private void OnTriggerStay(Collider other)
-    {
-        #region Deploy
-        if (other.gameObject.CompareTag("DeployHeal"))
-        {
-            StartCoroutine(CuracionActiva(1, 1f));
-        }
-        #endregion
-    }*/
 
 
 
