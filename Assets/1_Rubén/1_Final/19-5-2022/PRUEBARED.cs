@@ -119,13 +119,13 @@ public class PRUEBARED : MonoBehaviourPunCallbacks
         if (brazoIzq.value == 1) info1 = "Proyectil que al impactar deja inmovilizado al objetivo";
         if (brazoIzq.value == 2) info1 = "Proyectil de alto daño , distancia y velocidad";
         if (brazoIzq.value == 3) info1 = "Canalizado de 12 proyectiles que aplican daño en el tiempo";
-        if (brazoIzq.value == 3) info1 = "Crea un escudo que bloquea daño";
+        if (brazoIzq.value == 4) info1 = "Activa un escudo de energia que bloquea los proyectiles hasta que pierde toda su durabilidad";
 
         if (brazoDer.value == 0) info3 = "Canalizado de 8 proyeciles seguidos. Alcance medio y daño moderado";
         if (brazoDer.value == 1) info3 = "Proyectil que al impactar deja inmovilizado al objetivo";
         if (brazoDer.value == 2) info3 = "Proyectil de alto daño , distancia y velocidad";
         if (brazoDer.value == 3) info3 = "Canalizado de 12 proyectiles que aplican daño en el tiempo";
-        if (brazoDer.value == 3) info3 = "Crea un escudo que bloquea daño";
+        if (brazoDer.value == 4) info3 = "Activa un escudo de energia que bloquea los proyectiles hasta que pierde toda su durabilidad";
 
         if (piernas.value == 0) info2 = "Al activarse se obtiene un acelerón que durará algunos segundos";
         if (piernas.value == 1) info2 = "Al activarse se obtiene un aumento de vida";
