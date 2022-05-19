@@ -88,9 +88,9 @@ public class arm_shield : MonoBehaviour
         Debug.Log("Borja Prueba");
         if (lifeShield <= 0)
         {
+            audioPlayer.Stop();
             shield.SetActive(false);
             StartCoroutine(CDescudo());//<---cuando la vida del escudo llega  a 0 empieza el cooldown para que el escudo recupere la vida
-            audioPlayer.Stop();
         }
 
         //Activar habilidad (solo si la vida no es 0)
@@ -101,8 +101,8 @@ public class arm_shield : MonoBehaviour
 
         if (shield.active)
         {
-            shield.SetActive(false);
             audioPlayer.Stop();
+            shield.SetActive(false);
 
             Player.GetComponent<PJ_movement>().playerSpeed = Player.GetComponent<PJ_movement>().playerMaxSpeed;  //Reestablecemos la velocidad
         }
