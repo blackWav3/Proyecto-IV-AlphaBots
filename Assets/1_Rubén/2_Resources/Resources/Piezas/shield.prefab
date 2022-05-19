@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6542157494890002869}
+  - component: {fileID: 3906736862175713975}
+  - component: {fileID: 9085782772136175776}
   m_Layer: 6
   m_Name: shield
   m_TagString: Untagged
@@ -31,6 +33,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3906736862175713975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4461295355381978281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &9085782772136175776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4461295355381978281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d564485a01b975141bcbf643fc4d2f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shield: {fileID: 5501379515511387788}
+  Player: {fileID: 0}
+  lifeShield: 50
+  cooldown: 5
+  actualcd: 0
+  canUseAbility: 1
+  roboto: {fileID: 0}
 --- !u!1001 &8539338819343275255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88,6 +131,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac7030b0d9c15ec4681fe481e49f83f2, type: 3}
+--- !u!1 &5501379515511387788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4240421538748326523, guid: ac7030b0d9c15ec4681fe481e49f83f2, type: 3}
+  m_PrefabInstance: {fileID: 8539338819343275255}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5501379515511387789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4240421538748326522, guid: ac7030b0d9c15ec4681fe481e49f83f2, type: 3}
