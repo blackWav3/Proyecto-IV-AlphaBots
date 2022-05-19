@@ -21,6 +21,8 @@ public class arm_zapper : MonoBehaviour
     public GameObject roboto;
     ActivadorAnim animatorPlay;
 
+    AudioSource audioPlayer;
+
     private void Start()
     {
         photonview = GetComponent<PhotonView>();
@@ -30,6 +32,7 @@ public class arm_zapper : MonoBehaviour
         muzzleDirection = GameObject.Find("Main Camera").transform.GetChild(0).gameObject;
 
         animatorPlay = roboto.GetComponent<ActivadorAnim>();
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -43,6 +46,7 @@ public class arm_zapper : MonoBehaviour
                 Zapper();
                 StartCoroutine(StartCooldown("txt_q"));
                 StartCoroutine(animatorPlay.Laser());
+                audioPlayer.Play();
             }
         }
         if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
@@ -52,6 +56,7 @@ public class arm_zapper : MonoBehaviour
                 muzzleOrigin = muzzleDrch;
                 Zapper();
                 StartCoroutine(StartCooldown("txt_e"));
+                audioPlayer.Play();
             }
         }
     }

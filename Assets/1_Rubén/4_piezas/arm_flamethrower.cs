@@ -22,6 +22,7 @@ public class arm_flamethrower : MonoBehaviour
 
     public GameObject roboto;
     ActivadorAnim animatorPlay;
+    AudioSource audioPlayer;
 
     private void Start()
     {
@@ -32,6 +33,7 @@ public class arm_flamethrower : MonoBehaviour
         muzzleDirection = GameObject.Find("Main Camera").transform.GetChild(0).gameObject;
 
         animatorPlay = roboto.GetComponent<ActivadorAnim>();
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -45,6 +47,7 @@ public class arm_flamethrower : MonoBehaviour
                 Flamethrower();
                 StartCoroutine(StartCooldown("txt_q"));
                 StartCoroutine(animatorPlay.Flamethrower());
+                audioPlayer.Play();
             } 
         }
         if(transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
@@ -54,6 +57,7 @@ public class arm_flamethrower : MonoBehaviour
                 muzzleOrigin = muzzleDrch;
                 Flamethrower();
                 StartCoroutine(StartCooldown("txt_e"));
+                audioPlayer.Play();
             }
         }        
     }

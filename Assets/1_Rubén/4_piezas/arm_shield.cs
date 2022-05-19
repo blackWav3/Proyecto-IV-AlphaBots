@@ -25,6 +25,7 @@ public class arm_shield : MonoBehaviour
 
     [HideInInspector] public GameObject roboto;
     [HideInInspector] ActivadorAnim animatorPlay;
+    AudioSource audioPlayer;
 
     private void Start()
     {
@@ -36,6 +37,7 @@ public class arm_shield : MonoBehaviour
         muzzleDirection = GameObject.Find("Main Camera").transform.GetChild(0).gameObject;
 
         //animatorPlay = roboto.GetComponent<ActivadorAnim>();
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -45,20 +47,20 @@ public class arm_shield : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) && canUseAbility == true)
             {
-                Debug.Log("Preuba1");
                 muzzleOrigin = muzzleIzq;
                 Shield();
                 StartCoroutine(StartCooldown("txt_q"));
+                audioPlayer.Play();
             }
         }
         if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
         {
             if (Input.GetKeyDown(KeyCode.Mouse1) && canUseAbility == true)
             {
-                Debug.Log("Preuba2");
                 muzzleOrigin = muzzleDrch;
                 Shield();
                 StartCoroutine(StartCooldown("txt_e"));
+                audioPlayer.Play();
             }
         }
     }
@@ -88,6 +90,7 @@ public class arm_shield : MonoBehaviour
         {
             shield.SetActive(false);
             StartCoroutine(CDescudo());//<---cuando la vida del escudo llega  a 0 empieza el cooldown para que el escudo recupere la vida
+            audioPlayer.Stop();
         }
 
         //Activar habilidad (solo si la vida no es 0)
@@ -99,6 +102,7 @@ public class arm_shield : MonoBehaviour
         if (shield.active)
         {
             shield.SetActive(false);
+            audioPlayer.Stop();
 
             Player.GetComponent<PJ_movement>().playerSpeed = Player.GetComponent<PJ_movement>().playerMaxSpeed;  //Reestablecemos la velocidad
         }

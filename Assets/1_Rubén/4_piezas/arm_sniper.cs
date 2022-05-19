@@ -23,6 +23,8 @@ public class arm_sniper : MonoBehaviour
     public GameObject roboto;
     ActivadorAnim animatorPlay;
 
+    AudioSource audioPlayer;
+
     private void Start()
     {
         photonview = GetComponent<PhotonView>();
@@ -32,6 +34,7 @@ public class arm_sniper : MonoBehaviour
         muzzleDirection = GameObject.Find("Main Camera").transform.GetChild(0).gameObject;
 
         animatorPlay = roboto.GetComponent<ActivadorAnim>();
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -45,6 +48,7 @@ public class arm_sniper : MonoBehaviour
                 Sniper();
                 StartCoroutine(StartCooldown("txt_q"));
                 StartCoroutine(animatorPlay.Laser());
+                audioPlayer.Play();
             } 
         }
         if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
@@ -54,6 +58,7 @@ public class arm_sniper : MonoBehaviour
                 muzzleOrigin = muzzleDrch;
                 Sniper();
                 StartCoroutine(StartCooldown("txt_e"));
+                audioPlayer.Play();
             }
         }
     }
