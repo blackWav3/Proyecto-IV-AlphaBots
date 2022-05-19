@@ -24,6 +24,8 @@ public class arm_gatling : MonoBehaviour
     public GameObject roboto;
     ActivadorAnim animatorPlay;
 
+    AudioSource audioPlayer;
+
     private void Start()
     {        
         photonview = GetComponent<PhotonView>();
@@ -33,6 +35,7 @@ public class arm_gatling : MonoBehaviour
         muzzleDirection = GameObject.Find("Main Camera").transform.GetChild(0).gameObject;
 
         animatorPlay = roboto.GetComponent<ActivadorAnim>();
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -46,6 +49,7 @@ public class arm_gatling : MonoBehaviour
                 Gatling();
                 StartCoroutine(StartCooldown("txt_q"));
                 StartCoroutine(animatorPlay.Gatling());
+                audioPlayer.Play();
             }
         }
         if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
@@ -55,6 +59,7 @@ public class arm_gatling : MonoBehaviour
                 muzzleOrigin = muzzleDrch;
                 Gatling();
                 StartCoroutine(StartCooldown("txt_e"));
+                audioPlayer.Play();
             }
         }
     }
