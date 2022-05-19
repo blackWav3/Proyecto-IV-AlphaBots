@@ -48,9 +48,9 @@ public class arm_shield : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0) && canUseAbility == true)
             {
                 muzzleOrigin = muzzleIzq;
+                audioPlayer.Play();
                 Shield();
                 StartCoroutine(StartCooldown("txt_q"));
-                audioPlayer.Play();
             }
         }
         if (transform.parent.name == "rightarm" && PRUEBARED.pauseAct == false)
@@ -58,9 +58,9 @@ public class arm_shield : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse1) && canUseAbility == true)
             {
                 muzzleOrigin = muzzleDrch;
+                audioPlayer.Play();
                 Shield();
                 StartCoroutine(StartCooldown("txt_e"));
-                audioPlayer.Play();
             }
         }
     }
