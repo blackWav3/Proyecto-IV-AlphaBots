@@ -52,6 +52,8 @@ public class Estados : MonoBehaviour
         piezasReset[1].GetComponent<arm_gatling>().actualcd = 0;
         piezasReset[2].GetComponent<arm_zapper>().actualcd = 0;
         piezasReset[3].GetComponent<arm_zapper>().actualcd = 0;
+        piezasReset[4].GetComponent<arm_shield>().actualcd = 0;
+        piezasReset[5].GetComponent<arm_shield>().actualcd = 0;
         piezasReset[6].GetComponent<arm_sniper>().actualcd = 0;
         piezasReset[7].GetComponent<arm_sniper>().actualcd = 0;
         piezasReset[8].GetComponent<arm_flamethrower>().actualcd = 0;
